@@ -1,0 +1,2692 @@
+/* =========================================================
+   PORTFOLIO WEBSITE
+   CSS FOUNDATION
+   ========================================================= */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+    --color-cream: #fffaf5;
+    --color-white: #ffffff;
+
+    --color-pink: #f6b8c8;
+    --color-pink-soft: #fde3ea;
+    --color-lavender: #dcd2f4;
+    --color-peach: #ffd8bd;
+    --color-blue: #cfe8f7;
+    --color-green: #d9efd9;
+
+    --color-text: #403847;
+    --color-text-light: #746b78;
+    --color-heading: #302936;
+
+    --color-border: rgba(64, 56, 71, 0.10);
+
+    --font-main: "Segoe UI", Arial, sans-serif;
+
+    --container-width: 1200px;
+
+    --radius-small: 12px;
+    --radius-medium: 20px;
+    --radius-large: 32px;
+
+    --shadow-soft: 0 10px 30px rgba(64, 56, 71, 0.08);
+}
+
+
+/* ---------- HTML ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    min-height: 100vh;
+
+    background: var(--color-cream);
+    color: var(--color-text);
+
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+
+/* ---------- LINKS ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ---------- IMAGES ---------- */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* ---------- HEADINGS ---------- */
+
+h1,
+h2,
+h3 {
+    color: var(--color-heading);
+    line-height: 1.2;
+}
+
+
+/* ---------- CONTAINER ---------- */
+
+main,
+header,
+footer {
+    width: 100%;
+}
+/* =========================================================
+   HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+    position: relative;
+    width: 100%;
+    z-index: 100;
+
+    padding: 24px 6%;
+}
+
+header nav {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 22px;
+
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+/* ---------- LOGO ---------- */
+
+header nav > a {
+    color: var(--color-heading);
+
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+header nav > a:hover {
+    color: #d98ca4;
+    transform: translateY(-2px);
+}
+
+
+/* ---------- NAVIGATION LINKS ---------- */
+
+header nav > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+header nav > div a {
+    position: relative;
+
+    padding: 9px 14px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    border-radius: 999px;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ---------- LINK HOVER ---------- */
+
+header nav > div a:hover {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- ACTIVE-LIKE EFFECT ---------- */
+
+header nav > div a:first-child {
+    color: var(--color-heading);
+    background: rgba(253, 227, 234, 0.7);
+}
+/* =========================================================
+   HOME / HERO SECTION
+   ========================================================= */
+
+#home {
+    width: min(100% - 12%, var(--container-width));
+    min-height: 680px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 70px;
+
+    padding: 80px 0 100px;
+}
+
+
+/* ---------- HOME TEXT ---------- */
+
+#home > div:first-child {
+    max-width: 650px;
+}
+
+#home > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 18px;
+    padding: 7px 16px;
+
+    color: #b85f7b;
+    background: var(--color-pink-soft);
+
+    border: 1px solid rgba(184, 95, 123, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- MAIN HEADING ---------- */
+
+#home h1 {
+    max-width: 700px;
+
+    margin-bottom: 24px;
+
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.045em;
+}
+
+
+/* ---------- DESCRIPTION ---------- */
+
+#home > div:first-child > p:nth-of-type(2) {
+    max-width: 570px;
+
+    margin-bottom: 34px;
+
+    color: var(--color-text-light);
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- HOME BUTTONS ---------- */
+
+#home > div:first-child > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+#home > div:first-child > div a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+    padding: 0 24px;
+
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* ---------- PRIMARY BUTTON ---------- */
+
+#home > div:first-child > div a:first-child {
+    color: var(--color-white);
+    background: #d98ca4;
+
+    box-shadow: 0 10px 24px rgba(217, 140, 164, 0.25);
+}
+
+#home > div:first-child > div a:first-child:hover {
+    background: #cc7893;
+    transform: translateY(-3px);
+
+    box-shadow: 0 14px 30px rgba(217, 140, 164, 0.30);
+}
+
+
+/* ---------- SECONDARY BUTTON ---------- */
+
+#home > div:first-child > div a:last-child {
+    color: var(--color-heading);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+}
+
+#home > div:first-child > div a:last-child:hover {
+    background: var(--color-lavender);
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- FEATURED ARTWORK ---------- */
+
+#home > div:last-child {
+    position: relative;
+
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(246, 184, 200, 0.75),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            rgba(220, 210, 244, 0.85),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff1f5,
+            #f7f1ff 55%,
+            #eef8ff
+        );
+
+    border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+
+    box-shadow:
+        0 30px 70px rgba(64, 56, 71, 0.10);
+
+    overflow: hidden;
+}
+
+
+/* ---------- ARTWORK PLACEHOLDER ---------- */
+
+#home > div:last-child p {
+    position: relative;
+    z-index: 2;
+
+    padding: 18px 24px;
+
+    color: var(--color-text-light);
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
+
+#about {
+    width: min(100% - 12%, var(--container-width));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+    gap: 80px;
+
+    padding: 110px 0;
+}
+
+
+/* ---------- ABOUT TEXT ---------- */
+
+#about > div:first-child {
+    max-width: 650px;
+}
+
+
+/* ---------- SECTION LABEL ---------- */
+
+#about > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #8b70b5;
+    background: rgba(220, 210, 244, 0.55);
+
+    border: 1px solid rgba(139, 112, 181, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- ABOUT HEADING ---------- */
+
+#about h2 {
+    margin-bottom: 24px;
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+
+/* ---------- ABOUT PARAGRAPHS ---------- */
+
+#about > div:first-child > p:not(:first-child) {
+    max-width: 590px;
+
+    margin-bottom: 18px;
+
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+
+/* ---------- ARTIST PROFILE CARD ---------- */
+
+#about > div:last-child {
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(255, 216, 189, 0.85),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 25% 75%,
+            rgba(207, 232, 247, 0.9),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff8f2,
+            #f9f3ff
+        );
+
+    border-radius: 55% 45% 48% 52% / 45% 52% 48% 55%;
+
+    box-shadow:
+        0 25px 60px rgba(64, 56, 71, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* ---------- PROFILE PLACEHOLDER ---------- */
+
+#about > div:last-child p {
+    position: relative;
+    z-index: 2;
+
+    padding: 18px 24px;
+
+    color: var(--color-text-light);
+    background: rgba(255, 255, 255, 0.76);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+/* =========================================================
+   PORTFOLIO SECTION
+   ========================================================= */
+
+#portfolio {
+    width: min(100% - 12%, var(--container-width));
+    margin: 0 auto;
+
+    padding: 110px 0;
+}
+
+
+/* ---------- PORTFOLIO INTRO ---------- */
+
+#portfolio > div:first-child {
+    max-width: 700px;
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+/* ---------- SECTION LABEL ---------- */
+
+#portfolio > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #b56d52;
+    background: rgba(255, 216, 189, 0.65);
+
+    border: 1px solid rgba(181, 109, 82, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- PORTFOLIO HEADING ---------- */
+
+#portfolio h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+
+/* ---------- PORTFOLIO DESCRIPTION ---------- */
+
+#portfolio > div:first-child > p:last-child {
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- CATEGORY FILTER ---------- */
+
+#portfolio > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 45px;
+}
+
+#portfolio > div:nth-child(2) a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 18px;
+
+    color: var(--color-text-light);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow: 0 5px 18px rgba(64, 56, 71, 0.04);
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ---------- CATEGORY HOVER ---------- */
+
+#portfolio > div:nth-child(2) a:hover {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- ACTIVE CATEGORY ---------- */
+
+#portfolio > div:nth-child(2) a:first-child {
+    color: var(--color-white);
+    background: #d98ca4;
+
+    border-color: #d98ca4;
+}
+
+
+/* ---------- ARTWORK GRID ---------- */
+
+#portfolio > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+
+/* ---------- ARTWORK CARD ---------- */
+
+#portfolio article {
+    position: relative;
+
+    padding: 14px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: 0 8px 25px rgba(64, 56, 71, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* ---------- CARD HOVER ---------- */
+
+#portfolio article:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(64, 56, 71, 0.12);
+}
+
+
+/* ---------- ARTWORK PREVIEW ---------- */
+
+#portfolio article > div {
+    position: relative;
+
+    width: 100%;
+    min-height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f4,
+            #f2edff 50%,
+            #edf8ff
+        );
+
+    border-radius: var(--radius-small);
+
+    overflow: hidden;
+}
+
+
+/* ---------- PREVIEW TEXT ---------- */
+
+#portfolio article > div p {
+    padding: 14px 20px;
+
+    color: var(--color-text-light);
+    background: rgba(255, 255, 255, 0.76);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+
+/* ---------- ARTWORK TITLE ---------- */
+
+#portfolio article h3 {
+    margin: 0 8px 5px;
+
+    font-size: 1.15rem;
+    font-weight: 750;
+}
+
+
+/* ---------- ARTWORK CATEGORY ---------- */
+
+#portfolio article > p {
+    margin: 0 8px 8px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.88rem;
+}
+/* =========================================================
+   CONTACT SECTION
+   ========================================================= */
+
+#contact {
+    width: min(100% - 12%, var(--container-width));
+    margin: 0 auto;
+
+    padding: 110px 0;
+}
+
+
+/* ---------- CONTACT INTRO ---------- */
+
+#contact > div:first-child {
+    max-width: 700px;
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+/* ---------- SECTION LABEL ---------- */
+
+#contact > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #6b91b5;
+    background: rgba(207, 232, 247, 0.7);
+
+    border: 1px solid rgba(107, 145, 181, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- CONTACT HEADING ---------- */
+
+#contact h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.035em;
+}
+
+
+/* ---------- CONTACT DESCRIPTION ---------- */
+
+#contact > div:first-child > p:last-child {
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- CONTACT CONTENT ---------- */
+
+#contact > div:nth-child(2) {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION CARD
+   ========================================================= */
+
+#contact > div:nth-child(2) > div:first-child {
+    padding: 35px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(246, 184, 200, 0.55),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #fff7f2,
+            #f7f1ff
+        );
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- CONTACT INFO HEADING ---------- */
+
+#contact > div:nth-child(2) > div:first-child h3 {
+    margin-bottom: 30px;
+
+    font-size: 1.3rem;
+    font-weight: 750;
+}
+
+
+/* ---------- CONTACT INFO LABELS ---------- */
+
+#contact > div:nth-child(2) > div:first-child p:nth-of-type(1),
+#contact > div:nth-child(2) > div:first-child p:nth-of-type(3) {
+    margin-bottom: 4px;
+
+    color: var(--color-heading);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- CONTACT INFO VALUES ---------- */
+
+#contact > div:nth-child(2) > div:first-child p:nth-of-type(2),
+#contact > div:nth-child(2) > div:first-child p:nth-of-type(4) {
+    margin-bottom: 28px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+#contact form {
+    padding: 35px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- FORM GROUP ---------- */
+
+#contact form > div {
+    margin-bottom: 22px;
+}
+
+
+/* ---------- FORM LABEL ---------- */
+
+#contact form label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--color-heading);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* ---------- FORM INPUTS ---------- */
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    color: var(--color-heading);
+    background: #fffafc;
+
+    border: 1px solid rgba(64, 56, 71, 0.12);
+    border-radius: var(--radius-small);
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+#contact form textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* ---------- PLACEHOLDER ---------- */
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+    color: #a69da8;
+}
+
+
+/* ---------- INPUT FOCUS ---------- */
+
+#contact form input:focus,
+#contact form textarea:focus {
+    background: var(--color-white);
+
+    border-color: #d98ca4;
+
+    box-shadow:
+        0 0 0 4px rgba(246, 184, 200, 0.22);
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+#contact form button {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 0 24px;
+
+    color: var(--color-white);
+    background: #d98ca4;
+
+    border: none;
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(217, 140, 164, 0.22);
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ---------- SEND BUTTON HOVER ---------- */
+
+#contact form button:hover {
+    background: #cc7893;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(217, 140, 164, 0.28);
+}
+
+
+/* ---------- SEND BUTTON ACTIVE ---------- */
+
+#contact form button:active {
+    transform: translateY(-1px);
+}
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 40px;
+    padding: 60px 6% 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f5,
+            #f7f1ff 50%,
+            #eef8ff
+        );
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* ---------- FOOTER CONTENT ---------- */
+
+footer > div {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* ---------- FOOTER BRAND ---------- */
+
+footer > div:first-child {
+    margin-bottom: 30px;
+}
+
+
+footer > div:first-child p:first-child {
+    margin-bottom: 8px;
+
+    color: var(--color-heading);
+
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+
+footer > div:first-child p:last-child {
+    max-width: 430px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* ---------- SOCIAL LINKS ---------- */
+
+footer > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 35px;
+}
+
+
+footer > div:nth-child(2) a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 40px;
+    padding: 0 16px;
+
+    color: var(--color-text-light);
+    background: rgba(255, 255, 255, 0.75);
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* ---------- SOCIAL HOVER ---------- */
+
+footer > div:nth-child(2) a:hover {
+    color: var(--color-heading);
+    background: var(--color-white);
+
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- COPYRIGHT ---------- */
+
+footer > div:last-child {
+    padding-top: 25px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+footer > div:last-child p {
+    color: var(--color-text-light);
+
+    font-size: 0.82rem;
+}
+/* =========================================================
+   RESPONSIVE DESIGN
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 18px 4%;
+    }
+
+
+    header nav {
+        padding: 14px 18px;
+    }
+
+
+    header nav > div {
+        gap: 4px;
+    }
+
+
+    header nav > div a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 70px 0 90px;
+
+        text-align: center;
+    }
+
+
+    #home > div:first-child {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    #home > div:first-child > div {
+        justify-content: center;
+    }
+
+
+    #home > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 420px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 90px 0;
+    }
+
+
+    #about > div:first-child {
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    #about > div:first-child > p:not(:first-child) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    #about > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 380px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+
+    #portfolio > div:last-child {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+
+    #portfolio article > div {
+        min-height: 280px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+
+    #contact > div:nth-child(2) {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+}
+/* =========================================================
+   RESPONSIVE DESIGN
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 14px 4%;
+    }
+
+
+    header nav {
+        padding: 14px 16px;
+
+        border-radius: 22px;
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+
+    header nav > a {
+        font-size: 1.15rem;
+    }
+
+
+    header nav > div {
+        width: 100%;
+
+        justify-content: center;
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
+
+
+    header nav > div a {
+        padding: 7px 9px;
+
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 10%, var(--container-width));
+
+        min-height: auto;
+
+        gap: 40px;
+
+        padding: 55px 0 70px;
+    }
+
+
+    #home > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+
+    #home h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.5rem, 13vw, 4rem);
+
+        letter-spacing: -0.04em;
+    }
+
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-bottom: 28px;
+
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+
+    #home > div:first-child > div {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    #home > div:first-child > div a {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+
+    #home > div:last-child {
+        width: 100%;
+
+        min-height: 320px;
+
+        padding: 20px;
+
+        border-radius: 42% 58% 50% 50% / 50% 45% 55% 50%;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 10%, var(--container-width));
+
+        gap: 40px;
+
+        padding: 70px 0;
+    }
+
+
+    #about > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+
+    #about h2 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+
+    #about > div:first-child > p:not(:first-child) {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+
+
+    #about > div:last-child {
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+
+    #portfolio > div:first-child {
+        margin-bottom: 35px;
+    }
+
+
+    #portfolio > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+
+    #portfolio h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+
+    #portfolio > div:first-child > p:last-child {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+
+    /* ---------- CATEGORY FILTER ---------- */
+
+    #portfolio > div:nth-child(2) {
+        margin-bottom: 30px;
+
+        gap: 7px;
+    }
+
+
+    #portfolio > div:nth-child(2) a {
+        min-height: 38px;
+
+        padding: 0 13px;
+
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- ARTWORK GRID ---------- */
+
+    #portfolio > div:last-child {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    #portfolio article {
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+
+    #portfolio article > div {
+        min-height: 300px;
+
+        margin-bottom: 16px;
+    }
+
+
+    #portfolio article h3 {
+        margin: 0 7px 4px;
+
+        font-size: 1.05rem;
+    }
+
+
+    #portfolio article > p {
+        margin: 0 7px 8px;
+
+        font-size: 0.82rem;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+
+    #contact > div:first-child {
+        margin-bottom: 35px;
+    }
+
+
+    #contact > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+
+    #contact h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+
+    #contact > div:first-child > p:last-child {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+
+    /* ---------- CONTACT INFO ---------- */
+
+    #contact > div:nth-child(2) > div:first-child {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+
+    #contact > div:nth-child(2) > div:first-child h3 {
+        margin-bottom: 24px;
+
+        font-size: 1.15rem;
+    }
+
+
+    /* ---------- CONTACT FORM ---------- */
+
+    #contact form {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+
+    #contact form > div {
+        margin-bottom: 18px;
+    }
+
+
+    #contact form input,
+    #contact form textarea {
+        padding: 13px 14px;
+
+        font-size: 0.9rem;
+    }
+
+
+    #contact form textarea {
+        min-height: 140px;
+    }
+
+
+    #contact form button {
+        min-height: 50px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        margin-top: 20px;
+
+        padding: 45px 5% 25px;
+    }
+
+
+    footer > div:first-child {
+        margin-bottom: 24px;
+    }
+
+
+    footer > div:first-child p:first-child {
+        font-size: 1.15rem;
+    }
+
+
+    footer > div:first-child p:last-child {
+        font-size: 0.84rem;
+    }
+
+
+    footer > div:nth-child(2) {
+        margin-bottom: 28px;
+
+        gap: 8px;
+    }
+
+
+    footer > div:nth-child(2) a {
+        min-height: 38px;
+
+        padding: 0 13px;
+
+        font-size: 0.78rem;
+    }
+
+
+    footer > div:last-child {
+        padding-top: 20px;
+    }
+
+
+    footer > div:last-child p {
+        font-size: 0.75rem;
+        line-height: 1.6;
+    }
+
+}
+/* =========================================================
+   VISUAL DECORATION
+   SOFT ARTISTIC SHAPES
+   ========================================================= */
+
+/* ---------- GLOBAL SECTION DECORATION ---------- */
+
+#home,
+#about,
+#portfolio,
+#contact {
+    position: relative;
+}
+
+
+/* ---------- HOME DECORATIVE CIRCLES ---------- */
+
+#home::before,
+#home::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+#home::before {
+    top: 40px;
+    left: -90px;
+
+    background: rgba(246, 184, 200, 0.20);
+}
+
+
+#home::after {
+    right: -80px;
+    bottom: 20px;
+
+    background: rgba(220, 210, 244, 0.25);
+}
+
+
+/* ---------- ABOUT DECORATION ---------- */
+
+#about::before {
+    content: "";
+
+    position: absolute;
+
+    top: 30px;
+    right: -60px;
+
+    width: 130px;
+    height: 130px;
+
+    border: 20px solid rgba(255, 216, 189, 0.28);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* ---------- PORTFOLIO DECORATION ---------- */
+
+#portfolio::before {
+    content: "";
+
+    position: absolute;
+
+    top: 40px;
+    left: -50px;
+
+    width: 100px;
+    height: 100px;
+
+    background: rgba(207, 232, 247, 0.30);
+
+    border-radius: 42% 58% 55% 45%;
+
+    transform: rotate(18deg);
+
+    pointer-events: none;
+}
+
+
+/* ---------- CONTACT DECORATION ---------- */
+
+#contact::after {
+    content: "";
+
+    position: absolute;
+
+    right: -40px;
+    bottom: 50px;
+
+    width: 110px;
+    height: 110px;
+
+    background: rgba(246, 184, 200, 0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALL ARTISTIC DOTS
+   ========================================================= */
+
+#home > div:last-child::before,
+#about > div:last-child::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        32px 25px 0 rgba(255, 255, 255, 0.55),
+        64px 5px 0 rgba(255, 255, 255, 0.40);
+
+    pointer-events: none;
+}
+
+
+/* ---------- HOME DOT POSITION ---------- */
+
+#home > div:last-child::before {
+    top: 55px;
+    right: 65px;
+}
+
+
+/* ---------- ABOUT DOT POSITION ---------- */
+
+#about > div:last-child::before {
+    bottom: 60px;
+    left: 55px;
+}
+
+
+/* =========================================================
+   DECORATIVE FLOWER-LIKE SHAPES
+   ========================================================= */
+
+#home > div:last-child::after,
+#about > div:last-child::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius:
+        50%
+        50%
+        50%
+        0;
+
+    transform: rotate(45deg);
+
+    background: rgba(255, 255, 255, 0.35);
+
+    pointer-events: none;
+}
+
+
+/* ---------- HOME FLOWER ---------- */
+
+#home > div:last-child::after {
+    left: 45px;
+    bottom: 45px;
+}
+
+
+/* ---------- ABOUT FLOWER ---------- */
+
+#about > div:last-child::after {
+    top: 45px;
+    right: 45px;
+}
+
+
+/* =========================================================
+   DECORATION SAFETY
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #home::before,
+    #home::after {
+        width: 120px;
+        height: 120px;
+    }
+
+
+    #home::before {
+        left: -70px;
+    }
+
+
+    #home::after {
+        right: -60px;
+    }
+
+
+    #about::before {
+        right: -45px;
+
+        width: 90px;
+        height: 90px;
+
+        border-width: 14px;
+    }
+
+
+    #portfolio::before {
+        left: -40px;
+
+        width: 75px;
+        height: 75px;
+    }
+
+
+    #contact::after {
+        right: -35px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+
+    #home > div:last-child::after,
+    #about > div:last-child::after {
+        width: 50px;
+        height: 50px;
+    }
+
+}
+/* =========================================================
+   FLORAL / ARTISTIC ANIMATION
+   ========================================================= */
+
+
+/* ---------- FLOATING DECORATION ---------- */
+
+#home::before {
+    animation: softFloat 7s ease-in-out infinite;
+}
+
+
+#home::after {
+    animation: softFloatReverse 9s ease-in-out infinite;
+}
+
+
+#about::before {
+    animation: softRotate 12s linear infinite;
+}
+
+
+#portfolio::before {
+    animation: softFloat 8s ease-in-out infinite;
+}
+
+
+#contact::after {
+    animation: softFloatReverse 7s ease-in-out infinite;
+}
+
+
+/* ---------- DECORATIVE FLOWERS ---------- */
+
+#home > div:last-child::after {
+    animation: flowerDrift 6s ease-in-out infinite;
+}
+
+
+#about > div:last-child::after {
+    animation: flowerDriftReverse 7s ease-in-out infinite;
+}
+
+
+/* ---------- SMALL DOTS ---------- */
+
+#home > div:last-child::before,
+#about > div:last-child::before {
+    animation: tinyFloat 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+@keyframes softFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+@keyframes softFloatReverse {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+}
+
+
+@keyframes softRotate {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+
+}
+
+
+@keyframes flowerDrift {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(52deg) translateY(-8px);
+    }
+
+}
+
+
+@keyframes flowerDriftReverse {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(38deg) translateY(8px);
+    }
+
+}
+
+
+@keyframes tinyFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #home::before,
+    #home::after,
+    #about::before,
+    #portfolio::before,
+    #contact::after,
+    #home > div:last-child::after,
+    #about > div:last-child::after,
+    #home > div:last-child::before,
+    #about > div:last-child::before {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   TYPOGRAPHY & VISUAL POLISH
+   ========================================================= */
+
+
+/* ---------- GENERAL TEXT SELECTION ---------- */
+
+::selection {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+}
+
+
+/* ---------- PARAGRAPH BALANCE ---------- */
+
+p {
+    text-wrap: pretty;
+}
+
+
+/* ---------- HEADINGS BALANCE ---------- */
+
+h1,
+h2,
+h3 {
+    text-wrap: balance;
+}
+
+
+/* =========================================================
+   BUTTON POLISH
+   ========================================================= */
+
+#home a,
+#contact button {
+    user-select: none;
+}
+
+
+/* ---------- BUTTON FOCUS ---------- */
+
+#home > div:first-child > div a:focus-visible,
+#contact form button:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   NAVIGATION FOCUS
+   ========================================================= */
+
+header nav > a:focus-visible,
+header nav > div a:focus-visible,
+footer a:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.30);
+    outline-offset: 3px;
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   PORTFOLIO CARD POLISH
+   ========================================================= */
+
+#portfolio article {
+    isolation: isolate;
+}
+
+
+#portfolio article > div {
+    isolation: isolate;
+}
+
+
+/* ---------- ARTWORK PREVIEW HOVER ---------- */
+
+#portfolio article > div {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+#portfolio article:hover > div {
+    transform: scale(1.015);
+}
+
+
+/* =========================================================
+   CONTACT INPUT POLISH
+   ========================================================= */
+
+#contact form input:hover,
+#contact form textarea:hover {
+    border-color: rgba(217, 140, 164, 0.35);
+}
+
+
+/* =========================================================
+   FOOTER POLISH
+   ========================================================= */
+
+footer a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   SMOOTH INTERACTION
+   ========================================================= */
+
+a,
+button,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   MOBILE TYPOGRAPHY POLISH
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 15px;
+    }
+
+
+    p {
+        text-wrap: pretty;
+    }
+
+
+    #portfolio article:hover {
+        transform: translateY(-5px);
+    }
+
+
+    #portfolio article:hover > div {
+        transform: none;
+    }
+
+}
+/* =========================================
+   ARTWORK IMAGE STYLING
+   ========================================= */
+
+#home > div:last-child img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 410px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    box-shadow: 0 20px 45px rgba(64, 56, 71, 0.12);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+#home > div:last-child:hover img {
+    transform: scale(1.025);
+    box-shadow: 0 25px 55px rgba(64, 56, 71, 0.16);
+}
+
+
+/* =========================================
+   PORTFOLIO ARTWORK IMAGES
+   ========================================= */
+
+#portfolio article > div img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-small);
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+#portfolio article:hover > div img {
+    transform: scale(1.035);
+    filter: brightness(1.03);
+}
+
+
+/* =========================================
+   MOBILE IMAGE SIZING
+   ========================================= */
+
+@media (max-width: 900px) {
+    #home > div:last-child img {
+        min-height: 360px;
+    }
+
+    #portfolio article > div img {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 600px) {
+    #home > div:last-child img {
+        min-height: 280px;
+        border-radius: 22px;
+    }
+
+    #portfolio article > div img {
+        min-height: 300px;
+    }
+}
+
+
+/* =========================================
+   REDUCE MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    #home > div:last-child img,
+    #portfolio article > div img {
+        transition: none;
+    }
+
+    #home > div:last-child:hover img,
+    #portfolio article:hover > div img {
+        transform: none;
+    }
+}
+/* =========================================
+   JAVASCRIPT INTERACTION STYLES
+   ========================================= */
+
+
+/* =========================================
+   1. PORTFOLIO FILTER ANIMATION
+   ========================================= */
+
+#portfolio article {
+    opacity: 1;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================
+   2. ACTIVE NAVIGATION
+   ========================================= */
+
+header nav > div a.is-active {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+}
+
+
+/* =========================================
+   3. SCROLL REVEAL
+   ========================================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   4. ARTWORK LIGHTBOX
+   ========================================= */
+
+.artwork-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(48, 41, 54, 0.82);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.artwork-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.artwork-lightbox__content {
+    position: relative;
+
+    width: min(100%, 1000px);
+    max-height: 92vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+
+    transform: scale(0.94);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.artwork-lightbox.is-open
+.artwork-lightbox__content {
+    transform: scale(1);
+}
+
+
+.artwork-lightbox__image {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+}
+
+
+.artwork-lightbox__caption {
+    width: 100%;
+
+    padding: 18px 8px 4px;
+
+    text-align: center;
+}
+
+
+.artwork-lightbox__caption h3 {
+    margin-bottom: 4px;
+
+    color: var(--color-heading);
+
+    font-size: 1.2rem;
+    font-weight: 750;
+}
+
+
+.artwork-lightbox__caption p {
+    color: var(--color-text-light);
+
+    font-size: 0.9rem;
+}
+
+
+.artwork-lightbox__close {
+    position: fixed;
+
+    top: 25px;
+    right: 30px;
+
+    z-index: 10000;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-heading);
+    background: rgba(255, 255, 255, 0.92);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.artwork-lightbox__close:hover {
+    background: var(--color-pink-soft);
+    transform: rotate(90deg);
+}
+
+.artwork-lightbox__close:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.4);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   5. SITE NOTIFICATION
+   ========================================= */
+
+.site-notification {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 10001;
+
+    width: min(
+        calc(100% - 50px),
+        390px
+    );
+
+    padding: 16px 20px;
+
+    color: var(--color-heading);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 18px 45px rgba(64, 56, 71, 0.15);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-notification.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.site-notification.is-success {
+    border-left: 5px solid #9bcf9b;
+}
+
+.site-notification.is-error {
+    border-left: 5px solid #e29a9a;
+}
+
+
+/* =========================================
+   6. ACCESSIBILITY
+   ========================================= */
+
+#portfolio article:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   7. MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .artwork-lightbox {
+        padding: 15px;
+    }
+
+    .artwork-lightbox__content {
+        width: 100%;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .artwork-lightbox__image {
+        max-height: 68vh;
+        border-radius: 14px;
+    }
+
+    .artwork-lightbox__caption {
+        padding-top: 14px;
+    }
+
+    .artwork-lightbox__caption h3 {
+        font-size: 1.05rem;
+    }
+
+    .artwork-lightbox__caption p {
+        font-size: 0.82rem;
+    }
+
+    .artwork-lightbox__close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 1.5rem;
+    }
+
+    .site-notification {
+        right: 15px;
+        bottom: 15px;
+
+        width: calc(100% - 30px);
+
+        padding: 14px 17px;
+    }
+
+}
+
+
+/* =========================================
+   8. REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .artwork-lightbox,
+    .artwork-lightbox__content,
+    .site-notification,
+    #portfolio article {
+        transition: none;
+    }
+
+}
