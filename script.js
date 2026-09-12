@@ -273,69 +273,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================
-       5. CONTACT FORM
-       ========================================= */
+   5. CONTACT FORM
+   ========================================= */
 
-    if (contactForm) {
+if (contactForm) {
 
-        contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", (event) => {
+
+        const nameInput =
+            document.querySelector("#name");
+
+        const emailInput =
+            document.querySelector("#email");
+
+        const messageInput =
+            document.querySelector("#message");
+
+        const name =
+            nameInput.value.trim();
+
+        const email =
+            emailInput.value.trim();
+
+        const message =
+            messageInput.value.trim();
+
+
+        if (!name || !email || !message) {
 
             event.preventDefault();
 
-            const nameInput =
-                document.querySelector("#name");
-
-            const emailInput =
-                document.querySelector("#email");
-
-            const messageInput =
-                document.querySelector("#message");
-
-            const name =
-                nameInput.value.trim();
-
-            const email =
-                emailInput.value.trim();
-
-            const message =
-                messageInput.value.trim();
-
-
-            if (!name || !email || !message) {
-
-                showNotification(
-                    "Please complete all fields.",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            if (!isValidEmail(email)) {
-
-                showNotification(
-                    "Please enter a valid email address.",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
             showNotification(
-                `Thank you, ${name}! Your message has been received.`,
-                "success"
+                "Please complete all fields.",
+                "error"
             );
 
+            return;
+        }
 
-            contactForm.reset();
 
-        });
+        if (!isValidEmail(email)) {
 
-    }
+            event.preventDefault();
+
+            showNotification(
+                "Please enter a valid email address.",
+                "error"
+            );
+
+            return;
+        }
+
+        // Allow the form to continue to Formspree.
+        // Do not use event.preventDefault() here.
+
+    });
+
+}
 
 
     /* =========================================
