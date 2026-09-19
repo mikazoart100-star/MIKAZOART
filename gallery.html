@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="MIKAZOART Art Gallery — an archive of illustrations, digital artwork, character art, anime artwork, concept art and wallpapers."
+    >
+
+    <title>MIKAZOART — Art Gallery</title>
+
+    <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                MIKAZOART
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#portfolio">Portfolio</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="index.html#explore">Explore My World</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         GALLERY HERO
+    ========================== -->
+    <main>
+
+        <section class="gallery-hero">
+
+            <div class="gallery-hero-content">
+
+                <span class="gallery-eyebrow">
+                    MIKAZOART ARCHIVE
+                </span>
+
+                <h1>
+                    The Art Gallery
+                </h1>
+
+                <p>
+                    A collection of artworks, visual experiments,
+                    characters, illustrations and creative projects.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY
+        ========================== -->
+        <section class="gallery-section">
+
+            <!-- CATEGORY FILTER -->
+            <div class="gallery-filters">
+
+                <button
+                    type="button"
+                    class="gallery-filter active"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="illustration"
+                >
+                    Illustration
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="digital-artwork"
+                >
+                    Digital Artwork
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="character-art"
+                >
+                    Character Art
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="anime"
+                >
+                    Anime
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="concept-art"
+                >
+                    Concept Art
+                </button>
+
+                <button
+                    type="button"
+                    class="gallery-filter"
+                    data-filter="wallpaper"
+                >
+                    Wallpaper
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 TWO MAIN PANELS
+            ========================== -->
+            <div class="gallery-panels">
+
+
+                <!-- =========================
+                     PROJECT PANEL
+                ========================== -->
+                <aside class="gallery-project-panel">
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-icon">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <div>
+                            <span class="panel-eyebrow">
+                                THE PROJECT
+                            </span>
+
+                            <h2>
+                                Album &amp; EP
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="project-list"
+                        class="project-list"
+                    >
+                        <!-- Project cards generated by gallery.js -->
+                    </div>
+
+                </aside>
+
+
+                <!-- =========================
+                     ARTWORK COLLECTION
+                ========================== -->
+                <section class="gallery-artwork-panel">
+
+                    <div class="artwork-panel-header">
+
+                        <div>
+                            <span class="panel-eyebrow">
+                                ARTWORK COLLECTION
+                            </span>
+
+                            <h2>
+                                Selected Works
+                            </h2>
+                        </div>
+
+                        <span
+                            id="artwork-count"
+                            class="artwork-count"
+                        >
+                            0 works
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        id="artwork-grid"
+                        class="artwork-grid"
+                    >
+                        <!-- Artwork cards generated by gallery.js -->
+                    </div>
+
+
+                    <div class="load-more-wrapper">
+
+                        <button
+                            type="button"
+                            id="load-more"
+                            class="load-more-button"
+                        >
+                            Load More
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+    <div
+        id="gallery-lightbox"
+        class="gallery-lightbox"
+        aria-hidden="true"
+    >
+
+        <div
+            class="gallery-lightbox-backdrop"
+            data-close-lightbox
+        ></div>
+
+        <div class="gallery-lightbox-content">
+
+            <button
+                type="button"
+                class="gallery-lightbox-close"
+                id="lightbox-close"
+                aria-label="Close artwork preview"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="gallery-lightbox-image-wrapper">
+
+                <img
+                    id="lightbox-image"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+            <div class="gallery-lightbox-info">
+
+                <span id="lightbox-category">
+                    Artwork
+                </span>
+
+                <h3 id="lightbox-title">
+                    Artwork Title
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <h3>MIKAZOART</h3>
+
+                <p>
+                    Digital artwork, imagination and visual storytelling.
+                </p>
+            </div>
+
+
+            <div class="footer-social">
+
+                <a
+                    href="https://www.instagram.com/mikazo.art/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a
+                    href="https://www.artstation.com/mikazoart9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="ArtStation"
+                >
+                    <i class="fa-brands fa-artstation"></i>
+                </a>
+
+                <a
+                    href="https://pt.pinterest.com/mikazoart/_created/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Pinterest"
+                >
+                    <i class="fa-brands fa-pinterest-p"></i>
+                </a>
+
+                <a
+                    href="https://www.deviantart.com/mikazoart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="DeviantArt"
+                >
+                    <i class="fa-brands fa-deviantart"></i>
+                </a>
+
+                <a
+                    href="https://www.pixiv.net/en/users/86367097"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Pixiv"
+                >
+                    <i class="fa-solid fa-image"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="gallery-year"></span> MIKAZOART.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="gallery.js"></script>
+
+</body>
+</html>

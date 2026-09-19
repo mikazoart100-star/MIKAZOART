@@ -9,20 +9,341 @@
     <title>MIKAZOART</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
 </head>
 
 <body>
 
     <header>
     <nav>
-        <a href="#home">MIKAZOART</a>
+<a href="#home" class="brand-logo" aria-label="MIKAZOART">
 
-        <div>
+    <span class="logo-letter">M</span>
+    <span class="logo-letter">I</span>
+    <span class="logo-letter">K</span>
+    <span class="logo-letter">A</span>
+    <span class="logo-letter">Z</span>
+
+    <!-- O = BLOOMING SAKURA -->
+    <svg
+        class="logo-sakura"
+        viewBox="0 0 160 160"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+
+        <defs>
+
+            <!-- Main petal texture -->
+            <linearGradient id="petalMain" x1="20%" y1="10%" x2="80%" y2="100%">
+                <stop offset="0%" stop-color="#fffdfd"/>
+                <stop offset="22%" stop-color="#ffe9f2"/>
+                <stop offset="52%" stop-color="#f8bfd5"/>
+                <stop offset="78%" stop-color="#e58eaf"/>
+                <stop offset="100%" stop-color="#c9638b"/>
+            </linearGradient>
+
+            <!-- Inner petal -->
+            <linearGradient id="petalInner" x1="50%" y1="0%" x2="50%" y2="100%">
+                <stop offset="0%" stop-color="#fff8fb"/>
+                <stop offset="55%" stop-color="#ffd0e1"/>
+                <stop offset="100%" stop-color="#ed91b2"/>
+            </linearGradient>
+
+            <!-- Center -->
+            <radialGradient id="flowerCenter">
+                <stop offset="0%" stop-color="#fff9b5"/>
+                <stop offset="40%" stop-color="#ffd966"/>
+                <stop offset="75%" stop-color="#efa93f"/>
+                <stop offset="100%" stop-color="#c97a2c"/>
+            </radialGradient>
+
+            <!-- Petal shadow -->
+            <filter
+                id="flowerShadow"
+                x="-40%"
+                y="-40%"
+                width="180%"
+                height="180%"
+            >
+                <feDropShadow
+                    dx="0"
+                    dy="5"
+                    stdDeviation="4"
+                    flood-color="#7d3558"
+                    flood-opacity="0.30"
+                />
+            </filter>
+
+            <!-- Soft bloom -->
+            <filter
+                id="flowerGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+            >
+                <feGaussianBlur stdDeviation="4"/>
+            </filter>
+
+        </defs>
+
+
+        <!-- SOFT BLOOM AROUND FLOWER -->
+
+        <circle
+            cx="80"
+            cy="80"
+            r="54"
+            fill="#f5a8c7"
+            opacity="0.16"
+            filter="url(#flowerGlow)"
+        />
+
+
+        <!-- =================================
+             BLOOMING SAKURA PETALS
+        ================================== -->
+
+        <!-- TOP PETAL -->
+
+        <path
+            d="
+                M80 78
+                C66 67 59 48 64 34
+                C68 22 80 18 88 26
+                C96 34 94 51 84 66
+                C82 70 81 75 80 78
+                Z
+            "
+            fill="url(#petalMain)"
+            stroke="#c8668d"
+            stroke-width="2"
+            filter="url(#flowerShadow)"
+        />
+
+
+        <!-- RIGHT TOP PETAL -->
+
+        <path
+            d="
+                M84 76
+                C96 63 113 57 124 64
+                C134 70 134 82 125 89
+                C115 96 99 91 87 83
+                C84 81 82 79 84 76
+                Z
+            "
+            fill="url(#petalMain)"
+            stroke="#c8668d"
+            stroke-width="2"
+            filter="url(#flowerShadow)"
+        />
+
+
+        <!-- RIGHT BOTTOM PETAL -->
+
+        <path
+            d="
+                M85 83
+                C101 86 116 97 116 110
+                C116 122 106 130 96 125
+                C85 120 80 104 81 90
+                C81 86 82 84 85 83
+                Z
+            "
+            fill="url(#petalMain)"
+            stroke="#c8668d"
+            stroke-width="2"
+            filter="url(#flowerShadow)"
+        />
+
+
+        <!-- LEFT BOTTOM PETAL -->
+
+        <path
+            d="
+                M76 86
+                C76 101 69 117 57 121
+                C46 125 37 117 39 106
+                C41 94 55 84 69 81
+                C73 80 75 82 76 86
+                Z
+            "
+            fill="url(#petalMain)"
+            stroke="#c8668d"
+            stroke-width="2"
+            filter="url(#flowerShadow)"
+        />
+
+
+        <!-- LEFT TOP PETAL -->
+
+        <path
+            d="
+                M72 79
+                C58 86 41 84 34 74
+                C27 64 32 52 43 48
+                C54 44 67 54 76 68
+                C78 72 77 76 72 79
+                Z
+            "
+            fill="url(#petalMain)"
+            stroke="#c8668d"
+            stroke-width="2"
+            filter="url(#flowerShadow)"
+        />
+
+
+        <!-- =================================
+             PETAL INNER DETAILS
+        ================================== -->
+
+        <path
+            d="M75 31 C79 27 85 29 87 36"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity="0.78"
+        />
+
+        <path
+            d="M113 68 C119 67 124 70 126 75"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity="0.72"
+        />
+
+        <path
+            d="M99 103 C105 108 107 114 105 118"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity="0.65"
+        />
+
+        <path
+            d="M52 108 C54 102 58 98 64 96"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity="0.68"
+        />
+
+        <path
+            d="M40 62 C45 58 51 58 56 61"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="3"
+            stroke-linecap="round"
+            opacity="0.72"
+        />
+
+
+        <!-- PETAL VEINS -->
+
+        <g
+            fill="none"
+            stroke="#d8789d"
+            stroke-width="1.4"
+            opacity="0.55"
+            stroke-linecap="round"
+        >
+
+            <path d="M80 72 C77 56 77 43 79 32"/>
+            <path d="M88 78 C101 72 112 69 122 69"/>
+            <path d="M87 88 C98 96 105 106 108 116"/>
+            <path d="M70 88 C60 96 52 105 47 114"/>
+            <path d="M68 76 C55 69 45 62 38 56"/>
+
+        </g>
+
+
+        <!-- =================================
+             FLOWER CENTER
+        ================================== -->
+
+        <circle
+            cx="79"
+            cy="80"
+            r="13"
+            fill="url(#flowerCenter)"
+            stroke="#c47a31"
+            stroke-width="1.8"
+        />
+
+
+        <!-- STAMENS -->
+
+        <g
+            stroke="#c17b31"
+            stroke-width="1.6"
+            stroke-linecap="round"
+        >
+
+            <line x1="79" y1="80" x2="79" y2="63"/>
+            <line x1="79" y1="80" x2="93" y2="69"/>
+            <line x1="79" y1="80" x2="96" y2="82"/>
+            <line x1="79" y1="80" x2="91" y2="94"/>
+            <line x1="79" y1="80" x2="81" y2="98"/>
+            <line x1="79" y1="80" x2="66" y2="94"/>
+            <line x1="79" y1="80" x2="62" y2="82"/>
+            <line x1="79" y1="80" x2="66" y2="68"/>
+
+        </g>
+
+
+        <g fill="#fff3a3">
+
+            <circle cx="79" cy="63" r="2.7"/>
+            <circle cx="93" cy="69" r="2.7"/>
+            <circle cx="96" cy="82" r="2.7"/>
+            <circle cx="91" cy="94" r="2.7"/>
+            <circle cx="81" cy="98" r="2.7"/>
+            <circle cx="66" cy="94" r="2.7"/>
+            <circle cx="62" cy="82" r="2.7"/>
+            <circle cx="66" cy="68" r="2.7"/>
+
+        </g>
+
+
+        <!-- CENTER HIGHLIGHT -->
+
+        <circle
+            cx="75"
+            cy="75"
+            r="3"
+            fill="#fff9d0"
+            opacity="0.9"
+        />
+
+    </svg>
+
+
+    <span class="logo-letter">A</span>
+    <span class="logo-letter">R</span>
+    <span class="logo-letter">T</span>
+
+</a>
+
+        <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="gallery.html">Gallery</a>
             <a href="#contact">Contact</a>
+            <a href="#explore">Explore My World</a>
         </div>
+
     </nav>
 </header>
 
@@ -183,157 +504,206 @@
 
             <div>
 
-                <div>
-                    <h3>Contact Information</h3>
+<div>
 
-                   <p>Email</p>
+    <div class="contact-info">
 
-<p>
-    <a href="mailto:mikazoart100@gmail.com">
-        mikazoart100@gmail.com
-    </a>
-</p>
+        <h3>Contact Information</h3>
 
-                    <p>Social Media</p>
+        <div class="contact-group">
+            <p class="contact-label">Email</p>
 
-<p>
-    <a
-        href="https://www.instagram.com/mikazo.art/"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Instagram
-    </a>
-</p>
+            <p>
+                <a href="mailto:mikazoart100@gmail.com">
+                    mikazoart100@gmail.com
+                </a>
+            </p>
+        </div>
 
-<p>
-    <a
-        href="https://www.artstation.com/mikazoart9"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        ArtStation
-    </a>
-</p>
+        <div class="contact-group">
+            <p class="contact-label">Social Media</p>
 
-<p>
-    <a
-        href="https://pt.pinterest.com/mikazoart/_created/"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Pinterest
-    </a>
-</p>
+            <p>
+                <a
+                    href="https://www.instagram.com/mikazo.art/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+            </p>
+        </div>
 
-<p>
-    <a
-        href="https://www.deviantart.com/mikazoart"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        DeviantArt
-    </a>
-</p>
+        <div class="contact-group">
+            <p class="contact-label">My Gallery</p>
 
-<p>
-    <a
-        href="https://www.pixiv.net/en/users/86367097"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        Pixiv
-    </a>
-</p>
-                </div>
+            <p>
+                <a
+                    href="https://www.artstation.com/mikazoart9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    ArtStation
+                </a>
+            </p>
 
+            <p>
+                <a
+                    href="https://pt.pinterest.com/mikazoart/_created/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Pinterest
+                </a>
+            </p>
 
-                <form action="https://formspree.io/f/mdeovnvg" method="POST">
+            <p>
+                <a
+                    href="https://www.deviantart.com/mikazoart"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    DeviantArt
+                </a>
+            </p>
 
-                    <div>
-                        <label for="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            required
-                        >
-                    </div>
+            <p>
+                <a
+                    href="https://www.pixiv.net/en/users/86367097"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Pixiv
+                </a>
+            </p>
+        </div>
+
+    </div>
 
 
-                    <div>
-                        <label for="email">Email</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your email"
-                            required
-                        >
-                    </div>
+    <form action="https://formspree.io/f/mdeovnvg" method="POST">
 
+        <div>
+            <label for="name">Name</label>
 
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Your message"
-                            rows="6"
-                            required
-                        ></textarea>
-                    </div>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+            >
+        </div>
 
+        <div>
+            <label for="email">Email</label>
 
-                    <button type="submit">Send Message</button>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required
+            >
+        </div>
 
-                </form>
+        <div>
+            <label for="message">Message</label>
 
-            </div>
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Your message"
+                rows="6"
+                required
+            ></textarea>
+        </div>
 
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</div>
         </section>
 
     </main>
 
 
-    <footer>
+<footer id="explore">
 
-        <div>
-            <p>My Portfolio</p>
+    <div>
+       <h2 class="footer-explore-title">Explore My World</h2>
 
-            <p>
-                Digital artist creating artwork through
-                imagination and creativity.
-            </p>
-        </div>
+        <div class="footer-socials">
 
+            <a
+                href="https://www.instagram.com/mikazo.art/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                title="Instagram"
+            >
+                <i class="fa-brands fa-instagram"></i>
+            </a>
 
-        <div>
-            <a href="#">Instagram</a>
-            <a href="#">ArtStation</a>
-            <a href="#">Pinterest</a>
-            <a href="#">DeviantArt</a>
+            <a
+                href="https://www.artstation.com/mikazoart9"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ArtStation"
+                title="ArtStation"
+            >
+                <i class="fa-brands fa-artstation"></i>
+            </a>
+
+            <a
+                href="https://pt.pinterest.com/mikazoart/_created/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Pinterest"
+                title="Pinterest"
+            >
+                <i class="fa-brands fa-pinterest"></i>
+            </a>
+
+            <a
+                href="https://www.deviantart.com/mikazoart"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DeviantArt"
+                title="DeviantArt"
+            >
+                <i class="fa-brands fa-deviantart"></i>
+            </a>
 
             <a
                 href="https://www.pixiv.net/en/users/86367097"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Pixiv"
+                title="Pixiv"
             >
-                Pixiv
+                <i class="fa-solid fa-p"></i>
             </a>
 
-            <a href="mailto:mikazoart100@gmail.com">Email</a>
+            <a
+                href="mailto:mikazoart100@gmail.com"
+                aria-label="Email"
+                title="Email"
+            >
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
         </div>
+    </div>
 
+    <div>
+        <p>&copy; 2026 MIKAZOART. All rights reserved.</p>
+    </div>
 
-        <div>
-            <p>&copy; 2026 My Portfolio. All rights reserved.</p>
-        </div>
+</footer>
 
-    </footer>
-
-
+    <script src="artworks.js"></script>
     <script src="script.js"></script>
 
 </body>

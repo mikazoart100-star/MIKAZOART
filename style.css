@@ -1,9 +1,12 @@
 /* =========================================================
-   PORTFOLIO WEBSITE
-   CSS FOUNDATION
+   MIKAZOART PORTFOLIO
+   FINAL CLEAN CSS
    ========================================================= */
 
-/* ---------- RESET ---------- */
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -11,8 +14,60 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
-/* ---------- ROOT VARIABLES ---------- */
+body {
+    min-height: 100vh;
+
+    background: var(--color-cream);
+    color: var(--color-text);
+
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-heading);
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+::selection {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+}
+
+
+/* =========================================================
+   2. ROOT VARIABLES
+   ========================================================= */
 
 :root {
     --color-cream: #fffaf5;
@@ -20,6 +75,9 @@
 
     --color-pink: #f6b8c8;
     --color-pink-soft: #fde3ea;
+    --color-pink-dark: #d98ca4;
+    --color-pink-hover: #cc7893;
+
     --color-lavender: #dcd2f4;
     --color-peach: #ffd8bd;
     --color-blue: #cfe8f7;
@@ -43,80 +101,38 @@
 }
 
 
-/* ---------- HTML ---------- */
-
-html {
-    scroll-behavior: smooth;
-}
-
-
-/* ---------- BODY ---------- */
-
-body {
-    min-height: 100vh;
-
-    background: var(--color-cream);
-    color: var(--color-text);
-
-    font-family: var(--font-main);
-    font-size: 16px;
-    line-height: 1.7;
-
-    overflow-x: hidden;
-}
-
-
-/* ---------- LINKS ---------- */
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-
-/* ---------- IMAGES ---------- */
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-
-/* ---------- BUTTON ---------- */
-
-button,
-input,
-textarea {
-    font: inherit;
-}
-
-
-/* ---------- HEADINGS ---------- */
-
-h1,
-h2,
-h3 {
-    color: var(--color-heading);
-    line-height: 1.2;
-}
-
-
-/* ---------- CONTAINER ---------- */
+/* =========================================================
+   3. GLOBAL ELEMENTS
+   ========================================================= */
 
 main,
 header,
 footer {
     width: 100%;
 }
+
+button,
+a,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#home a,
+#contact button {
+    user-select: none;
+}
+
+
 /* =========================================================
-   HEADER & NAVIGATION
+   4. HEADER & NAVIGATION
    ========================================================= */
 
 header {
     position: relative;
-    width: 100%;
     z-index: 100;
 
+    width: 100%;
     padding: 24px 6%;
 }
 
@@ -131,6 +147,7 @@ header nav {
     padding: 16px 22px;
 
     background: rgba(255, 255, 255, 0.82);
+
     border: 1px solid var(--color-border);
     border-radius: var(--radius-large);
 
@@ -141,23 +158,131 @@ header nav {
 }
 
 
-/* ---------- LOGO ---------- */
+/* ---------- NAV LOGO ---------- */
 
-header nav > a {
+nav .brand-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
     color: var(--color-heading);
 
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: nowrap;
 
-    transition:
-        color 0.25s ease,
-        transform 0.25s ease;
+    text-decoration: none;
+    transform: translateZ(0);
 }
 
-header nav > a:hover {
-    color: #d98ca4;
-    transform: translateY(-2px);
+
+/* ---------- LOGO LETTER ---------- */
+
+.logo-letter {
+    position: relative;
+
+    display: inline-block;
+
+    font-family:
+        "Lucida Calligraphy",
+        "URW Chancery L",
+        "Brush Script MT",
+        cursive;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+    line-height: 1;
+
+    color: #262326;
+
+    -webkit-text-stroke: 0.35px rgba(30, 25, 30, 0.35);
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9),
+        0 2px 0 rgba(0, 0, 0, 0.06),
+        0 4px 7px rgba(0, 0, 0, 0.12);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.logo-letter::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 15%;
+
+    height: 24%;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.13);
+
+    pointer-events: none;
+
+    opacity: 0.8;
+}
+
+
+/* ---------- SAKURA LOGO ---------- */
+
+.logo-sakura {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    margin-left: 2px;
+    margin-right: 2px;
+
+    overflow: visible;
+
+    transform-origin: center;
+
+    filter:
+        drop-shadow(0 4px 5px rgba(100, 38, 67, 0.22));
+
+    animation: sakuraLife 4.5s ease-in-out infinite;
+
+    transition:
+        transform 0.45s cubic-bezier(.2, .8, .2, 1),
+        filter 0.45s ease;
+}
+
+@keyframes sakuraLife {
+    0%,
+    100% {
+        transform: rotate(-1.5deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(1.5deg) scale(1.025);
+    }
+}
+
+nav .brand-logo:hover .logo-sakura {
+    transform: scale(1.12) rotate(4deg);
+
+    filter:
+        drop-shadow(0 6px 9px rgba(100, 38, 67, 0.30));
+}
+
+nav .brand-logo:hover .logo-letter {
+    color: var(--color-pink-dark);
+
+    transform: translateY(-1px);
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.9),
+        0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 
@@ -187,9 +312,6 @@ header nav > div a {
         transform 0.25s ease;
 }
 
-
-/* ---------- LINK HOVER ---------- */
-
 header nav > div a:hover {
     color: var(--color-heading);
     background: var(--color-pink-soft);
@@ -197,25 +319,44 @@ header nav > div a:hover {
     transform: translateY(-2px);
 }
 
-
-/* ---------- ACTIVE-LIKE EFFECT ---------- */
-
-header nav > div a:first-child {
+header nav > div a:first-child,
+header nav > div a.is-active {
     color: var(--color-heading);
     background: rgba(253, 227, 234, 0.7);
 }
+
+
+/* ---------- NAV FOCUS ---------- */
+
+header nav > a:focus-visible,
+header nav > div a:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.30);
+    outline-offset: 3px;
+    border-radius: 999px;
+}
+
+
 /* =========================================================
-   HOME / HERO SECTION
+   5. HOME / HERO
    ========================================================= */
+
+#home,
+#about,
+#portfolio,
+#contact {
+    position: relative;
+}
 
 #home {
     width: min(100% - 12%, var(--container-width));
     min-height: 680px;
+
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
+
     gap: 70px;
 
     padding: 80px 0 100px;
@@ -242,12 +383,10 @@ header nav > div a:first-child {
 
     font-size: 0.85rem;
     font-weight: 700;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-
-/* ---------- MAIN HEADING ---------- */
 
 #home h1 {
     max-width: 700px;
@@ -256,11 +395,9 @@ header nav > div a:first-child {
 
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 800;
+
     letter-spacing: -0.045em;
 }
-
-
-/* ---------- DESCRIPTION ---------- */
 
 #home > div:first-child > p:nth-of-type(2) {
     max-width: 570px;
@@ -280,6 +417,7 @@ header nav > div a:first-child {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     gap: 14px;
 }
 
@@ -289,6 +427,7 @@ header nav > div a:first-child {
     justify-content: center;
 
     min-height: 50px;
+
     padding: 0 24px;
 
     border-radius: 999px;
@@ -302,25 +441,22 @@ header nav > div a:first-child {
         background-color 0.25s ease;
 }
 
-
-/* ---------- PRIMARY BUTTON ---------- */
-
 #home > div:first-child > div a:first-child {
     color: var(--color-white);
-    background: #d98ca4;
+    background: var(--color-pink-dark);
 
-    box-shadow: 0 10px 24px rgba(217, 140, 164, 0.25);
+    box-shadow:
+        0 10px 24px rgba(217, 140, 164, 0.25);
 }
 
 #home > div:first-child > div a:first-child:hover {
-    background: #cc7893;
+    background: var(--color-pink-hover);
+
     transform: translateY(-3px);
 
-    box-shadow: 0 14px 30px rgba(217, 140, 164, 0.30);
+    box-shadow:
+        0 14px 30px rgba(217, 140, 164, 0.30);
 }
-
-
-/* ---------- SECONDARY BUTTON ---------- */
 
 #home > div:first-child > div a:last-child {
     color: var(--color-heading);
@@ -331,13 +467,14 @@ header nav > div a:first-child {
 
 #home > div:first-child > div a:last-child:hover {
     background: var(--color-lavender);
+
     transform: translateY(-3px);
 
     box-shadow: var(--shadow-soft);
 }
 
 
-/* ---------- FEATURED ARTWORK ---------- */
+/* ---------- HOME ARTWORK ---------- */
 
 #home > div:last-child {
     position: relative;
@@ -368,7 +505,9 @@ header nav > div a:first-child {
             #eef8ff
         );
 
-    border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+    border-radius:
+        45% 55% 52% 48% /
+        48% 45% 55% 52%;
 
     box-shadow:
         0 30px 70px rgba(64, 56, 71, 0.10);
@@ -376,54 +515,57 @@ header nav > div a:first-child {
     overflow: hidden;
 }
 
-
-/* ---------- ARTWORK PLACEHOLDER ---------- */
-
-#home > div:last-child p {
+#home > div:last-child img {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
-    padding: 18px 24px;
+    width: 100%;
+    height: 100%;
 
-    color: var(--color-text-light);
-    background: rgba(255, 255, 255, 0.72);
+    min-height: 410px;
 
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 999px;
+    object-fit: cover;
+    object-position: center;
 
-    font-size: 0.9rem;
-    font-weight: 600;
+    border-radius: 28px;
 
-    box-shadow: var(--shadow-soft);
+    box-shadow:
+        0 20px 45px rgba(64, 56, 71, 0.12);
 
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
 }
+
+#home > div:last-child:hover img {
+    transform: scale(1.025);
+
+    box-shadow:
+        0 25px 55px rgba(64, 56, 71, 0.16);
+}
+
+
 /* =========================================================
-   ABOUT SECTION
+   6. ABOUT
    ========================================================= */
 
 #about {
     width: min(100% - 12%, var(--container-width));
+
     margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1fr 0.85fr;
     align-items: center;
+
     gap: 80px;
 
     padding: 110px 0;
 }
 
-
-/* ---------- ABOUT TEXT ---------- */
-
 #about > div:first-child {
     max-width: 650px;
 }
-
-
-/* ---------- SECTION LABEL ---------- */
 
 #about > div:first-child > p:first-child {
     display: inline-block;
@@ -439,23 +581,19 @@ header nav > div a:first-child {
 
     font-size: 0.85rem;
     font-weight: 700;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-
-/* ---------- ABOUT HEADING ---------- */
 
 #about h2 {
     margin-bottom: 24px;
 
     font-size: clamp(2.3rem, 4vw, 4rem);
     font-weight: 800;
+
     letter-spacing: -0.035em;
 }
-
-
-/* ---------- ABOUT PARAGRAPHS ---------- */
 
 #about > div:first-child > p:not(:first-child) {
     max-width: 590px;
@@ -467,9 +605,6 @@ header nav > div a:first-child {
     font-size: 1.02rem;
     line-height: 1.85;
 }
-
-
-/* ---------- ARTIST PROFILE CARD ---------- */
 
 #about > div:last-child {
     position: relative;
@@ -499,7 +634,9 @@ header nav > div a:first-child {
             #f9f3ff
         );
 
-    border-radius: 55% 45% 48% 52% / 45% 52% 48% 55%;
+    border-radius:
+        55% 45% 48% 52% /
+        45% 52% 48% 55%;
 
     box-shadow:
         0 25px 60px rgba(64, 56, 71, 0.08);
@@ -508,51 +645,25 @@ header nav > div a:first-child {
 }
 
 
-/* ---------- PROFILE PLACEHOLDER ---------- */
-
-#about > div:last-child p {
-    position: relative;
-    z-index: 2;
-
-    padding: 18px 24px;
-
-    color: var(--color-text-light);
-    background: rgba(255, 255, 255, 0.76);
-
-    border: 1px solid rgba(255, 255, 255, 0.85);
-    border-radius: 999px;
-
-    font-size: 0.9rem;
-    font-weight: 600;
-
-    box-shadow: var(--shadow-soft);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
 /* =========================================================
-   PORTFOLIO SECTION
+   7. PORTFOLIO
    ========================================================= */
 
 #portfolio {
     width: min(100% - 12%, var(--container-width));
+
     margin: 0 auto;
 
     padding: 110px 0;
 }
 
-
-/* ---------- PORTFOLIO INTRO ---------- */
-
 #portfolio > div:first-child {
     max-width: 700px;
+
     margin: 0 auto 45px;
 
     text-align: center;
 }
-
-
-/* ---------- SECTION LABEL ---------- */
 
 #portfolio > div:first-child > p:first-child {
     display: inline-block;
@@ -568,23 +679,19 @@ header nav > div a:first-child {
 
     font-size: 0.85rem;
     font-weight: 700;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-
-/* ---------- PORTFOLIO HEADING ---------- */
 
 #portfolio h2 {
     margin-bottom: 18px;
 
     font-size: clamp(2.4rem, 4vw, 4rem);
     font-weight: 800;
+
     letter-spacing: -0.035em;
 }
-
-
-/* ---------- PORTFOLIO DESCRIPTION ---------- */
 
 #portfolio > div:first-child > p:last-child {
     color: var(--color-text-light);
@@ -598,9 +705,10 @@ header nav > div a:first-child {
 
 #portfolio > div:nth-child(2) {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+
     gap: 10px;
 
     margin-bottom: 45px;
@@ -612,6 +720,7 @@ header nav > div a:first-child {
     justify-content: center;
 
     min-height: 42px;
+
     padding: 0 18px;
 
     color: var(--color-text-light);
@@ -623,7 +732,8 @@ header nav > div a:first-child {
     font-size: 0.9rem;
     font-weight: 600;
 
-    box-shadow: 0 5px 18px rgba(64, 56, 71, 0.04);
+    box-shadow:
+        0 5px 18px rgba(64, 56, 71, 0.04);
 
     transition:
         color 0.25s ease,
@@ -631,9 +741,6 @@ header nav > div a:first-child {
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
-
-
-/* ---------- CATEGORY HOVER ---------- */
 
 #portfolio > div:nth-child(2) a:hover {
     color: var(--color-heading);
@@ -644,14 +751,11 @@ header nav > div a:first-child {
     box-shadow: var(--shadow-soft);
 }
 
-
-/* ---------- ACTIVE CATEGORY ---------- */
-
 #portfolio > div:nth-child(2) a:first-child {
     color: var(--color-white);
-    background: #d98ca4;
+    background: var(--color-pink-dark);
 
-    border-color: #d98ca4;
+    border-color: var(--color-pink-dark);
 }
 
 
@@ -659,7 +763,10 @@ header nav > div a:first-child {
 
 #portfolio > div:last-child {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 28px;
 }
 
@@ -676,23 +783,31 @@ header nav > div a:first-child {
     border: 1px solid var(--color-border);
     border-radius: var(--radius-medium);
 
-    box-shadow: 0 8px 25px rgba(64, 56, 71, 0.06);
+    box-shadow:
+        0 8px 25px rgba(64, 56, 71, 0.06);
 
     overflow: hidden;
 
+    isolation: isolate;
+
+    opacity: 1;
+
     transition:
+        opacity 0.25s ease,
         transform 0.35s ease,
         box-shadow 0.35s ease;
 }
-
-
-/* ---------- CARD HOVER ---------- */
 
 #portfolio article:hover {
     transform: translateY(-8px);
 
     box-shadow:
         0 20px 45px rgba(64, 56, 71, 0.12);
+}
+
+#portfolio article:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
 }
 
 
@@ -721,10 +836,46 @@ header nav > div a:first-child {
     border-radius: var(--radius-small);
 
     overflow: hidden;
+
+    isolation: isolate;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+#portfolio article:hover > div {
+    transform: scale(1.015);
+}
+
+#portfolio article > div img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 320px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: var(--radius-small);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+#portfolio article:hover > div img {
+    transform: scale(1.035);
+    filter: brightness(1.03);
 }
 
 
-/* ---------- PREVIEW TEXT ---------- */
+/* ---------- ARTWORK TEXT ---------- */
 
 #portfolio article > div p {
     padding: 14px 20px;
@@ -744,18 +895,12 @@ header nav > div a:first-child {
     -webkit-backdrop-filter: blur(8px);
 }
 
-
-/* ---------- ARTWORK TITLE ---------- */
-
 #portfolio article h3 {
     margin: 0 8px 5px;
 
     font-size: 1.15rem;
     font-weight: 750;
 }
-
-
-/* ---------- ARTWORK CATEGORY ---------- */
 
 #portfolio article > p {
     margin: 0 8px 8px;
@@ -764,29 +909,32 @@ header nav > div a:first-child {
 
     font-size: 0.88rem;
 }
+
+
 /* =========================================================
-   CONTACT SECTION
+   8. CONTACT
    ========================================================= */
 
 #contact {
     width: min(100% - 12%, var(--container-width));
+
     margin: 0 auto;
 
     padding: 110px 0;
 }
 
 
-/* ---------- CONTACT INTRO ---------- */
+/* =========================================================
+   CONTACT INTRO
+   ========================================================= */
 
 #contact > div:first-child {
     max-width: 700px;
-    margin: 0 auto 50px;
+
+    margin: 0 auto 55px;
 
     text-align: center;
 }
-
-
-/* ---------- SECTION LABEL ---------- */
 
 #contact > div:first-child > p:first-child {
     display: inline-block;
@@ -802,23 +950,19 @@ header nav > div a:first-child {
 
     font-size: 0.85rem;
     font-weight: 700;
+
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-
-/* ---------- CONTACT HEADING ---------- */
 
 #contact h2 {
     margin-bottom: 18px;
 
     font-size: clamp(2.4rem, 4vw, 4rem);
     font-weight: 800;
+
     letter-spacing: -0.035em;
 }
-
-
-/* ---------- CONTACT DESCRIPTION ---------- */
 
 #contact > div:first-child > p:last-child {
     color: var(--color-text-light);
@@ -828,22 +972,46 @@ header nav > div a:first-child {
 }
 
 
-/* ---------- CONTACT CONTENT ---------- */
+/* =========================================================
+   CONTACT MAIN CONTENT
+   ========================================================= */
 
-#contact > div:nth-child(2) {
+/*
+   Struktur HTML:
+
+   #contact
+   └── div:nth-child(2)
+       └── div
+           ├── .contact-info
+           └── form
+
+   Jadi GRID harus diterapkan pada div TERAKHIR tersebut.
+*/
+
+#contact > div:nth-child(2) > div {
+    width: 100%;
+
     display: grid;
-    grid-template-columns: 0.75fr 1.25fr;
-    gap: 30px;
+
+    grid-template-columns:
+        minmax(300px, 0.75fr)
+        minmax(480px, 1.25fr);
+
+    gap: 40px;
+
     align-items: stretch;
 }
 
 
 /* =========================================================
-   CONTACT INFORMATION CARD
+   CONTACT INFORMATION
    ========================================================= */
 
-#contact > div:nth-child(2) > div:first-child {
-    padding: 35px;
+#contact .contact-info {
+    width: 100%;
+    min-width: 0;
+
+    padding: 40px;
 
     background:
         radial-gradient(
@@ -863,42 +1031,75 @@ header nav > div a:first-child {
     box-shadow: var(--shadow-soft);
 }
 
+#contact .contact-info h3 {
+    margin-bottom: 32px;
 
-/* ---------- CONTACT INFO HEADING ---------- */
-
-#contact > div:nth-child(2) > div:first-child h3 {
-    margin-bottom: 30px;
-
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     font-weight: 750;
 }
 
 
-/* ---------- CONTACT INFO LABELS ---------- */
+/* ---------- CONTACT GROUP ---------- */
 
-#contact > div:nth-child(2) > div:first-child p:nth-of-type(1),
-#contact > div:nth-child(2) > div:first-child p:nth-of-type(3) {
-    margin-bottom: 4px;
+#contact .contact-group {
+    margin-bottom: 27px;
+}
+
+#contact .contact-group:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- CONTACT LABEL ---------- */
+
+#contact .contact-label {
+    margin-bottom: 6px;
 
     color: var(--color-heading);
 
     font-size: 0.82rem;
     font-weight: 700;
+
     letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
 
-/* ---------- CONTACT INFO VALUES ---------- */
+/* ---------- CONTACT VALUES ---------- */
 
-#contact > div:nth-child(2) > div:first-child p:nth-of-type(2),
-#contact > div:nth-child(2) > div:first-child p:nth-of-type(4) {
-    margin-bottom: 28px;
+#contact .contact-group > p:not(.contact-label) {
+    margin-bottom: 0;
 
     color: var(--color-text-light);
 
     font-size: 0.95rem;
-    line-height: 1.6;
+    line-height: 1.65;
+}
+
+
+/* ---------- CONTACT LINKS ---------- */
+
+#contact .contact-group a {
+    color: var(--color-text-light);
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+#contact .contact-group a:hover {
+    color: var(--color-pink-hover);
+}
+
+
+/* ---------- GALLERY LINKS ---------- */
+
+#contact .contact-group:last-child p:not(.contact-label) {
+    margin-bottom: 6px;
+}
+
+#contact .contact-group:last-child p:not(.contact-label):first-of-type {
+    margin-top: 8px;
 }
 
 
@@ -906,8 +1107,11 @@ header nav > div a:first-child {
    CONTACT FORM
    ========================================================= */
 
-#contact form {
-    padding: 35px;
+#contact > div:nth-child(2) > div > form {
+    width: 100%;
+    min-width: 0;
+
+    padding: 40px;
 
     background: var(--color-white);
 
@@ -921,7 +1125,9 @@ header nav > div a:first-child {
 /* ---------- FORM GROUP ---------- */
 
 #contact form > div {
-    margin-bottom: 22px;
+    width: 100%;
+
+    margin-bottom: 24px;
 }
 
 
@@ -930,22 +1136,24 @@ header nav > div a:first-child {
 #contact form label {
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 
     color: var(--color-heading);
 
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     font-weight: 700;
 }
 
 
-/* ---------- FORM INPUTS ---------- */
+/* ---------- FORM INPUT ---------- */
 
 #contact form input,
 #contact form textarea {
+    display: block;
+
     width: 100%;
 
-    padding: 14px 16px;
+    padding: 15px 17px;
 
     color: var(--color-heading);
     background: #fffafc;
@@ -955,23 +1163,34 @@ header nav > div a:first-child {
 
     outline: none;
 
+    box-sizing: border-box;
+
     transition:
         border-color 0.25s ease,
         box-shadow 0.25s ease,
         background-color 0.25s ease;
 }
 
-
-/* ---------- TEXTAREA ---------- */
+#contact form input {
+    min-height: 56px;
+}
 
 #contact form textarea {
-    min-height: 150px;
+    min-height: 210px;
 
     resize: vertical;
 }
 
 
-/* ---------- PLACEHOLDER ---------- */
+/* ---------- FORM HOVER ---------- */
+
+#contact form input:hover,
+#contact form textarea:hover {
+    border-color: rgba(217, 140, 164, 0.35);
+}
+
+
+/* ---------- FORM PLACEHOLDER ---------- */
 
 #contact form input::placeholder,
 #contact form textarea::placeholder {
@@ -979,13 +1198,13 @@ header nav > div a:first-child {
 }
 
 
-/* ---------- INPUT FOCUS ---------- */
+/* ---------- FORM FOCUS ---------- */
 
 #contact form input:focus,
 #contact form textarea:focus {
     background: var(--color-white);
 
-    border-color: #d98ca4;
+    border-color: var(--color-pink-dark);
 
     box-shadow:
         0 0 0 4px rgba(246, 184, 200, 0.22);
@@ -998,12 +1217,13 @@ header nav > div a:first-child {
 
 #contact form button {
     width: 100%;
-    min-height: 52px;
+
+    min-height: 54px;
 
     padding: 0 24px;
 
     color: var(--color-white);
-    background: #d98ca4;
+    background: var(--color-pink-dark);
 
     border: none;
     border-radius: 999px;
@@ -1022,11 +1242,8 @@ header nav > div a:first-child {
         box-shadow 0.25s ease;
 }
 
-
-/* ---------- SEND BUTTON HOVER ---------- */
-
 #contact form button:hover {
-    background: #cc7893;
+    background: var(--color-pink-hover);
 
     transform: translateY(-3px);
 
@@ -1034,20 +1251,24 @@ header nav > div a:first-child {
         0 14px 30px rgba(217, 140, 164, 0.28);
 }
 
-
-/* ---------- SEND BUTTON ACTIVE ---------- */
-
 #contact form button:active {
     transform: translateY(-1px);
 }
+
+#contact form button:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
+}
+
 /* =========================================================
-   FOOTER
+   9. FOOTER
    ========================================================= */
 
 footer {
     width: 100%;
 
     margin-top: 40px;
+
     padding: 60px 6% 30px;
 
     background:
@@ -1061,23 +1282,19 @@ footer {
     border-top: 1px solid var(--color-border);
 }
 
-
-/* ---------- FOOTER CONTENT ---------- */
-
 footer > div {
     width: min(100%, var(--container-width));
     margin: 0 auto;
 }
 
 
-/* ---------- FOOTER BRAND ---------- */
+/* ---------- FOOTER INTRO ---------- */
 
 footer > div:first-child {
     margin-bottom: 30px;
 }
 
-
-footer > div:first-child p:first-child {
+footer > div:first-child > p:first-child {
     margin-bottom: 8px;
 
     color: var(--color-heading);
@@ -1086,8 +1303,7 @@ footer > div:first-child p:first-child {
     font-weight: 800;
 }
 
-
-footer > div:first-child p:last-child {
+footer > div:first-child > p:last-of-type {
     max-width: 430px;
 
     color: var(--color-text-light);
@@ -1097,52 +1313,65 @@ footer > div:first-child p:last-child {
 }
 
 
-/* ---------- SOCIAL LINKS ---------- */
+/* =========================================================
+   FOOTER SOCIAL ICONS
+   ========================================================= */
 
-footer > div:nth-child(2) {
+footer .footer-socials {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
 
-    margin-bottom: 35px;
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 16px;
 }
 
+footer .footer-socials a {
+    width: 42px;
+    height: 42px;
 
-footer > div:nth-child(2) a {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    min-height: 40px;
-    padding: 0 16px;
+    padding: 0;
+    margin: 0;
 
-    color: var(--color-text-light);
-    background: rgba(255, 255, 255, 0.75);
-
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    transition:
-        color 0.25s ease,
-        background-color 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-
-/* ---------- SOCIAL HOVER ---------- */
-
-footer > div:nth-child(2) a:hover {
     color: var(--color-heading);
     background: var(--color-white);
 
-    transform: translateY(-3px);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
 
-    box-shadow: var(--shadow-soft);
+    font-size: 18px;
+    line-height: 1;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+footer .footer-socials a:hover {
+    background: var(--color-pink-soft);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+footer .footer-socials i {
+    display: block;
+    line-height: 1;
 }
 
 
@@ -1154,563 +1383,21 @@ footer > div:last-child {
     border-top: 1px solid var(--color-border);
 }
 
-
 footer > div:last-child p {
     color: var(--color-text-light);
 
     font-size: 0.82rem;
 }
-/* =========================================================
-   RESPONSIVE DESIGN
-   TABLET
-   ========================================================= */
 
-@media (max-width: 900px) {
-
-    /* ---------- HEADER ---------- */
-
-    header {
-        padding: 18px 4%;
-    }
-
-
-    header nav {
-        padding: 14px 18px;
-    }
-
-
-    header nav > div {
-        gap: 4px;
-    }
-
-
-    header nav > div a {
-        padding: 8px 10px;
-        font-size: 0.88rem;
-    }
-
-
-    /* ---------- HOME ---------- */
-
-    #home {
-        width: min(100% - 8%, var(--container-width));
-
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-
-        padding: 70px 0 90px;
-
-        text-align: center;
-    }
-
-
-    #home > div:first-child {
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-
-    #home > div:first-child > p:nth-of-type(2) {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    #home > div:first-child > div {
-        justify-content: center;
-    }
-
-
-    #home > div:last-child {
-        width: min(100%, 520px);
-
-        min-height: 420px;
-
-        margin: 0 auto;
-    }
-
-
-    /* ---------- ABOUT ---------- */
-
-    #about {
-        width: min(100% - 8%, var(--container-width));
-
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-
-        padding: 90px 0;
-    }
-
-
-    #about > div:first-child {
-        max-width: 700px;
-
-        margin: 0 auto;
-
-        text-align: center;
-    }
-
-
-    #about > div:first-child > p:not(:first-child) {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    #about > div:last-child {
-        width: min(100%, 520px);
-
-        min-height: 380px;
-
-        margin: 0 auto;
-    }
-
-
-    /* ---------- PORTFOLIO ---------- */
-
-    #portfolio {
-        width: min(100% - 8%, var(--container-width));
-
-        padding: 90px 0;
-    }
-
-
-    #portfolio > div:last-child {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 22px;
-    }
-
-
-    #portfolio article > div {
-        min-height: 280px;
-    }
-
-
-    /* ---------- CONTACT ---------- */
-
-    #contact {
-        width: min(100% - 8%, var(--container-width));
-
-        padding: 90px 0;
-    }
-
-
-    #contact > div:nth-child(2) {
-        grid-template-columns: 1fr;
-
-        gap: 24px;
-    }
-
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-        padding-left: 4%;
-        padding-right: 4%;
-    }
-
-}
-/* =========================================================
-   RESPONSIVE DESIGN
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    /* ---------- HEADER ---------- */
-
-    header {
-        padding: 14px 4%;
-    }
-
-
-    header nav {
-        padding: 14px 16px;
-
-        border-radius: 22px;
-
-        flex-direction: column;
-        gap: 12px;
-    }
-
-
-    header nav > a {
-        font-size: 1.15rem;
-    }
-
-
-    header nav > div {
-        width: 100%;
-
-        justify-content: center;
-        flex-wrap: wrap;
-
-        gap: 4px;
-    }
-
-
-    header nav > div a {
-        padding: 7px 9px;
-
-        font-size: 0.78rem;
-    }
-
-
-    /* ---------- HOME ---------- */
-
-    #home {
-        width: min(100% - 10%, var(--container-width));
-
-        min-height: auto;
-
-        gap: 40px;
-
-        padding: 55px 0 70px;
-    }
-
-
-    #home > div:first-child > p:first-child {
-        margin-bottom: 14px;
-
-        padding: 6px 13px;
-
-        font-size: 0.75rem;
-    }
-
-
-    #home h1 {
-        margin-bottom: 20px;
-
-        font-size: clamp(2.5rem, 13vw, 4rem);
-
-        letter-spacing: -0.04em;
-    }
-
-
-    #home > div:first-child > p:nth-of-type(2) {
-        margin-bottom: 28px;
-
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-
-
-    #home > div:first-child > div {
-        width: 100%;
-
-        flex-direction: column;
-
-        gap: 10px;
-    }
-
-
-    #home > div:first-child > div a {
-        width: 100%;
-
-        min-height: 48px;
-    }
-
-
-    #home > div:last-child {
-        width: 100%;
-
-        min-height: 320px;
-
-        padding: 20px;
-
-        border-radius: 42% 58% 50% 50% / 50% 45% 55% 50%;
-    }
-
-
-    /* ---------- ABOUT ---------- */
-
-    #about {
-        width: min(100% - 10%, var(--container-width));
-
-        gap: 40px;
-
-        padding: 70px 0;
-    }
-
-
-    #about > div:first-child > p:first-child {
-        margin-bottom: 14px;
-
-        padding: 6px 13px;
-
-        font-size: 0.75rem;
-    }
-
-
-    #about h2 {
-        margin-bottom: 20px;
-
-        font-size: clamp(2.2rem, 11vw, 3.3rem);
-    }
-
-
-    #about > div:first-child > p:not(:first-child) {
-        font-size: 0.95rem;
-        line-height: 1.8;
-    }
-
-
-    #about > div:last-child {
-        width: 100%;
-
-        min-height: 300px;
-
-        padding: 25px;
-    }
-
-
-    /* ---------- PORTFOLIO ---------- */
-
-    #portfolio {
-        width: min(100% - 10%, var(--container-width));
-
-        padding: 70px 0;
-    }
-
-
-    #portfolio > div:first-child {
-        margin-bottom: 35px;
-    }
-
-
-    #portfolio > div:first-child > p:first-child {
-        margin-bottom: 14px;
-
-        padding: 6px 13px;
-
-        font-size: 0.75rem;
-    }
-
-
-    #portfolio h2 {
-        margin-bottom: 16px;
-
-        font-size: clamp(2.2rem, 11vw, 3.3rem);
-    }
-
-
-    #portfolio > div:first-child > p:last-child {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-
-
-    /* ---------- CATEGORY FILTER ---------- */
-
-    #portfolio > div:nth-child(2) {
-        margin-bottom: 30px;
-
-        gap: 7px;
-    }
-
-
-    #portfolio > div:nth-child(2) a {
-        min-height: 38px;
-
-        padding: 0 13px;
-
-        font-size: 0.78rem;
-    }
-
-
-    /* ---------- ARTWORK GRID ---------- */
-
-    #portfolio > div:last-child {
-        grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-
-    #portfolio article {
-        padding: 10px;
-
-        border-radius: 18px;
-    }
-
-
-    #portfolio article > div {
-        min-height: 300px;
-
-        margin-bottom: 16px;
-    }
-
-
-    #portfolio article h3 {
-        margin: 0 7px 4px;
-
-        font-size: 1.05rem;
-    }
-
-
-    #portfolio article > p {
-        margin: 0 7px 8px;
-
-        font-size: 0.82rem;
-    }
-
-
-    /* ---------- CONTACT ---------- */
-
-    #contact {
-        width: min(100% - 10%, var(--container-width));
-
-        padding: 70px 0;
-    }
-
-
-    #contact > div:first-child {
-        margin-bottom: 35px;
-    }
-
-
-    #contact > div:first-child > p:first-child {
-        margin-bottom: 14px;
-
-        padding: 6px 13px;
-
-        font-size: 0.75rem;
-    }
-
-
-    #contact h2 {
-        margin-bottom: 16px;
-
-        font-size: clamp(2.2rem, 11vw, 3.3rem);
-    }
-
-
-    #contact > div:first-child > p:last-child {
-        font-size: 0.95rem;
-        line-height: 1.75;
-    }
-
-
-    /* ---------- CONTACT INFO ---------- */
-
-    #contact > div:nth-child(2) > div:first-child {
-        padding: 26px;
-
-        border-radius: 18px;
-    }
-
-
-    #contact > div:nth-child(2) > div:first-child h3 {
-        margin-bottom: 24px;
-
-        font-size: 1.15rem;
-    }
-
-
-    /* ---------- CONTACT FORM ---------- */
-
-    #contact form {
-        padding: 26px;
-
-        border-radius: 18px;
-    }
-
-
-    #contact form > div {
-        margin-bottom: 18px;
-    }
-
-
-    #contact form input,
-    #contact form textarea {
-        padding: 13px 14px;
-
-        font-size: 0.9rem;
-    }
-
-
-    #contact form textarea {
-        min-height: 140px;
-    }
-
-
-    #contact form button {
-        min-height: 50px;
-
-        font-size: 0.9rem;
-    }
-
-
-    /* ---------- FOOTER ---------- */
-
-    footer {
-        margin-top: 20px;
-
-        padding: 45px 5% 25px;
-    }
-
-
-    footer > div:first-child {
-        margin-bottom: 24px;
-    }
-
-
-    footer > div:first-child p:first-child {
-        font-size: 1.15rem;
-    }
-
-
-    footer > div:first-child p:last-child {
-        font-size: 0.84rem;
-    }
-
-
-    footer > div:nth-child(2) {
-        margin-bottom: 28px;
-
-        gap: 8px;
-    }
-
-
-    footer > div:nth-child(2) a {
-        min-height: 38px;
-
-        padding: 0 13px;
-
-        font-size: 0.78rem;
-    }
-
-
-    footer > div:last-child {
-        padding-top: 20px;
-    }
-
-
-    footer > div:last-child p {
-        font-size: 0.75rem;
-        line-height: 1.6;
-    }
-
-}
-/* =========================================================
-   VISUAL DECORATION
-   SOFT ARTISTIC SHAPES
-   ========================================================= */
-
-/* ---------- GLOBAL SECTION DECORATION ---------- */
-
-#home,
-#about,
-#portfolio,
-#contact {
-    position: relative;
+footer a:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.30);
+    outline-offset: 3px;
 }
 
 
-/* ---------- HOME DECORATIVE CIRCLES ---------- */
+/* =========================================================
+   10. DECORATIVE ARTISTIC SHAPES
+   ========================================================= */
 
 #home::before,
 #home::after {
@@ -1728,24 +1415,23 @@ footer > div:last-child p {
     z-index: -1;
 }
 
-
 #home::before {
     top: 40px;
     left: -90px;
 
     background: rgba(246, 184, 200, 0.20);
-}
 
+    animation: softFloat 7s ease-in-out infinite;
+}
 
 #home::after {
     right: -80px;
     bottom: 20px;
 
     background: rgba(220, 210, 244, 0.25);
+
+    animation: softFloatReverse 9s ease-in-out infinite;
 }
-
-
-/* ---------- ABOUT DECORATION ---------- */
 
 #about::before {
     content: "";
@@ -1759,14 +1445,12 @@ footer > div:last-child p {
     height: 130px;
 
     border: 20px solid rgba(255, 216, 189, 0.28);
-
     border-radius: 50%;
 
     pointer-events: none;
+
+    animation: softRotate 12s linear infinite;
 }
-
-
-/* ---------- PORTFOLIO DECORATION ---------- */
 
 #portfolio::before {
     content: "";
@@ -1781,15 +1465,15 @@ footer > div:last-child p {
 
     background: rgba(207, 232, 247, 0.30);
 
-    border-radius: 42% 58% 55% 45%;
+    border-radius:
+        42% 58% 55% 45%;
 
     transform: rotate(18deg);
 
     pointer-events: none;
+
+    animation: softFloat 8s ease-in-out infinite;
 }
-
-
-/* ---------- CONTACT DECORATION ---------- */
 
 #contact::after {
     content: "";
@@ -1807,11 +1491,13 @@ footer > div:last-child p {
     border-radius: 50%;
 
     pointer-events: none;
+
+    animation: softFloatReverse 7s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   SMALL ARTISTIC DOTS
+   11. ARTISTIC DOTS & FLOWERS
    ========================================================= */
 
 #home > div:last-child::before,
@@ -1832,28 +1518,20 @@ footer > div:last-child p {
         64px 5px 0 rgba(255, 255, 255, 0.40);
 
     pointer-events: none;
+
+    animation: tinyFloat 5s ease-in-out infinite;
 }
-
-
-/* ---------- HOME DOT POSITION ---------- */
 
 #home > div:last-child::before {
     top: 55px;
     right: 65px;
 }
 
-
-/* ---------- ABOUT DOT POSITION ---------- */
-
 #about > div:last-child::before {
     bottom: 60px;
     left: 55px;
 }
 
-
-/* =========================================================
-   DECORATIVE FLOWER-LIKE SHAPES
-   ========================================================= */
 
 #home > div:last-child::after,
 #about > div:last-child::after {
@@ -1865,149 +1543,37 @@ footer > div:last-child p {
     height: 70px;
 
     border-radius:
-        50%
-        50%
-        50%
-        0;
-
-    transform: rotate(45deg);
+        50% 50% 50% 0;
 
     background: rgba(255, 255, 255, 0.35);
 
     pointer-events: none;
 }
 
-
-/* ---------- HOME FLOWER ---------- */
-
 #home > div:last-child::after {
     left: 45px;
     bottom: 45px;
+
+    transform: rotate(45deg);
+
+    animation: flowerDrift 6s ease-in-out infinite;
 }
-
-
-/* ---------- ABOUT FLOWER ---------- */
 
 #about > div:last-child::after {
     top: 45px;
     right: 45px;
-}
 
+    transform: rotate(45deg);
 
-/* =========================================================
-   DECORATION SAFETY
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    #home::before,
-    #home::after {
-        width: 120px;
-        height: 120px;
-    }
-
-
-    #home::before {
-        left: -70px;
-    }
-
-
-    #home::after {
-        right: -60px;
-    }
-
-
-    #about::before {
-        right: -45px;
-
-        width: 90px;
-        height: 90px;
-
-        border-width: 14px;
-    }
-
-
-    #portfolio::before {
-        left: -40px;
-
-        width: 75px;
-        height: 75px;
-    }
-
-
-    #contact::after {
-        right: -35px;
-
-        width: 80px;
-        height: 80px;
-    }
-
-
-    #home > div:last-child::after,
-    #about > div:last-child::after {
-        width: 50px;
-        height: 50px;
-    }
-
-}
-/* =========================================================
-   FLORAL / ARTISTIC ANIMATION
-   ========================================================= */
-
-
-/* ---------- FLOATING DECORATION ---------- */
-
-#home::before {
-    animation: softFloat 7s ease-in-out infinite;
-}
-
-
-#home::after {
-    animation: softFloatReverse 9s ease-in-out infinite;
-}
-
-
-#about::before {
-    animation: softRotate 12s linear infinite;
-}
-
-
-#portfolio::before {
-    animation: softFloat 8s ease-in-out infinite;
-}
-
-
-#contact::after {
-    animation: softFloatReverse 7s ease-in-out infinite;
-}
-
-
-/* ---------- DECORATIVE FLOWERS ---------- */
-
-#home > div:last-child::after {
-    animation: flowerDrift 6s ease-in-out infinite;
-}
-
-
-#about > div:last-child::after {
     animation: flowerDriftReverse 7s ease-in-out infinite;
 }
 
 
-/* ---------- SMALL DOTS ---------- */
-
-#home > div:last-child::before,
-#about > div:last-child::before {
-    animation: tinyFloat 5s ease-in-out infinite;
-}
-
-
 /* =========================================================
-   KEYFRAMES
+   12. ANIMATIONS
    ========================================================= */
 
 @keyframes softFloat {
-
     0%,
     100% {
         transform: translateY(0);
@@ -2016,12 +1582,9 @@ footer > div:last-child p {
     50% {
         transform: translateY(-12px);
     }
-
 }
 
-
 @keyframes softFloatReverse {
-
     0%,
     100% {
         transform: translateY(0);
@@ -2030,12 +1593,9 @@ footer > div:last-child p {
     50% {
         transform: translateY(12px);
     }
-
 }
 
-
 @keyframes softRotate {
-
     0% {
         transform: rotate(0deg);
     }
@@ -2047,12 +1607,9 @@ footer > div:last-child p {
     100% {
         transform: rotate(0deg);
     }
-
 }
 
-
 @keyframes flowerDrift {
-
     0%,
     100% {
         transform: rotate(45deg) translateY(0);
@@ -2061,12 +1618,9 @@ footer > div:last-child p {
     50% {
         transform: rotate(52deg) translateY(-8px);
     }
-
 }
 
-
 @keyframes flowerDriftReverse {
-
     0%,
     100% {
         transform: rotate(45deg) translateY(0);
@@ -2075,12 +1629,9 @@ footer > div:last-child p {
     50% {
         transform: rotate(38deg) translateY(8px);
     }
-
 }
 
-
 @keyframes tinyFloat {
-
     0%,
     100% {
         transform: translateY(0);
@@ -2089,319 +1640,17 @@ footer > div:last-child p {
     50% {
         transform: translateY(-6px);
     }
-
 }
 
 
 /* =========================================================
-   REDUCE MOTION
+   13. LIGHTBOX
    ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    #home::before,
-    #home::after,
-    #about::before,
-    #portfolio::before,
-    #contact::after,
-    #home > div:last-child::after,
-    #about > div:last-child::after,
-    #home > div:last-child::before,
-    #about > div:last-child::before {
-        animation: none;
-    }
-
-}
-/* =========================================================
-   TYPOGRAPHY & VISUAL POLISH
-   ========================================================= */
-
-
-/* ---------- GENERAL TEXT SELECTION ---------- */
-
-::selection {
-    color: var(--color-heading);
-    background: var(--color-pink-soft);
-}
-
-
-/* ---------- PARAGRAPH BALANCE ---------- */
-
-p {
-    text-wrap: pretty;
-}
-
-
-/* ---------- HEADINGS BALANCE ---------- */
-
-h1,
-h2,
-h3 {
-    text-wrap: balance;
-}
-
-
-/* =========================================================
-   BUTTON POLISH
-   ========================================================= */
-
-#home a,
-#contact button {
-    user-select: none;
-}
-
-
-/* ---------- BUTTON FOCUS ---------- */
-
-#home > div:first-child > div a:focus-visible,
-#contact form button:focus-visible {
-    outline: 3px solid rgba(217, 140, 164, 0.35);
-    outline-offset: 4px;
-}
-
-
-/* =========================================================
-   NAVIGATION FOCUS
-   ========================================================= */
-
-header nav > a:focus-visible,
-header nav > div a:focus-visible,
-footer a:focus-visible {
-    outline: 3px solid rgba(217, 140, 164, 0.30);
-    outline-offset: 3px;
-    border-radius: 999px;
-}
-
-
-/* =========================================================
-   PORTFOLIO CARD POLISH
-   ========================================================= */
-
-#portfolio article {
-    isolation: isolate;
-}
-
-
-#portfolio article > div {
-    isolation: isolate;
-}
-
-
-/* ---------- ARTWORK PREVIEW HOVER ---------- */
-
-#portfolio article > div {
-    transition:
-        transform 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-
-#portfolio article:hover > div {
-    transform: scale(1.015);
-}
-
-
-/* =========================================================
-   CONTACT INPUT POLISH
-   ========================================================= */
-
-#contact form input:hover,
-#contact form textarea:hover {
-    border-color: rgba(217, 140, 164, 0.35);
-}
-
-
-/* =========================================================
-   FOOTER POLISH
-   ========================================================= */
-
-footer a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* =========================================================
-   SMOOTH INTERACTION
-   ========================================================= */
-
-a,
-button,
-input,
-textarea {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* =========================================================
-   MOBILE TYPOGRAPHY POLISH
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    body {
-        font-size: 15px;
-    }
-
-
-    p {
-        text-wrap: pretty;
-    }
-
-
-    #portfolio article:hover {
-        transform: translateY(-5px);
-    }
-
-
-    #portfolio article:hover > div {
-        transform: none;
-    }
-
-}
-/* =========================================
-   ARTWORK IMAGE STYLING
-   ========================================= */
-
-#home > div:last-child img {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    min-height: 410px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 28px;
-    box-shadow: 0 20px 45px rgba(64, 56, 71, 0.12);
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
-}
-
-#home > div:last-child:hover img {
-    transform: scale(1.025);
-    box-shadow: 0 25px 55px rgba(64, 56, 71, 0.16);
-}
-
-
-/* =========================================
-   PORTFOLIO ARTWORK IMAGES
-   ========================================= */
-
-#portfolio article > div img {
-    position: relative;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 320px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: var(--radius-small);
-    transition:
-        transform 0.5s ease,
-        filter 0.5s ease;
-}
-
-#portfolio article:hover > div img {
-    transform: scale(1.035);
-    filter: brightness(1.03);
-}
-
-
-/* =========================================
-   MOBILE IMAGE SIZING
-   ========================================= */
-
-@media (max-width: 900px) {
-    #home > div:last-child img {
-        min-height: 360px;
-    }
-
-    #portfolio article > div img {
-        min-height: 280px;
-    }
-}
-
-@media (max-width: 600px) {
-    #home > div:last-child img {
-        min-height: 280px;
-        border-radius: 22px;
-    }
-
-    #portfolio article > div img {
-        min-height: 300px;
-    }
-}
-
-
-/* =========================================
-   REDUCE MOTION
-   ========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    #home > div:last-child img,
-    #portfolio article > div img {
-        transition: none;
-    }
-
-    #home > div:last-child:hover img,
-    #portfolio article:hover > div img {
-        transform: none;
-    }
-}
-/* =========================================
-   JAVASCRIPT INTERACTION STYLES
-   ========================================= */
-
-
-/* =========================================
-   1. PORTFOLIO FILTER ANIMATION
-   ========================================= */
-
-#portfolio article {
-    opacity: 1;
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.35s ease;
-}
-
-
-/* =========================================
-   2. ACTIVE NAVIGATION
-   ========================================= */
-
-header nav > div a.is-active {
-    color: var(--color-heading);
-    background: var(--color-pink-soft);
-}
-
-
-/* =========================================
-   3. SCROLL REVEAL
-   ========================================= */
-
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-}
-
-.scroll-reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* =========================================
-   4. ARTWORK LIGHTBOX
-   ========================================= */
 
 .artwork-lightbox {
     position: fixed;
     inset: 0;
+
     z-index: 9999;
 
     display: flex;
@@ -2415,19 +1664,18 @@ header nav > div a.is-active {
     opacity: 0;
     visibility: hidden;
 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
     transition:
         opacity 0.3s ease,
         visibility 0.3s ease;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 
 .artwork-lightbox.is-open {
     opacity: 1;
     visibility: visible;
 }
-
 
 .artwork-lightbox__content {
     position: relative;
@@ -2437,6 +1685,7 @@ header nav > div a.is-active {
 
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
@@ -2456,17 +1705,16 @@ header nav > div a.is-active {
         transform 0.3s ease;
 }
 
-.artwork-lightbox.is-open
-.artwork-lightbox__content {
+.artwork-lightbox.is-open .artwork-lightbox__content {
     transform: scale(1);
 }
-
 
 .artwork-lightbox__image {
     display: block;
 
     width: auto;
     max-width: 100%;
+
     height: auto;
     max-height: 72vh;
 
@@ -2475,7 +1723,6 @@ header nav > div a.is-active {
     border-radius: 18px;
 }
 
-
 .artwork-lightbox__caption {
     width: 100%;
 
@@ -2483,7 +1730,6 @@ header nav > div a.is-active {
 
     text-align: center;
 }
-
 
 .artwork-lightbox__caption h3 {
     margin-bottom: 4px;
@@ -2494,13 +1740,11 @@ header nav > div a.is-active {
     font-weight: 750;
 }
 
-
 .artwork-lightbox__caption p {
     color: var(--color-text-light);
 
     font-size: 0.9rem;
 }
-
 
 .artwork-lightbox__close {
     position: fixed;
@@ -2538,6 +1782,7 @@ header nav > div a.is-active {
 
 .artwork-lightbox__close:hover {
     background: var(--color-pink-soft);
+
     transform: rotate(90deg);
 }
 
@@ -2547,9 +1792,9 @@ header nav > div a.is-active {
 }
 
 
-/* =========================================
-   5. SITE NOTIFICATION
-   ========================================= */
+/* =========================================================
+   14. SITE NOTIFICATION
+   ========================================================= */
 
 .site-notification {
     position: fixed;
@@ -2593,6 +1838,7 @@ header nav > div a.is-active {
 .site-notification.is-visible {
     opacity: 1;
     visibility: visible;
+
     transform: translateY(0);
 }
 
@@ -2605,21 +1851,544 @@ header nav > div a.is-active {
 }
 
 
-/* =========================================
-   6. ACCESSIBILITY
-   ========================================= */
+/* =========================================================
+   15. TABLET
+   IMPORTANT:
+   CONTACT STAYS SIDE-BY-SIDE
+   ========================================================= */
 
-#portfolio article:focus-visible {
-    outline: 3px solid rgba(217, 140, 164, 0.35);
-    outline-offset: 4px;
+@media (max-width: 900px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 18px 4%;
+    }
+
+    header nav {
+        padding: 14px 18px;
+    }
+
+    header nav > div {
+        gap: 4px;
+    }
+
+    header nav > div a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 70px 0 90px;
+
+        text-align: center;
+    }
+
+    #home > div:first-child {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #home > div:first-child > div {
+        justify-content: center;
+    }
+
+    #home > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 420px;
+
+        margin: 0 auto;
+    }
+
+    #home > div:last-child img {
+        min-height: 360px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 90px 0;
+    }
+
+    #about > div:first-child {
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    #about > div:first-child > p:not(:first-child) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 380px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+    #portfolio > div:last-child {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+    #portfolio article > div,
+    #portfolio article > div img {
+        min-height: 280px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    /*
+       IMPORTANT:
+       Contact tetap 2 kolom pada tablet.
+       Tidak ada aturan lain yang menimpa ini.
+    */
+
+    #contact {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+    #contact > div:nth-child(2) {
+        grid-template-columns:
+            minmax(260px, 0.8fr)
+            minmax(360px, 1.2fr);
+
+        gap: 24px;
+    }
+
+    #contact .contact-info,
+    #contact form {
+        padding: 28px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
 }
 
 
-/* =========================================
-   7. MOBILE
-   ========================================= */
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 14px 4%;
+    }
+
+    header nav {
+        padding: 14px 16px;
+
+        border-radius: 22px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    header nav > a {
+        font-size: 1.15rem;
+    }
+
+    header nav > div {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
+
+    header nav > div a {
+        padding: 7px 9px;
+
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 10%, var(--container-width));
+
+        min-height: auto;
+
+        gap: 40px;
+
+        padding: 55px 0 70px;
+    }
+
+    #home > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #home h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.5rem, 13vw, 4rem);
+
+        letter-spacing: -0.04em;
+    }
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-bottom: 28px;
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    #home > div:first-child > div {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    #home > div:first-child > div a {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    #home > div:last-child {
+        width: 100%;
+
+        min-height: 320px;
+
+        padding: 20px;
+
+        border-radius:
+            42% 58% 50% 50% /
+            50% 45% 55% 50%;
+    }
+
+    #home > div:last-child img {
+        min-height: 280px;
+
+        border-radius: 22px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 10%, var(--container-width));
+
+        gap: 40px;
+
+        padding: 70px 0;
+    }
+
+    #about > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #about h2 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #about > div:first-child > p:not(:first-child) {
+        font-size: 0.95rem;
+
+        line-height: 1.8;
+    }
+
+    #about > div:last-child {
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+    #portfolio > div:first-child {
+        margin-bottom: 35px;
+    }
+
+    #portfolio > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #portfolio h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #portfolio > div:first-child > p:last-child {
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    #portfolio > div:nth-child(2) {
+        margin-bottom: 30px;
+
+        gap: 7px;
+    }
+
+    #portfolio > div:nth-child(2) a {
+        min-height: 38px;
+
+        padding: 0 13px;
+
+        font-size: 0.78rem;
+    }
+
+    #portfolio > div:last-child {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    #portfolio article {
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+    #portfolio article > div {
+        min-height: 300px;
+
+        margin-bottom: 16px;
+    }
+
+    #portfolio article > div img {
+        min-height: 300px;
+    }
+
+    #portfolio article h3 {
+        margin: 0 7px 4px;
+
+        font-size: 1.05rem;
+    }
+
+    #portfolio article > p {
+        margin: 0 7px 8px;
+
+        font-size: 0.82rem;
+    }
+
+    #portfolio article:hover {
+        transform: translateY(-5px);
+    }
+
+    #portfolio article:hover > div,
+    #portfolio article:hover > div img {
+        transform: none;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+    #contact > div:first-child {
+        margin-bottom: 35px;
+    }
+
+    #contact > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #contact h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #contact > div:first-child > p:last-child {
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+
+    /*
+       Mobile:
+       Contact information berada di atas,
+       form berada di bawah.
+    */
+
+    #contact > div:nth-child(2) {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    #contact .contact-info {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+    #contact .contact-info h3 {
+        margin-bottom: 24px;
+
+        font-size: 1.15rem;
+    }
+
+    #contact .contact-group {
+        margin-bottom: 22px;
+    }
+
+    #contact form {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+    #contact form > div {
+        margin-bottom: 18px;
+    }
+
+    #contact form input,
+    #contact form textarea {
+        padding: 13px 14px;
+
+        font-size: 0.9rem;
+    }
+
+    #contact form textarea {
+        min-height: 140px;
+    }
+
+    #contact form button {
+        min-height: 50px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        margin-top: 20px;
+
+        padding: 45px 5% 25px;
+    }
+
+    footer > div:first-child {
+        margin-bottom: 24px;
+    }
+
+    footer > div:first-child > p:first-child {
+        font-size: 1.15rem;
+    }
+
+    footer > div:first-child > p:last-of-type {
+        font-size: 0.84rem;
+    }
+
+    footer .footer-socials {
+        justify-content: flex-start;
+
+        gap: 10px;
+
+        margin-top: 14px;
+    }
+
+    footer .footer-socials a {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    footer > div:last-child {
+        padding-top: 20px;
+    }
+
+    footer > div:last-child p {
+        font-size: 0.75rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* ---------- LIGHTBOX ---------- */
 
     .artwork-lightbox {
         padding: 15px;
@@ -2627,12 +2396,15 @@ header nav > div a.is-active {
 
     .artwork-lightbox__content {
         width: 100%;
+
         padding: 12px;
+
         border-radius: 20px;
     }
 
     .artwork-lightbox__image {
         max-height: 68vh;
+
         border-radius: 14px;
     }
 
@@ -2658,6 +2430,9 @@ header nav > div a.is-active {
         font-size: 1.5rem;
     }
 
+
+    /* ---------- NOTIFICATION ---------- */
+
     .site-notification {
         right: 15px;
         bottom: 15px;
@@ -2667,26 +2442,559 @@ header nav > div a.is-active {
         padding: 14px 17px;
     }
 
+
+    /* ---------- DECORATION ---------- */
+
+    #home::before,
+    #home::after {
+        width: 120px;
+        height: 120px;
+    }
+
+    #home::before {
+        left: -70px;
+    }
+
+    #home::after {
+        right: -60px;
+    }
+
+    #about::before {
+        right: -45px;
+
+        width: 90px;
+        height: 90px;
+
+        border-width: 14px;
+    }
+
+    #portfolio::before {
+        left: -40px;
+
+        width: 75px;
+        height: 75px;
+    }
+
+    #contact::after {
+        right: -35px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+    #home > div:last-child::after,
+    #about > div:last-child::after {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 
-/* =========================================
-   8. REDUCED MOTION
-   ========================================= */
+/* =========================================================
+   17. REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
+    html {
+        scroll-behavior: auto;
+    }
+
+    .logo-sakura,
+    #home::before,
+    #home::after,
+    #about::before,
+    #portfolio::before,
+    #contact::after,
+    #home > div:last-child::after,
+    #about > div:last-child::after,
+    #home > div:last-child::before,
+    #about > div:last-child::before {
+        animation: none;
+    }
+
     .scroll-reveal {
         opacity: 1;
+
         transform: none;
+
         transition: none;
     }
 
     .artwork-lightbox,
     .artwork-lightbox__content,
     .site-notification,
-    #portfolio article {
+    #portfolio article,
+    #home > div:last-child img,
+    #portfolio article > div img {
         transition: none;
     }
 
+    #home > div:last-child:hover img,
+    #portfolio article:hover > div img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   18. JAVASCRIPT INTERACTION
+   ========================================================= */
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+.footer-explore-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+/* =========================================================
+   MIKAZOART — CINEMATIC HOME ARTWORK SHOWCASE
+   ========================================================= */
+
+.cinematic-showcase {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transform: translateZ(0);
+}
+
+/*
+   Image utama
+*/
+
+.cinematic-showcase__image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transform:
+        translate3d(
+            var(--parallax-x, 0px),
+            var(--parallax-y, 0px),
+            0
+        )
+        scale(1.035);
+
+    filter:
+        saturate(1.02)
+        contrast(1.015);
+
+    transition:
+        transform 1.2s cubic-bezier(.22,.61,.36,1),
+        filter 1.2s ease,
+        opacity 1.25s ease;
+}
+
+/*
+   Slow cinematic movement
+*/
+
+.cinematic-showcase__image:not(.is-leaving) {
+    animation:
+        cinematicArtworkDrift
+        7s
+        ease-in-out
+        infinite alternate;
+}
+
+/*
+   Artwork yang sedang keluar
+*/
+
+.cinematic-showcase__image.is-leaving {
+    opacity: 0;
+
+    transform:
+        translate3d(
+            -7%,
+            2%,
+            0
+        )
+        scale(1.12);
+
+    filter:
+        blur(10px)
+        saturate(.82)
+        brightness(.94);
+}
+
+/*
+   Artwork berikutnya
+*/
+
+.cinematic-showcase__image--next {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform:
+        translate3d(
+            8%,
+            0,
+            0
+        )
+        scale(1.13);
+
+    filter:
+        blur(12px)
+        saturate(.85)
+        brightness(.94);
+
+    transition:
+        opacity 1.45s cubic-bezier(.22,.61,.36,1),
+        transform 1.55s cubic-bezier(.22,.61,.36,1),
+        filter 1.55s ease;
+}
+
+.cinematic-showcase__image--next.is-entering {
+    opacity: 1;
+
+    transform:
+        translate3d(
+            var(--parallax-x, 0px),
+            var(--parallax-y, 0px),
+            0
+        )
+        scale(1.035);
+
+    filter:
+        blur(0)
+        saturate(1.02)
+        brightness(1);
+}
+
+/*
+   Atmospheric overlay
+*/
+
+.cinematic-showcase__atmosphere {
+    position: absolute;
+
+    inset: -15%;
+
+    z-index: 4;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            rgba(255, 220, 232, .22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 75% 70%,
+            rgba(207, 232, 247, .18),
+            transparent 38%
+        );
+
+    mix-blend-mode: screen;
+
+    opacity: .55;
+
+    transform:
+        scale(1.08);
+
+    animation:
+        cinematicAtmosphere
+        12s
+        ease-in-out
+        infinite alternate;
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.5s ease;
+}
+
+.cinematic-showcase__atmosphere.is-transitioning {
+    opacity: .95;
+
+    transform:
+        scale(1.2);
+}
+
+/*
+   Cinematic light sweep
+*/
+
+.cinematic-showcase__light {
+    position: absolute;
+
+    top: -20%;
+    left: -40%;
+
+    width: 45%;
+    height: 150%;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.24),
+            rgba(255,220,232,.16),
+            transparent
+        );
+
+    transform:
+        rotate(12deg)
+        translateX(-100%);
+
+    opacity: 0;
+
+    filter:
+        blur(8px);
+
+    mix-blend-mode: screen;
+}
+
+.cinematic-showcase__light.is-sweeping {
+    animation:
+        cinematicLightSweep
+        1.35s
+        cubic-bezier(.25,.1,.25,1)
+        forwards;
+}
+
+/*
+   Vignette
+*/
+
+.cinematic-showcase::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 6;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 48%,
+            rgba(32, 25, 36, .12) 100%
+        );
+
+    opacity: .65;
+}
+
+/*
+   Progress indicator
+*/
+
+.cinematic-showcase__progress {
+    position: absolute;
+
+    left: 50%;
+    bottom: 22px;
+
+    width: min(180px, 35%);
+
+    height: 2px;
+
+    z-index: 10;
+
+    overflow: hidden;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        rgba(255,255,255,.25);
+
+    border-radius: 999px;
+
+    pointer-events: none;
+}
+
+.cinematic-showcase__progress::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    transform:
+        scaleX(0);
+
+    transform-origin: left center;
+
+    background:
+        rgba(255,255,255,.9);
+
+    border-radius: inherit;
+}
+
+.cinematic-showcase__progress.is-running::after {
+    animation:
+        cinematicProgress
+        var(--progress-duration)
+        linear
+        forwards;
+}
+
+/*
+   Animations
+*/
+
+@keyframes cinematicArtworkDrift {
+    from {
+        transform:
+            translate3d(
+                var(--parallax-x, 0px),
+                var(--parallax-y, 0px),
+                0
+            )
+            scale(1.035);
+    }
+
+    to {
+        transform:
+            translate3d(
+                calc(var(--parallax-x, 0px) * .5),
+                calc(var(--parallax-y, 0px) * .5),
+                0
+            )
+            scale(1.085);
+    }
+}
+
+@keyframes cinematicAtmosphere {
+    from {
+        transform:
+            scale(1.05)
+            translate3d(-1%, -1%, 0);
+    }
+
+    to {
+        transform:
+            scale(1.14)
+            translate3d(2%, 1%, 0);
+    }
+}
+
+@keyframes cinematicLightSweep {
+    0% {
+        opacity: 0;
+
+        transform:
+            rotate(12deg)
+            translateX(-100%);
+    }
+
+    20% {
+        opacity: .75;
+    }
+
+    75% {
+        opacity: .45;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            rotate(12deg)
+            translateX(390%);
+    }
+}
+
+@keyframes cinematicProgress {
+    from {
+        transform:
+            scaleX(0);
+    }
+
+    to {
+        transform:
+            scaleX(1);
+    }
+}
+
+/*
+   Mobile
+*/
+
+@media (max-width: 768px) {
+    .cinematic-showcase__image {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1.04);
+    }
+
+    .cinematic-showcase__image.is-leaving {
+        transform:
+            translate3d(-4%, 1%, 0)
+            scale(1.08);
+    }
+
+    .cinematic-showcase__image--next {
+        transform:
+            translate3d(5%, 0, 0)
+            scale(1.08);
+    }
+
+    .cinematic-showcase__image--next.is-entering {
+        transform:
+            translate3d(0, 0, 0)
+            scale(1.04);
+    }
+
+    .cinematic-showcase__progress {
+        bottom: 14px;
+        width: 120px;
+    }
+}
+
+/*
+   Respect user's reduced-motion preference
+*/
+
+@media (prefers-reduced-motion: reduce) {
+    .cinematic-showcase__image,
+    .cinematic-showcase__image--next,
+    .cinematic-showcase__atmosphere,
+    .cinematic-showcase__light {
+        animation: none !important;
+        transition: opacity .3s ease !important;
+        transform: none !important;
+        filter: none !important;
+    }
 }
