@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fffaf5">
+    <meta name="description" content="Explore the MIKAZOART Artbook, a curated collection of digital illustrations, characters, and visual stories.">
+
+    <title>MIKAZOART — Artbook</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="artbook.css">
+</head>
+
+<body class="artbook-page">
+
+    
+<header class="ab-header">
+    <nav class="ab-navbar" aria-label="Main navigation">
+
+        <!-- MIKAZOART ORIGINAL SAKURA LOGO -->
+        <a href="index.html" class="brand-logo ab-brand" aria-label="MIKAZOART Home">
+            <span class="logo-letter">M</span>
+            <span class="logo-letter">I</span>
+            <span class="logo-letter">K</span>
+            <span class="logo-letter">A</span>
+            <span class="logo-letter">Z</span>
+
+            <svg
+                class="logo-sakura"
+                viewBox="0 0 160 160"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+            >
+                <defs>
+                    <linearGradient id="petalMain" x1="20%" y1="10%" x2="80%" y2="100%">
+                        <stop offset="0%" stop-color="#fffdfd"/>
+                        <stop offset="22%" stop-color="#ffe9f2"/>
+                        <stop offset="52%" stop-color="#f8bfd5"/>
+                        <stop offset="78%" stop-color="#e58eaf"/>
+                        <stop offset="100%" stop-color="#c9638b"/>
+                    </linearGradient>
+
+                    <radialGradient id="flowerCenter">
+                        <stop offset="0%" stop-color="#fff9b5"/>
+                        <stop offset="40%" stop-color="#ffd966"/>
+                        <stop offset="75%" stop-color="#efa93f"/>
+                        <stop offset="100%" stop-color="#c97a2c"/>
+                    </radialGradient>
+
+                    <filter id="flowerShadow" x="-40%" y="-40%" width="180%" height="180%">
+                        <feDropShadow dx="0" dy="5" stdDeviation="4"
+                            flood-color="#7d3558" flood-opacity="0.30"/>
+                    </filter>
+
+                    <filter id="flowerGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="4"/>
+                    </filter>
+                </defs>
+
+                <circle cx="80" cy="80" r="54" fill="#f5a8c7"
+                    opacity="0.16" filter="url(#flowerGlow)"/>
+
+                <g fill="url(#petalMain)" stroke="#c8668d"
+                    stroke-width="2" filter="url(#flowerShadow)">
+                    <path d="M80 78 C66 67 59 48 64 34 C68 22 80 18 88 26 C96 34 94 51 84 66 C82 70 81 75 80 78 Z"/>
+                    <path d="M84 76 C96 63 113 57 124 64 C134 70 134 82 125 89 C115 96 99 91 87 83 C84 81 82 79 84 76 Z"/>
+                    <path d="M85 83 C101 86 116 97 116 110 C116 122 106 130 96 125 C85 120 80 104 81 90 C81 86 82 84 85 83 Z"/>
+                    <path d="M76 86 C76 101 69 117 57 121 C46 125 37 117 39 106 C41 94 55 84 69 81 C73 80 75 82 76 86 Z"/>
+                    <path d="M72 79 C58 86 41 84 34 74 C27 64 32 52 43 48 C54 44 67 54 76 68 C78 72 77 76 72 79 Z"/>
+                </g>
+
+                <g fill="none" stroke="#ffffff" stroke-width="3"
+                    stroke-linecap="round" opacity="0.72">
+                    <path d="M75 31 C79 27 85 29 87 36"/>
+                    <path d="M113 68 C119 67 124 70 126 75"/>
+                    <path d="M99 103 C105 108 107 114 105 118"/>
+                    <path d="M52 108 C54 102 58 98 64 96"/>
+                    <path d="M40 62 C45 58 51 58 56 61"/>
+                </g>
+
+                <g fill="none" stroke="#d8789d" stroke-width="1.4"
+                    opacity="0.55" stroke-linecap="round">
+                    <path d="M80 72 C77 56 77 43 79 32"/>
+                    <path d="M88 78 C101 72 112 69 122 69"/>
+                    <path d="M87 88 C98 96 105 106 108 116"/>
+                    <path d="M70 88 C60 96 52 105 47 114"/>
+                    <path d="M68 76 C55 69 45 62 38 56"/>
+                </g>
+
+                <circle cx="79" cy="80" r="13" fill="url(#flowerCenter)"
+                    stroke="#c47a31" stroke-width="1.8"/>
+
+                <g stroke="#c17b31" stroke-width="1.6" stroke-linecap="round">
+                    <line x1="79" y1="80" x2="79" y2="63"/>
+                    <line x1="79" y1="80" x2="93" y2="69"/>
+                    <line x1="79" y1="80" x2="96" y2="82"/>
+                    <line x1="79" y1="80" x2="91" y2="94"/>
+                    <line x1="79" y1="80" x2="81" y2="98"/>
+                    <line x1="79" y1="80" x2="66" y2="94"/>
+                    <line x1="79" y1="80" x2="62" y2="82"/>
+                    <line x1="79" y1="80" x2="66" y2="68"/>
+                </g>
+
+                <g fill="#fff3a3">
+                    <circle cx="79" cy="63" r="2.7"/>
+                    <circle cx="93" cy="69" r="2.7"/>
+                    <circle cx="96" cy="82" r="2.7"/>
+                    <circle cx="91" cy="94" r="2.7"/>
+                    <circle cx="81" cy="98" r="2.7"/>
+                    <circle cx="66" cy="94" r="2.7"/>
+                    <circle cx="62" cy="82" r="2.7"/>
+                    <circle cx="66" cy="68" r="2.7"/>
+                </g>
+
+                <circle cx="75" cy="75" r="3" fill="#fff9d0" opacity="0.9"/>
+            </svg>
+
+            <span class="logo-letter">A</span>
+            <span class="logo-letter">R</span>
+            <span class="logo-letter">T</span>
+        </a>
+
+        <div class="ab-nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="artbook.html" class="is-active" aria-current="page">Artbook</a>
+        </div>
+
+        <button
+            type="button"
+            class="ab-toc-toggle"
+            id="ab-toc-toggle"
+            aria-expanded="false"
+            aria-controls="ab-toc"
+            aria-label="Open table of contents"
+        >
+            <i class="fa-solid fa-bars"></i>
+            <span>Contents</span>
+        </button>
+    </nav>
+</header>
+
+
+    <main class="ab-main">
+
+        <section class="ab-intro">
+            <span class="ab-eyebrow">THE WORLD OF MIKAZOART</span>
+            <h1>My <em>Artbook</em></h1>
+            <p>
+                A curated journey through imagination, colour, and visual storytelling.
+                Every page reveals another piece of my creative world.
+            </p>
+            <div class="ab-intro-decoration" aria-hidden="true">
+                <span></span><i class="fa-solid fa-asterisk"></i><span></span>
+            </div>
+        </section>
+
+        
+<section class="ab-layout" aria-label="Interactive artbook">
+
+    <aside class="ab-toc" id="ab-toc" aria-label="Table of contents">
+        <div class="ab-toc-header">
+            <span class="ab-eyebrow">EXPLORE THE COLLECTION</span>
+            <h2>Contents</h2>
+            <p>Choose a collection and turn the pages.</p>
+        </div>
+
+        <div class="ab-toc-list" id="ab-toc-list">
+            <p class="ab-loading">Preparing your artbook…</p>
+        </div>
+    </aside>
+
+    <section class="ab-reader" aria-label="Book reader">
+
+        <div class="ab-reader-heading">
+            <span id="ab-current-chapter">MIKAZOART COLLECTION</span>
+            <span id="ab-progress-label">ARTBOOK</span>
+        </div>
+
+        <div class="ab-book-shell" id="ab-book-stage">
+            <div class="ab-book-spread" id="ab-spread">
+
+                <section class="ab-page ab-art-page" aria-label="Artwork page">
+                    <div class="ab-page-inner">
+                        <div class="ab-art-frame" id="ab-art-frame">
+                            <div class="ab-placeholder">
+                                <i class="fa-regular fa-image"></i>
+                                <p>Your artwork will appear here.</p>
+                            </div>
+                        </div>
+
+                        <div class="ab-art-caption">
+                            <span id="ab-art-index">COLLECTION</span>
+                            <span id="ab-art-collection">MIKAZOART</span>
+                        </div>
+                    </div>
+                    <span class="ab-page-number ab-left-number" id="ab-left-page-number">01</span>
+                </section>
+
+                <section class="ab-page ab-story-page" aria-label="Artwork details">
+                    <div class="ab-page-inner">
+                        <div class="ab-story-content" id="ab-story-content">
+                            <span class="ab-story-kicker">A NOTE FROM THE ARTIST</span>
+                            <h2>Every image begins with an idea.</h2>
+                            <p>Discover the artwork and its story.</p>
+                        </div>
+                    </div>
+                    <span class="ab-page-number ab-right-number" id="ab-page-number">02</span>
+                </section>
+
+            </div>
+
+            <button
+                type="button"
+                class="ab-page-hit ab-page-hit-left"
+                id="ab-click-prev"
+                aria-label="Previous page"
+                title="Previous page">
+            </button>
+
+            <button
+                type="button"
+                class="ab-page-hit ab-page-hit-right"
+                id="ab-click-next"
+                aria-label="Next page"
+                title="Next page">
+            </button>
+
+            <div class="ab-book-spine" aria-hidden="true"></div>
+        </div>
+
+        <div class="ab-version-bar" id="ab-version-bar" hidden>
+            <span class="ab-version-label">ARTWORK VERSIONS</span>
+
+            <div class="ab-version-controls">
+                <button type="button" id="ab-version-prev" aria-label="Previous version">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <span id="ab-version-count">01 / 01</span>
+
+                <button type="button" id="ab-version-next" aria-label="Next version">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="ab-reader-bottom">
+            <span class="ab-bottom-hint">
+                <i class="fa-regular fa-hand-pointer"></i>
+                Click the left or right side of the book
+            </span>
+
+            <span class="ab-page-counter">
+                <span id="ab-page-status-number">01</span>
+                <span>/</span>
+                <span id="ab-total-pages">01</span>
+            </span>
+        </div>
+
+        <p class="ab-reader-message" id="ab-reader-message" role="status"></p>
+    </section>
+
+</section>
+
+        <section class="ab-endnote">
+            <span class="ab-eyebrow">ENDLESS IMAGINATION</span>
+            <h2>Every collection holds a different story.</h2>
+            <p>
+                Thank you for exploring my creative world.
+                There is always another idea waiting to become art.
+            </p>
+            <a href="gallery.html" class="ab-gallery-link">
+                Discover the full gallery
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="ab-footer">
+        <a href="index.html" class="ab-footer-brand">MIKAZOART</a>
+        <span>Art, imagination &amp; visual storytelling.</span>
+        <span>© <span id="ab-year"></span> MIKAZOART</span>
+    </footer>
+
+    <!-- Load the original artwork data first. -->
+    <script src="artworks.js"></script>
+    <script src="artbook.js"></script>
+</body>
+</html>

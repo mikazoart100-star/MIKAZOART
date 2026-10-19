@@ -1,0 +1,2319 @@
+
+/* =========================================================
+   MIKAZOART ARTBOOK — PASTEL EDITION
+   Isolated styles: artbook page only
+   ========================================================= */
+
+.artbook-page {
+    --ab-cream: #fffaf5;
+    --ab-paper: #fffdfb;
+    --ab-pink: #f6b8c8;
+    --ab-pink-light: #fde3ea;
+    --ab-pink-dark: #d98ca4;
+    --ab-lavender: #dcd2f4;
+    --ab-peach: #ffd8bd;
+    --ab-blue: #cfe8f7;
+    --ab-green: #d9efd9;
+    --ab-ink: #403847;
+    --ab-heading: #302936;
+    --ab-muted: #746b78;
+    --ab-border: #eadfe5;
+    --ab-shadow: 0 18px 48px rgba(94, 66, 83, 0.10);
+
+    background:
+        radial-gradient(ellipse at 8% 8%, rgba(246,184,200,.20), transparent 32rem),
+        radial-gradient(ellipse at 92% 30%, rgba(220,210,244,.22), transparent 30rem),
+        var(--ab-cream);
+    color: var(--ab-ink);
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.artbook-page *,
+.artbook-page *::before,
+.artbook-page *::after {
+    box-sizing: border-box;
+}
+
+.artbook-page button,
+.artbook-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.artbook-page button {
+    font: inherit;
+}
+
+.ab-header {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    background: rgba(255, 250, 245, .94);
+    border-bottom: 1px solid rgba(217, 140, 164, .20);
+    backdrop-filter: blur(14px);
+}
+
+.ab-navbar {
+    width: min(1440px, 100%);
+    min-height: 82px;
+    padding: 14px clamp(18px, 5vw, 72px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+}
+
+.ab-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    color: var(--ab-heading);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: .11em;
+}
+
+.ab-brand-flower {
+    color: var(--ab-pink-dark);
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0 1px;
+}
+
+.ab-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3vw, 38px);
+}
+
+.ab-nav-links a {
+    color: var(--ab-muted);
+    text-decoration: none;
+    font-size: .91rem;
+    font-weight: 600;
+    padding: 10px 0;
+    position: relative;
+    transition: color .2s ease;
+}
+
+.ab-nav-links a:hover,
+.ab-nav-links a.is-active {
+    color: var(--ab-pink-dark);
+}
+
+.ab-nav-links a.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 99px;
+    background: var(--ab-pink-dark);
+}
+
+.ab-toc-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid var(--ab-border);
+    background: rgba(255,255,255,.78);
+    color: var(--ab-ink);
+    padding: 11px 15px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: .88rem;
+    font-weight: 650;
+    transition: background .2s, border-color .2s, transform .2s;
+}
+
+.ab-toc-toggle:hover {
+    background: var(--ab-pink-light);
+    border-color: var(--ab-pink);
+    transform: translateY(-1px);
+}
+
+.ab-main {
+    width: min(1440px, 100%);
+    margin: 0 auto;
+    padding: 0 clamp(18px, 4vw, 56px);
+}
+
+.ab-intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(58px, 8vw, 104px) 0 clamp(42px, 6vw, 72px);
+    text-align: center;
+}
+
+.ab-eyebrow {
+    display: inline-block;
+    color: var(--ab-pink-dark);
+    font-size: .72rem;
+    font-weight: 750;
+    letter-spacing: .19em;
+    line-height: 1.6;
+}
+
+.ab-intro h1 {
+    margin: 12px 0 16px;
+    color: var(--ab-heading);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 500;
+    letter-spacing: -.045em;
+    line-height: 1.04;
+}
+
+.ab-intro h1 em {
+    color: var(--ab-pink-dark);
+    font-weight: 500;
+}
+
+.ab-intro > p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--ab-muted);
+    font-size: clamp(.95rem, 1.6vw, 1.08rem);
+    line-height: 1.9;
+}
+
+.ab-intro-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 28px;
+    color: var(--ab-pink-dark);
+    font-size: .85rem;
+}
+
+.ab-intro-decoration span {
+    width: 62px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ab-pink));
+}
+
+.ab-intro-decoration span:last-child {
+    transform: rotate(180deg);
+}
+
+.ab-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 270px) minmax(0, 1fr);
+    align-items: start;
+    gap: clamp(22px, 3.5vw, 48px);
+    padding-bottom: clamp(64px, 8vw, 104px);
+}
+
+/* Table of contents */
+
+.ab-toc {
+    position: sticky;
+    top: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(234, 223, 229, .95);
+    border-radius: 24px;
+    background: rgba(255,255,255,.77);
+    box-shadow: 0 12px 36px rgba(94,66,83,.055);
+}
+
+.ab-toc-header {
+    padding: 25px 22px 20px;
+    background: linear-gradient(145deg, #fff7f8, #fffdfb 75%);
+    border-bottom: 1px solid var(--ab-border);
+}
+
+.ab-toc-header h2 {
+    margin: 8px 0 6px;
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ab-heading);
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.ab-toc-header p {
+    margin: 0;
+    color: var(--ab-muted);
+    font-size: .85rem;
+    line-height: 1.65;
+}
+
+.ab-toc-list {
+    display: grid;
+    gap: 7px;
+    padding: 14px 12px;
+}
+
+.ab-toc-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    min-width: 0;
+    padding: 13px 11px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    background: transparent;
+    color: var(--ab-ink);
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, transform .2s;
+}
+
+.ab-toc-item:hover {
+    background: #fff7f8;
+    border-color: #f3dce5;
+    transform: translateX(2px);
+}
+
+.ab-toc-item.is-active {
+    background: linear-gradient(110deg, #fdeaf0, #fff7f8);
+    border-color: #f1c9d7;
+}
+
+.ab-toc-number {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #f8e4eb;
+    color: #b86f8b;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+}
+
+.ab-toc-item:nth-child(2) .ab-toc-number {
+    background: #f0eafb;
+    color: #8e7db8;
+}
+
+.ab-toc-item:nth-child(3) .ab-toc-number {
+    background: #eaf4fb;
+    color: #6e9ab5;
+}
+
+.ab-toc-item:nth-child(4) .ab-toc-number {
+    background: #eaf5e9;
+    color: #719b70;
+}
+
+.ab-toc-copy {
+    display: grid;
+    gap: 4px;
+    min-width: 0;
+}
+
+.ab-toc-copy strong {
+    overflow-wrap: anywhere;
+    font-size: .91rem;
+    font-weight: 700;
+}
+
+.ab-toc-copy small {
+    color: var(--ab-muted);
+    font-size: .73rem;
+    line-height: 1.5;
+}
+
+.ab-toc-footer {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--ab-border);
+    color: var(--ab-muted);
+    font-size: .77rem;
+    line-height: 1.5;
+}
+
+.ab-toc-footer i {
+    color: var(--ab-pink-dark);
+}
+
+.ab-loading,
+.ab-error {
+    padding: 12px;
+    color: var(--ab-muted);
+    font-size: .85rem;
+    line-height: 1.7;
+}
+
+/* Reader */
+
+.ab-reader {
+    min-width: 0;
+}
+
+.ab-reader-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 2px 15px;
+    color: var(--ab-muted);
+    font-size: .7rem;
+    font-weight: 750;
+    letter-spacing: .13em;
+}
+
+.ab-reader-heading span:first-child {
+    color: var(--ab-pink-dark);
+}
+
+.ab-book-shell {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    border-radius: 10px 18px 18px 10px;
+    padding: 12px;
+    background: linear-gradient(130deg, #f6dfe6, #fff4f0 48%, #e9e0f5);
+    box-shadow: var(--ab-shadow);
+}
+
+.ab-book-spread {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: clamp(440px, 55vw, 660px);
+    overflow: hidden;
+    border-radius: 5px 12px 12px 5px;
+    background: var(--ab-paper);
+    box-shadow: 0 4px 15px rgba(68,48,59,.10);
+}
+
+.ab-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: clamp(20px, 3vw, 39px);
+    overflow: hidden;
+    background-color: var(--ab-paper);
+    background-image:
+        radial-gradient(ellipse at 12% 8%, rgba(246,184,200,.09), transparent 55%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(123,98,110,.018) 0,
+            rgba(123,98,110,.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+}
+
+.ab-art-page {
+    border-right: 1px solid rgba(215,199,207,.85);
+    box-shadow: inset -9px 0 14px -15px rgba(45,31,40,.65);
+}
+
+.ab-story-page {
+    box-shadow: inset 9px 0 14px -15px rgba(45,31,40,.55);
+}
+
+.ab-page-inner {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.ab-art-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 240px;
+    overflow: hidden;
+    border: 1px solid #eee4e8;
+    border-radius: 5px;
+    background:
+        linear-gradient(145deg, rgba(246,184,200,.10), transparent 45%),
+        #fff;
+}
+
+.ab-art-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    animation: ab-image-in .35s ease both;
+}
+
+.ab-placeholder {
+    padding: 30px 15px;
+    text-align: center;
+    color: #a99aa5;
+}
+
+.ab-placeholder i {
+    font-size: 2.1rem;
+    color: #d9b2c1;
+}
+
+.ab-placeholder p {
+    margin: 12px 0 0;
+    font-size: .83rem;
+    line-height: 1.6;
+}
+
+.ab-art-caption {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 15px;
+    color: var(--ab-muted);
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .09em;
+}
+
+.ab-art-caption span:last-child {
+    text-align: right;
+}
+
+.ab-page-number {
+    margin-top: 20px;
+    color: #b5a6b0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .8rem;
+}
+
+.ab-left-number {
+    text-align: left;
+}
+
+.ab-right-number {
+    text-align: right;
+}
+
+.ab-story-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px 0 18px;
+}
+
+.ab-story-kicker {
+    color: var(--ab-pink-dark);
+    font-size: .65rem;
+    font-weight: 750;
+    letter-spacing: .15em;
+    line-height: 1.8;
+}
+
+.ab-story-content h2 {
+    max-width: 100%;
+    margin: 19px 0 13px;
+    color: var(--ab-heading);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.65rem);
+    font-weight: 500;
+    line-height: 1.17;
+    letter-spacing: -.025em;
+    overflow-wrap: anywhere;
+}
+
+.ab-story-category {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0 20px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: #f9eaf0;
+    color: #a96681;
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+.ab-story-description {
+    margin: 0;
+    color: var(--ab-muted);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(.92rem, 1.3vw, 1.05rem);
+    line-height: 1.95;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.ab-story-meta {
+    width: 100%;
+    margin-top: 26px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ab-border);
+    color: #a08e9b;
+    font-size: .63rem;
+    font-weight: 750;
+    letter-spacing: .1em;
+    line-height: 1.7;
+}
+
+.ab-chapter-mark {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(255,255,255,.92), transparent 45%),
+        linear-gradient(145deg, #fde8ef, #f6edf8 55%, #e9f4fa);
+    color: #9f7990;
+    text-align: center;
+}
+
+.ab-chapter-mark-number {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(4rem, 9vw, 7rem);
+    line-height: 1;
+    color: rgba(174,117,148,.68);
+}
+
+.ab-chapter-mark-line {
+    width: 54px;
+    height: 1px;
+    background: #d4a6ba;
+}
+
+.ab-chapter-mark i {
+    font-size: 1.2rem;
+    color: #d28ca8;
+}
+
+.ab-chapter-mark-label {
+    padding: 0 12px;
+    font-size: .65rem;
+    font-weight: 750;
+    letter-spacing: .13em;
+}
+
+.ab-story-description.ab-chapter-description {
+    font-size: 1.05rem;
+}
+
+/* Click zones over the book */
+
+.ab-page-hit {
+    position: absolute;
+    z-index: 5;
+    top: 12px;
+    bottom: 12px;
+    width: calc(50% - 12px);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.ab-page-hit-left {
+    left: 12px;
+}
+
+.ab-page-hit-right {
+    right: 12px;
+}
+
+.ab-page-hit:focus-visible {
+    outline: 2px solid var(--ab-pink-dark);
+    outline-offset: -5px;
+}
+
+.ab-book-spine {
+    position: absolute;
+    z-index: 4;
+    top: 12px;
+    bottom: 12px;
+    left: 50%;
+    width: 16px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        rgba(92,66,81,.09),
+        rgba(255,255,255,.55) 48%,
+        rgba(92,66,81,.08)
+    );
+}
+
+/* Keep the content visible while making the page zones clickable. */
+
+.ab-page-hit {
+    opacity: 0;
+}
+
+.ab-page-hit-left:hover {
+    background: linear-gradient(90deg, rgba(246,184,200,.045), transparent);
+    opacity: 1;
+}
+
+.ab-page-hit-right:hover {
+    background: linear-gradient(270deg, rgba(220,210,244,.06), transparent);
+    opacity: 1;
+}
+
+/* Version controls */
+
+.ab-version-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 17px;
+    padding: 12px 16px;
+    border: 1px solid var(--ab-border);
+    border-radius: 16px;
+    background: rgba(255,255,255,.76);
+}
+
+.ab-version-bar[hidden] {
+    display: none;
+}
+
+.ab-version-label {
+    color: var(--ab-muted);
+    font-size: .68rem;
+    font-weight: 750;
+    letter-spacing: .12em;
+}
+
+.ab-version-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ab-version-controls button {
+    display: grid;
+    place-items: center;
+    width: 31px;
+    height: 31px;
+    border: 1px solid var(--ab-border);
+    border-radius: 50%;
+    background: white;
+    color: var(--ab-ink);
+    cursor: pointer;
+}
+
+.ab-version-controls button:hover:not(:disabled) {
+    background: var(--ab-pink-light);
+}
+
+.ab-version-controls button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+#ab-version-count {
+    min-width: 48px;
+    color: var(--ab-muted);
+    font-size: .75rem;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
+.ab-reader-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 17px;
+    color: var(--ab-muted);
+    font-size: .77rem;
+}
+
+.ab-bottom-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ab-bottom-hint i {
+    color: var(--ab-pink-dark);
+}
+
+.ab-page-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    color: var(--ab-muted);
+    font-size: .8rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.ab-page-counter span:first-child {
+    color: var(--ab-heading);
+}
+
+.ab-reader-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.ab-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 43px;
+    padding: 10px 17px;
+    border: 1px solid var(--ab-border);
+    border-radius: 999px;
+    background: rgba(255,255,255,.82);
+    color: var(--ab-ink);
+    font-size: .82rem;
+    font-weight: 650;
+    cursor: pointer;
+    transition: transform .2s, background .2s, border-color .2s;
+}
+
+.ab-action-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: var(--ab-pink);
+    background: var(--ab-pink-light);
+}
+
+.ab-action-button:disabled {
+    opacity: .38;
+    cursor: not-allowed;
+}
+
+.ab-reader-message {
+    min-height: 1.2em;
+    margin: 10px 0 0;
+    color: #a46b84;
+    font-size: .78rem;
+    line-height: 1.6;
+}
+
+/* Ending section and footer */
+
+.ab-endnote {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(35px, 5vw, 60px) 24px;
+    border-top: 1px solid var(--ab-border);
+    text-align: center;
+}
+
+.ab-endnote h2 {
+    margin: 13px 0;
+    color: var(--ab-heading);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.ab-endnote p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--ab-muted);
+    font-size: .96rem;
+    line-height: 1.9;
+}
+
+.ab-gallery-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 23px;
+    padding: 12px 19px;
+    border: 1px solid #edc6d4;
+    border-radius: 999px;
+    background: linear-gradient(110deg, #fde8ef, #fff5f6);
+    color: #9f617a;
+    text-decoration: none;
+    font-size: .85rem;
+    font-weight: 700;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.ab-gallery-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217,140,164,.18);
+}
+
+.ab-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    padding: 24px clamp(18px, 5vw, 72px);
+    border-top: 1px solid var(--ab-border);
+    background: rgba(255,255,255,.55);
+    color: var(--ab-muted);
+    font-size: .78rem;
+}
+
+.ab-footer-brand {
+    color: var(--ab-heading);
+    font-size: .88rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-decoration: none;
+}
+
+/* Animations */
+
+@keyframes ab-image-in {
+    from { opacity: .45; transform: scale(.99); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ab-book-spread.is-turning {
+    animation: ab-page-turn .32s ease;
+}
+
+@keyframes ab-page-turn {
+    0% { opacity: .78; transform: perspective(1400px) rotateY(0); }
+    45% { opacity: .88; transform: perspective(1400px) rotateY(-2deg); }
+    100% { opacity: 1; transform: perspective(1400px) rotateY(0); }
+}
+
+/* Responsive layout */
+
+@media (max-width: 1000px) {
+    .ab-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .ab-toc {
+        position: relative;
+        top: auto;
+        display: none;
+        order: 0;
+    }
+
+    .ab-toc.is-open {
+        display: block;
+    }
+
+    .ab-reader {
+        order: 1;
+    }
+
+    .ab-book-spread {
+        min-height: clamp(440px, 66vw, 640px);
+    }
+}
+
+@media (max-width: 650px) {
+    .ab-navbar {
+        min-height: 70px;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .ab-brand {
+        font-size: .95rem;
+    }
+
+    .ab-nav-links {
+        gap: 13px;
+    }
+
+    .ab-nav-links a {
+        font-size: .78rem;
+    }
+
+    .ab-toc-toggle {
+        gap: 0;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    .ab-toc-toggle span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
+
+    .ab-intro {
+        padding-top: 55px;
+    }
+
+    .ab-book-shell {
+        padding: 7px;
+    }
+
+    .ab-book-spread {
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+        border-radius: 7px;
+    }
+
+    .ab-page {
+        padding: 22px;
+    }
+
+    .ab-art-page {
+        min-height: 340px;
+        border-right: 0;
+        border-bottom: 1px solid var(--ab-border);
+    }
+
+    .ab-art-frame {
+        min-height: 245px;
+    }
+
+    .ab-story-page {
+        min-height: 300px;
+    }
+
+    .ab-story-content h2 {
+        font-size: 2rem;
+    }
+
+    .ab-story-description {
+        font-size: .98rem;
+    }
+
+    .ab-book-spine {
+        display: none;
+    }
+
+    .ab-page-hit {
+        top: 7px;
+        bottom: auto;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255,255,255,.84);
+        border: 1px solid var(--ab-border);
+        opacity: 1;
+    }
+
+    .ab-page-hit-left {
+        left: 13px;
+    }
+
+    .ab-page-hit-right {
+        right: 13px;
+    }
+
+    .ab-page-hit-left::after,
+    .ab-page-hit-right::after {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: var(--ab-pink-dark);
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: .85rem;
+    }
+
+    .ab-page-hit-left::after {
+        content: "\f053";
+    }
+
+    .ab-page-hit-right::after {
+        content: "\f054";
+    }
+
+    .ab-reader-heading {
+        font-size: .61rem;
+        letter-spacing: .08em;
+    }
+
+    .ab-reader-bottom {
+        align-items: flex-start;
+    }
+
+    .ab-bottom-hint {
+        max-width: 72%;
+        line-height: 1.6;
+    }
+
+    .ab-footer {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 390px) {
+    .ab-nav-links {
+        gap: 9px;
+    }
+
+    .ab-nav-links a {
+        font-size: .72rem;
+    }
+
+    .ab-brand {
+        letter-spacing: .04em;
+    }
+
+    .ab-page {
+        padding: 17px;
+    }
+
+    .ab-art-page {
+        min-height: 300px;
+    }
+
+    .ab-art-frame {
+        min-height: 215px;
+    }
+
+    .ab-action-button {
+        padding: 10px 13px;
+        font-size: .77rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .artbook-page *,
+    .artbook-page *::before,
+    .artbook-page *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =====================================================
+   MIKAZOART ARTBOOK — CENTERED BOOK LAYOUT
+   Append this section at the end of artbook.css
+   ===================================================== */
+
+.artbook-page .ab-header {
+    width: 100%;
+    background: rgba(255, 250, 245, 0.97);
+}
+
+.artbook-page .ab-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 84px;
+    gap: 28px;
+}
+
+/* Make the complete logo word visible. */
+
+.artbook-page .ab-brand {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    width: auto !important;
+    max-width: none !important;
+    height: auto;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    white-space: nowrap;
+    color: #302936 !important;
+    text-decoration: none;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+}
+
+.artbook-page .ab-brand-word {
+    display: inline !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #302936 !important;
+}
+
+.artbook-page .ab-brand-flower {
+    display: inline-block !important;
+    margin: 0 2px;
+    color: #d98ca4 !important;
+    font-size: 1.45em;
+    line-height: 1;
+}
+
+/* Keep Home, Gallery and Artbook visible. */
+
+.artbook-page .ab-nav-links {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(18px, 3vw, 38px);
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.artbook-page .ab-nav-links a {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #746b78;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.artbook-page .ab-nav-links a:hover,
+.artbook-page .ab-nav-links a.is-active {
+    color: #c77996;
+}
+
+/* The top-right Contents toggle is no longer needed. */
+
+.artbook-page .ab-toc-toggle {
+    display: none !important;
+}
+
+/* One column: Contents first, book underneath. */
+
+.artbook-page .ab-main {
+    width: 100%;
+    max-width: 1600px;
+    padding-inline: clamp(16px, 4vw, 64px);
+}
+
+.artbook-page .ab-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding-bottom: clamp(65px, 8vw, 110px);
+}
+
+.artbook-page .ab-toc {
+    display: block !important;
+    position: static;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid #eedde5;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.78);
+    box-shadow: 0 12px 35px rgba(94, 66, 83, 0.06);
+}
+
+.artbook-page .ab-toc-header {
+    padding: 24px 20px 12px;
+    border: 0;
+    background: transparent;
+    text-align: center;
+}
+
+.artbook-page .ab-toc-header h2 {
+    margin: 6px 0;
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+.artbook-page .ab-toc-header p {
+    margin: 0 auto;
+    max-width: 480px;
+}
+
+.artbook-page .ab-toc-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 12px;
+    padding: 18px 22px 22px;
+}
+
+.artbook-page .ab-toc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 120px;
+    padding: 17px 10px;
+    border: 1px solid #eee2e8;
+    border-radius: 18px;
+    background: #fffdfc;
+    text-align: center;
+    transform: none;
+}
+
+.artbook-page .ab-toc-item:hover {
+    border-color: #e9bacb;
+    background: #fff5f8;
+    transform: translateY(-2px);
+}
+
+.artbook-page .ab-toc-item.is-active {
+    border-color: #dfa3b9;
+    background: linear-gradient(145deg, #fde7ee, #fff9fa);
+    box-shadow: 0 5px 15px rgba(217, 140, 164, 0.10);
+}
+
+.artbook-page .ab-toc-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+
+.artbook-page .ab-toc-copy {
+    justify-items: center;
+}
+
+.artbook-page .ab-toc-copy strong {
+    font-size: 0.94rem;
+}
+
+.artbook-page .ab-toc-copy small {
+    text-align: center;
+}
+
+.artbook-page .ab-toc-footer {
+    display: none;
+}
+
+/* Highlight the book as the primary feature. */
+
+.artbook-page .ab-reader {
+    width: 100%;
+    max-width: 1320px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.artbook-page .ab-reader-heading {
+    margin: 0 4px 16px;
+    font-size: 0.72rem;
+}
+
+.artbook-page .ab-book-shell {
+    width: 100%;
+    padding: clamp(10px, 1.5vw, 18px);
+    border-radius: 12px 22px 22px 12px;
+    background: linear-gradient(135deg, #f6dfe8, #fff4ef 48%, #e9e0f5);
+    box-shadow:
+        0 28px 75px rgba(94, 66, 83, 0.15),
+        0 5px 18px rgba(94, 66, 83, 0.06);
+}
+
+.artbook-page .ab-book-spread {
+    min-height: clamp(550px, 60vw, 820px);
+    border-radius: 6px 15px 15px 6px;
+}
+
+.artbook-page .ab-page {
+    padding: clamp(24px, 3.2vw, 48px);
+}
+
+.artbook-page .ab-art-frame {
+    min-height: 360px;
+}
+
+.artbook-page .ab-story-content h2 {
+    font-size: clamp(2rem, 3.4vw, 3.4rem);
+    line-height: 1.13;
+}
+
+.artbook-page .ab-story-description {
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+    line-height: 2;
+}
+
+/* Click zones replace visible Previous / Next buttons. */
+
+.artbook-page .ab-reader-actions {
+    display: none !important;
+}
+
+.artbook-page .ab-page-hit {
+    display: block;
+    z-index: 6;
+    cursor: pointer;
+}
+
+.artbook-page .ab-page-hit:disabled {
+    cursor: default;
+}
+
+.artbook-page .ab-reader-bottom {
+    margin-top: 20px;
+}
+
+/* Slightly larger typography for the ending section. */
+
+.artbook-page .ab-endnote {
+    max-width: 850px;
+    padding-top: 55px;
+    padding-bottom: 70px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .artbook-page .ab-navbar {
+        gap: 16px;
+    }
+
+    .artbook-page .ab-toc-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .artbook-page .ab-book-spread {
+        min-height: 580px;
+    }
+
+    .artbook-page .ab-page {
+        padding: 24px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+    .artbook-page .ab-navbar {
+        min-height: 70px;
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+    }
+
+    .artbook-page .ab-brand {
+        font-size: 1rem;
+    }
+
+    .artbook-page .ab-nav-links {
+        width: 100%;
+        gap: clamp(20px, 7vw, 36px);
+    }
+
+    .artbook-page .ab-nav-links a {
+        font-size: 0.83rem;
+    }
+
+    .artbook-page .ab-toc-list {
+        gap: 8px;
+        padding: 14px;
+    }
+
+    .artbook-page .ab-toc-item {
+        min-height: 105px;
+        padding: 12px 7px;
+    }
+
+    .artbook-page .ab-book-shell {
+        padding: 7px;
+    }
+
+    .artbook-page .ab-book-spread {
+        min-height: 0;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .artbook-page .ab-art-page {
+        min-height: 380px;
+        border-right: 0;
+        border-bottom: 1px solid #eadfe5;
+    }
+
+    .artbook-page .ab-art-frame {
+        min-height: 280px;
+    }
+
+    .artbook-page .ab-story-page {
+        min-height: 340px;
+    }
+
+    .artbook-page .ab-story-content h2 {
+        font-size: 2.15rem;
+    }
+
+    .artbook-page .ab-page-hit {
+        top: 15px;
+        bottom: auto;
+        width: 42px;
+        height: 42px;
+        border: 1px solid #eadfe5;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        opacity: 1;
+    }
+
+    .artbook-page .ab-page-hit-left {
+        left: 15px;
+    }
+
+    .artbook-page .ab-page-hit-right {
+        right: 15px;
+    }
+
+    .artbook-page .ab-page-hit-left::after,
+    .artbook-page .ab-page-hit-right::after {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: #c77996;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    .artbook-page .ab-page-hit-left::after {
+        content: "\f053";
+    }
+
+    .artbook-page .ab-page-hit-right::after {
+        content: "\f054";
+    }
+
+    .artbook-page .ab-reader-bottom {
+        gap: 12px;
+        font-size: 0.72rem;
+    }
+}
+
+/* =========================================
+   ARTBOOK — ORIGINAL MIKAZOART LOGO
+   ========================================= */
+
+.artbook-page .ab-navbar .ab-brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 0;
+    position: relative;
+
+    color: #403847;
+    text-decoration: none;
+    line-height: 1;
+    white-space: nowrap;
+
+    filter: drop-shadow(0 2px 4px rgba(64, 56, 71, 0.12));
+}
+
+.artbook-page .ab-navbar .ab-brand .logo-letter {
+    color: #403847;
+    font-family: "Lucida Calligraphy", "URW Chancery L",
+                 "Brush Script MT", cursive;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    line-height: 1;
+    text-shadow: none;
+    -webkit-text-stroke: 0;
+}
+
+.artbook-page .ab-navbar .ab-brand .logo-letter::after {
+    display: none;
+}
+
+.artbook-page .ab-navbar .ab-brand .logo-sakura {
+    display: block;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    margin: 0 2px;
+    overflow: visible;
+    animation: abLogoSakuraLife 4.5s ease-in-out infinite;
+}
+
+@keyframes abLogoSakuraLife {
+    0%, 100% {
+        transform: rotate(-1.5deg) scale(1);
+    }
+    50% {
+        transform: rotate(1.5deg) scale(1.025);
+    }
+}
+
+.artbook-page .ab-navbar .ab-brand:hover .logo-letter {
+    color: #d98ca4;
+    transform: translateY(-1px);
+}
+
+.artbook-page .ab-navbar .ab-brand:hover .logo-sakura {
+    transform: scale(1.08) rotate(4deg);
+}
+
+@media (max-width: 760px) {
+    .artbook-page .ab-navbar .ab-brand .logo-letter {
+        font-size: 24px;
+    }
+
+    .artbook-page .ab-navbar .ab-brand .logo-sakura {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+/* =========================================
+   ARTBOOK — DARK & PINK NAVBAR THEME
+   ========================================= */
+
+/* Logo MIKAZOART */
+.artbook-page .ab-navbar .ab-brand .logo-letter {
+    color: #302936 !important;
+    font-family: "Lucida Calligraphy", "URW Chancery L",
+                 "Brush Script MT", cursive;
+    font-weight: 700;
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 !important;
+}
+
+/* Huruf Z, A, R, T berwarna pink */
+.artbook-page .ab-navbar .ab-brand .logo-letter:nth-of-type(n+5) {
+    color: #d98ca4 !important;
+}
+
+/* Navbar Home, Gallery, Artbook */
+.artbook-page .ab-navbar .ab-nav-links a {
+    color: #302936 !important;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+/* Pink saat diarahkan mouse */
+.artbook-page .ab-navbar .ab-nav-links a:hover {
+    color: #d98ca4 !important;
+}
+
+/* Halaman yang sedang aktif */
+.artbook-page .ab-navbar .ab-nav-links a.is-active {
+    color: #d98ca4 !important;
+    font-weight: 700;
+}
+
+/* Garis indikator menu aktif */
+.artbook-page .ab-navbar .ab-nav-links a.is-active::after {
+    background-color: #d98ca4;
+}
+
+/* Tombol Contents jika masih digunakan */
+.artbook-page .ab-navbar .ab-toc-toggle {
+    color: #302936;
+    border-color: #e8b4c5;
+}
+
+.artbook-page .ab-navbar .ab-toc-toggle:hover {
+    color: #d98ca4;
+    border-color: #d98ca4;
+}
+
+/* FORCE ARTBOOK NAVBAR COLORS */
+body.artbook-page header.ab-header nav.ab-navbar a.brand-logo .logo-letter {
+    color: #302936 !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: #302936 !important;
+}
+
+/* Logo: MIKA hitam, Z dan ART pink */
+body.artbook-page header.ab-header nav.ab-navbar a.brand-logo .logo-letter:nth-child(n+5) {
+    color: #d98ca4 !important;
+    -webkit-text-fill-color: #d98ca4 !important;
+}
+
+/* Home, Gallery, Artbook */
+body.artbook-page header.ab-header nav.ab-navbar .ab-nav-links a,
+body.artbook-page header.ab-header nav.ab-navbar .ab-nav-links a:visited {
+    color: #302936 !important;
+    -webkit-text-fill-color: #302936 !important;
+    text-shadow: none !important;
+}
+
+/* Menu aktif dan hover menjadi pink */
+body.artbook-page header.ab-header nav.ab-navbar .ab-nav-links a.is-active,
+body.artbook-page header.ab-header nav.ab-navbar .ab-nav-links a:hover {
+    color: #d98ca4 !important;
+    -webkit-text-fill-color: #d98ca4 !important;
+}
+
+/* Pastikan logo tidak transparan */
+body.artbook-page header.ab-header nav.ab-navbar a.brand-logo {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ==========================================
+   MIKAZOART ARTBOOK — PREMIUM EDITORIAL DESIGN
+   ========================================== */
+
+.artbook-page {
+    --ab-ink: #302936;
+    --ab-pink: #d98ca4;
+    --ab-soft-pink: #fde3ea;
+    --ab-cream: #fffaf5;
+    --ab-lavender: #e8e0f5;
+    --ab-muted: #817583;
+
+    background:
+        radial-gradient(ellipse at 8% 18%, rgba(253, 227, 234, .72), transparent 32%),
+        radial-gradient(ellipse at 92% 42%, rgba(220, 210, 244, .55), transparent 32%),
+        radial-gradient(ellipse at 50% 95%, rgba(255, 216, 189, .36), transparent 34%),
+        var(--ab-cream);
+    color: var(--ab-ink);
+}
+
+/* Decorative atmosphere */
+.artbook-page .ab-main {
+    position: relative;
+    isolation: isolate;
+}
+
+.artbook-page .ab-main::before,
+.artbook-page .ab-main::after {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    color: rgba(217, 140, 164, .20);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.artbook-page .ab-main::before {
+    content: "✿";
+    top: 250px;
+    left: 2%;
+    font-size: clamp(80px, 12vw, 170px);
+    transform: rotate(-18deg);
+}
+
+.artbook-page .ab-main::after {
+    content: "✧";
+    top: 650px;
+    right: 4%;
+    font-size: clamp(70px, 10vw, 130px);
+    color: rgba(160, 135, 190, .22);
+}
+
+/* Intro section */
+.artbook-page .ab-intro {
+    position: relative;
+    padding: 74px 24px 54px;
+    text-align: center;
+}
+
+.artbook-page .ab-intro .ab-eyebrow {
+    display: inline-block;
+    padding: 9px 17px;
+    border: 1px solid rgba(217, 140, 164, .45);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .62);
+    color: #b66d88;
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 800;
+    box-shadow: 0 5px 20px rgba(104, 70, 88, .05);
+}
+
+.artbook-page .ab-intro h1 {
+    margin: 22px 0 14px;
+    color: var(--ab-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 500;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.artbook-page .ab-intro h1 em {
+    color: var(--ab-pink);
+    font-weight: 500;
+    text-shadow: 0 5px 24px rgba(217, 140, 164, .18);
+}
+
+.artbook-page .ab-intro > p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--ab-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.artbook-page .ab-intro-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 28px;
+    color: var(--ab-pink);
+}
+
+.artbook-page .ab-intro-decoration span {
+    width: 54px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--ab-pink));
+}
+
+.artbook-page .ab-intro-decoration span:last-child {
+    transform: rotate(180deg);
+}
+
+/* Overall reader layout */
+.artbook-page .ab-layout {
+    width: min(1480px, calc(100% - 48px));
+    margin: 0 auto;
+    gap: 34px;
+    align-items: start;
+}
+
+/* Contents panel */
+.artbook-page .ab-toc {
+    padding: 27px 22px;
+    border: 1px solid rgba(217, 140, 164, .25);
+    border-radius: 20px;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.94), rgba(255,250,245,.88));
+    box-shadow:
+        0 18px 45px rgba(76, 54, 70, .07),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.artbook-page .ab-toc-header h2 {
+    margin: 12px 0 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--ab-ink);
+}
+
+.artbook-page .ab-toc-header p {
+    color: var(--ab-muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.artbook-page .ab-toc-list {
+    margin-top: 22px;
+}
+
+.artbook-page .ab-toc-list button,
+.artbook-page .ab-toc-list a {
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease,
+        border-color .25s ease;
+}
+
+.artbook-page .ab-toc-list button:hover,
+.artbook-page .ab-toc-list a:hover {
+    transform: translateX(4px);
+}
+
+/* Reader heading */
+.artbook-page .ab-reader-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 0 0 17px;
+    padding: 0 5px 13px;
+    border-bottom: 1px solid rgba(217, 140, 164, .28);
+    color: var(--ab-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+/* Premium book shell */
+.artbook-page .ab-book-shell {
+    position: relative;
+    padding: 14px;
+    border: 1px solid rgba(217, 140, 164, .35);
+    border-radius: 9px 18px 18px 9px;
+    background:
+        linear-gradient(135deg, #e8cad5, #fff0f3 24%, #f4dce5 50%, #fff7f3 76%, #dfc5d9);
+    box-shadow:
+        0 35px 80px rgba(73, 47, 65, .18),
+        0 12px 25px rgba(73, 47, 65, .10),
+        inset 0 0 0 1px rgba(255,255,255,.8);
+    transition: box-shadow .35s ease, transform .35s ease;
+}
+
+.artbook-page .ab-book-shell:hover {
+    box-shadow:
+        0 42px 95px rgba(73, 47, 65, .22),
+        0 15px 30px rgba(73, 47, 65, .12),
+        inset 0 0 0 1px rgba(255,255,255,.9);
+}
+
+/* Two pages */
+.artbook-page .ab-book-spread {
+    overflow: hidden;
+    border-radius: 4px 12px 12px 4px;
+    background: #fffdf9;
+    box-shadow: 0 3px 12px rgba(48, 41, 54, .10);
+}
+
+.artbook-page .ab-page {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 0% 0%, rgba(253, 227, 234, .42), transparent 40%),
+        radial-gradient(ellipse at 100% 100%, rgba(232, 224, 245, .34), transparent 42%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(120, 95, 100, .018) 0,
+            rgba(120, 95, 100, .018) 1px,
+            transparent 1px,
+            transparent 5px
+        ),
+        #fffdf9;
+}
+
+/* Subtle inner page borders */
+.artbook-page .ab-page::before {
+    content: "";
+    position: absolute;
+    inset: 13px;
+    z-index: 0;
+    border: 1px solid rgba(217, 140, 164, .24);
+    pointer-events: none;
+}
+
+.artbook-page .ab-page-inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(20px, 3vw, 42px);
+}
+
+/* Artwork frame */
+.artbook-page .ab-art-frame {
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(217, 140, 164, .42);
+    border-radius: 5px;
+    background:
+        radial-gradient(circle at 50% 45%, #fff 0, #fffaf7 55%, #f6e8ec 100%);
+    box-shadow:
+        0 12px 30px rgba(48, 41, 54, .10),
+        inset 0 0 0 6px rgba(255,255,255,.72);
+    transition: box-shadow .3s ease;
+}
+
+.artbook-page .ab-art-frame::before {
+    content: "✧";
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    z-index: 2;
+    color: rgba(217, 140, 164, .9);
+    font-size: 23px;
+    pointer-events: none;
+}
+
+.artbook-page .ab-art-frame::after {
+    content: "✧";
+    position: absolute;
+    right: 13px;
+    bottom: 10px;
+    z-index: 2;
+    color: rgba(217, 140, 164, .9);
+    font-size: 23px;
+    pointer-events: none;
+}
+
+.artbook-page .ab-art-frame:hover {
+    box-shadow:
+        0 18px 40px rgba(48, 41, 54, .14),
+        inset 0 0 0 6px rgba(255,255,255,.8);
+}
+
+/* Artwork caption */
+.artbook-page .ab-art-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(217, 140, 164, .32);
+}
+
+.artbook-page .ab-art-caption span:first-child {
+    color: #b66d88;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.artbook-page .ab-art-caption span:last-child {
+    color: var(--ab-muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Story / description page */
+.artbook-page .ab-story-content {
+    position: relative;
+    padding-top: 22px;
+}
+
+.artbook-page .ab-story-content::before {
+    content: "❝";
+    display: block;
+    margin-bottom: 12px;
+    color: rgba(217, 140, 164, .5);
+    font-family: Georgia, serif;
+    font-size: 66px;
+    line-height: .8;
+}
+
+.artbook-page .ab-story-kicker {
+    display: inline-block;
+    margin-bottom: 17px;
+    color: #b66d88;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.artbook-page .ab-story-content h2 {
+    color: var(--ab-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(25px, 3vw, 39px);
+    font-weight: 500;
+    line-height: 1.28;
+}
+
+.artbook-page .ab-story-content h2 em {
+    color: var(--ab-pink);
+}
+
+.artbook-page .ab-story-content p {
+    color: #746b78;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.artbook-page .ab-story-content p::selection,
+.artbook-page .ab-story-content h2::selection {
+    background: var(--ab-soft-pink);
+}
+
+/* Page numbers */
+.artbook-page .ab-page-number {
+    color: #b17d91;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* Spine */
+.artbook-page .ab-book-spine {
+    background: linear-gradient(
+        90deg,
+        rgba(117, 72, 94, .12),
+        rgba(255,255,255,.65),
+        rgba(117, 72, 94, .08)
+    );
+    box-shadow: 0 0 10px rgba(80, 54, 70, .08);
+}
+
+/* Version selector */
+.artbook-page .ab-version-bar {
+    margin-top: 18px;
+    padding: 13px 17px;
+    border: 1px solid rgba(217, 140, 164, .30);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .78);
+    box-shadow: 0 8px 24px rgba(76, 54, 70, .05);
+}
+
+.artbook-page .ab-version-label {
+    color: #b66d88;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.artbook-page .ab-version-controls button {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(217, 140, 164, .4);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--ab-ink);
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.artbook-page .ab-version-controls button:hover {
+    transform: translateY(-2px);
+    background: var(--ab-pink);
+    color: white;
+}
+
+/* Reader footer */
+.artbook-page .ab-reader-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+    color: var(--ab-muted);
+    font-size: 11px;
+}
+
+.artbook-page .ab-bottom-hint i {
+    margin-right: 7px;
+    color: var(--ab-pink);
+}
+
+.artbook-page .ab-page-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 14px;
+    border: 1px solid rgba(217, 140, 164, .32);
+    border-radius: 999px;
+    background: rgba(255,255,255,.65);
+    color: var(--ab-ink);
+    font-variant-numeric: tabular-nums;
+}
+
+/* End note */
+.artbook-page .ab-endnote {
+    position: relative;
+    max-width: 850px;
+    margin: 90px auto 70px;
+    padding: 48px 28px;
+    border: 1px solid rgba(217, 140, 164, .28);
+    border-radius: 24px;
+    background:
+        radial-gradient(ellipse at top left, rgba(253, 227, 234, .65), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.90), rgba(255,250,245,.85));
+    box-shadow: 0 20px 50px rgba(76, 54, 70, .07);
+    text-align: center;
+}
+
+.artbook-page .ab-endnote h2 {
+    color: var(--ab-ink);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 500;
+}
+
+.artbook-page .ab-endnote p {
+    max-width: 550px;
+    margin: 14px auto 24px;
+    color: var(--ab-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.artbook-page .ab-gallery-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 20px;
+    border: 1px solid #d98ca4;
+    border-radius: 999px;
+    background: #d98ca4;
+    color: white;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.artbook-page .ab-gallery-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(217, 140, 164, .3);
+}
+
+/* Mobile adjustments */
+@media (max-width: 760px) {
+    .artbook-page .ab-intro {
+        padding: 48px 18px 36px;
+    }
+
+    .artbook-page .ab-layout {
+        width: min(100% - 24px, 600px);
+        gap: 22px;
+    }
+
+    .artbook-page .ab-book-shell {
+        padding: 7px;
+    }
+
+    .artbook-page .ab-page::before {
+        inset: 7px;
+    }
+
+    .artbook-page .ab-page-inner {
+        padding: 17px 13px;
+    }
+
+    .artbook-page .ab-reader-bottom {
+        font-size: 10px;
+    }
+
+    .artbook-page .ab-endnote {
+        margin: 55px 12px 40px;
+        padding: 34px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .artbook-page .ab-book-shell,
+    .artbook-page .ab-art-frame,
+    .artbook-page .ab-gallery-link {
+        transition: none;
+    }
+}
+
+/* =========================================
+   MIKAZOART — CONTENTS COLLECTION CARDS
+   ========================================= */
+
+.artbook-page .ab-toc-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+/* Collection card */
+.artbook-page .ab-toc-list button,
+.artbook-page .ab-toc-list a {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding: 21px 18px;
+    border: 1px solid #ead9e2;
+    border-radius: 16px;
+    background:
+        linear-gradient(135deg, #ffffff 0%, #fff8fa 58%, #f8f0ff 100%);
+    color: #302936;
+    text-align: left;
+    box-shadow: 0 5px 14px rgba(75, 48, 68, .045);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+/* Decorative corner glow */
+.artbook-page .ab-toc-list button::before,
+.artbook-page .ab-toc-list a::before {
+    content: "✿";
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    color: rgba(217, 140, 164, .16);
+    font-family: Georgia, serif;
+    font-size: 76px;
+    line-height: 1;
+    transform: rotate(15deg);
+    transition: transform .4s ease, color .3s ease;
+    pointer-events: none;
+}
+
+/* Small decorative accent */
+.artbook-page .ab-toc-list button::after,
+.artbook-page .ab-toc-list a::after {
+    content: "✧  ✧  ✧";
+    position: absolute;
+    right: 16px;
+    bottom: 12px;
+    color: #d9b2c6;
+    font-size: 10px;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+
+/* Hover effect */
+.artbook-page .ab-toc-list button:hover,
+.artbook-page .ab-toc-list a:hover {
+    transform: translateY(-4px);
+    border-color: #d98ca4;
+    background:
+        linear-gradient(135deg, #fff 0%, #fdeaf0 60%, #eee6fb 100%);
+    box-shadow: 0 13px 28px rgba(122, 77, 103, .13);
+}
+
+.artbook-page .ab-toc-list button:hover::before,
+.artbook-page .ab-toc-list a:hover::before {
+    color: rgba(217, 140, 164, .28);
+    transform: rotate(28deg) scale(1.12);
+}
+
+/* Selected collection */
+.artbook-page .ab-toc-list button.active,
+.artbook-page .ab-toc-list button.is-active,
+.artbook-page .ab-toc-list a.active,
+.artbook-page .ab-toc-list a.is-active,
+.artbook-page .ab-toc-list [aria-current="true"] {
+    border-color: #d98ca4;
+    background:
+        linear-gradient(125deg, #fde3ea 0%, #fff7fa 55%, #e9e0f8 100%);
+    box-shadow:
+        inset 4px 0 0 #d98ca4,
+        0 9px 24px rgba(217, 140, 164, .13);
+}
+
+/* Text and icons inside collection cards */
+.artbook-page .ab-toc-list button strong,
+.artbook-page .ab-toc-list a strong {
+    color: #302936;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.artbook-page .ab-toc-list button small,
+.artbook-page .ab-toc-list a small {
+    display: block;
+    margin-top: 7px;
+    color: #897887;
+    font-size: 11px;
+    letter-spacing: .7px;
+}
+
+.artbook-page .ab-toc-list button i,
+.artbook-page .ab-toc-list a i {
+    color: #d98ca4;
+}
+
+/* Keyboard accessibility */
+.artbook-page .ab-toc-list button:focus-visible,
+.artbook-page .ab-toc-list a:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, .45);
+    outline-offset: 3px;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+    .artbook-page .ab-toc-list {
+        gap: 11px;
+    }
+
+    .artbook-page .ab-toc-list button,
+    .artbook-page .ab-toc-list a {
+        padding: 18px 15px;
+        border-radius: 13px;
+    }
+}

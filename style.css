@@ -1,0 +1,4046 @@
+/* =========================================================
+   MIKAZOART PORTFOLIO
+   FINAL CLEAN CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background: var(--color-cream);
+    color: var(--color-text);
+
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.7;
+
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--color-heading);
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+::selection {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+}
+
+
+/* =========================================================
+   2. ROOT VARIABLES
+   ========================================================= */
+
+:root {
+    --color-cream: #fffaf5;
+    --color-white: #ffffff;
+
+    --color-pink: #f6b8c8;
+    --color-pink-soft: #fde3ea;
+    --color-pink-dark: #d98ca4;
+    --color-pink-hover: #cc7893;
+
+    --color-lavender: #dcd2f4;
+    --color-peach: #ffd8bd;
+    --color-blue: #cfe8f7;
+    --color-green: #d9efd9;
+
+    --color-text: #403847;
+    --color-text-light: #746b78;
+    --color-heading: #302936;
+
+    --color-border: rgba(64, 56, 71, 0.10);
+
+    --font-main: "Segoe UI", Arial, sans-serif;
+
+    --container-width: 1200px;
+
+    --radius-small: 12px;
+    --radius-medium: 20px;
+    --radius-large: 32px;
+
+    --shadow-soft: 0 10px 30px rgba(64, 56, 71, 0.08);
+}
+
+
+/* =========================================================
+   3. GLOBAL ELEMENTS
+   ========================================================= */
+
+main,
+header,
+footer {
+    width: 100%;
+}
+
+button,
+a,
+input,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+
+#home a,
+#contact button {
+    user-select: none;
+}
+
+
+/* =========================================================
+   4. HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 24px 6%;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+
+/* ---------- NAVIGATION CONTAINER ---------- */
+
+header nav {
+    width: min(100%, var(--container-width));
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 8px 0;
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+
+    -webkit-backdrop-filter: none;
+}
+
+
+/* ---------- NAV LOGO ---------- */
+
+nav .brand-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    color: #ffffff;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    transform: translateZ(0);
+
+    filter:
+        drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
+}
+
+
+/* ---------- LOGO LETTER ---------- */
+
+.logo-letter {
+    position: relative;
+
+    display: inline-block;
+
+    font-family:
+        "Lucida Calligraphy",
+        "URW Chancery L",
+        "Brush Script MT",
+        cursive;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+
+    line-height: 1;
+
+    color: #ffffff;
+
+    -webkit-text-stroke:
+        0.35px rgba(0, 0, 0, 0.25);
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.25),
+        0 3px 8px rgba(0, 0, 0, 0.45);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.logo-letter::after {
+    content: "";
+
+    position: absolute;
+
+    left: 8%;
+    right: 8%;
+    top: 15%;
+
+    height: 24%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.13);
+
+    pointer-events: none;
+
+    opacity: 0.8;
+}
+
+
+/* ---------- SAKURA LOGO ---------- */
+
+.logo-sakura {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    margin-left: 2px;
+    margin-right: 2px;
+
+    overflow: visible;
+
+    transform-origin: center;
+
+    filter:
+        drop-shadow(
+            0 4px 6px
+            rgba(0, 0, 0, 0.35)
+        );
+
+    animation:
+        sakuraLife 4.5s ease-in-out infinite;
+
+    transition:
+        transform 0.45s cubic-bezier(.2, .8, .2, 1),
+        filter 0.45s ease;
+}
+
+@keyframes sakuraLife {
+
+    0%,
+    100% {
+        transform:
+            rotate(-1.5deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            rotate(1.5deg)
+            scale(1.025);
+    }
+}
+
+nav .brand-logo:hover .logo-sakura {
+    transform:
+        scale(1.12)
+        rotate(4deg);
+
+    filter:
+        drop-shadow(
+            0 6px 10px
+            rgba(0, 0, 0, 0.45)
+        );
+}
+
+nav .brand-logo:hover .logo-letter {
+    color: #ffffff;
+
+    transform:
+        translateY(-1px);
+
+    text-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.30),
+        0 4px 9px rgba(0, 0, 0, 0.50);
+}
+
+
+/* ---------- NAVIGATION LINKS ---------- */
+
+header nav > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+header nav > div a {
+    position: relative;
+
+    padding: 9px 14px;
+
+    color:
+        rgba(255, 255, 255, 0.90);
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    border-radius: 999px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.50);
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+
+/* ---------- NAVIGATION HOVER ---------- */
+
+header nav > div a:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+    text-shadow: 0 3px 9px rgba(0, 0, 0, 0.60);
+}
+
+
+
+/* ---------- ACTIVE LINK ---------- */
+
+header nav > div a.is-active {
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    text-shadow: 0 3px 9px rgba(0, 0, 0, 0.60);
+}
+
+
+
+/* ---------- NAV FOCUS ---------- */
+
+header nav > a:focus-visible,
+header nav > div a:focus-visible {
+    outline:
+        3px solid
+        rgba(255, 255, 255, 0.35);
+
+    outline-offset: 3px;
+
+    border-radius: 999px;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 760px) {
+
+    header {
+        padding:
+            18px 5%;
+    }
+
+    header nav {
+        padding: 6px 0;
+
+        gap: 12px;
+    }
+
+    .logo-letter {
+        font-size: 26px;
+    }
+
+    .logo-sakura {
+        width: 36px;
+        height: 36px;
+    }
+
+    header nav > div {
+        gap: 2px;
+    }
+
+    header nav > div a {
+        padding:
+            8px 9px;
+
+        font-size:
+            0.78rem;
+    }
+}
+
+/* =========================================================
+   AUTO NAVBAR CONTRAST
+   ========================================================= */
+
+header.nav-dark .logo-letter,
+header.nav-dark nav > div a {
+    color: #111111;
+
+    text-shadow:
+        0 1px 3px rgba(255, 255, 255, 0.45);
+}
+
+header.nav-light .logo-letter,
+header.nav-light nav > div a {
+    color: #ffffff;
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+/* =========================================================
+   5. HOME / CINEMATIC ARTWORK SHOWCASE
+   ========================================================= */
+
+#home.home-showcase {
+    position: relative;
+
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: calc(50% - 50vw);
+
+    padding: 0;
+
+    display: flex;
+    align-items: stretch;
+
+    overflow: hidden;
+
+    border-radius: 0;
+
+    isolation: isolate;
+
+    background: #151219;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   ARTWORK BACKGROUND
+   ========================================================= */
+
+.home-artwork-background {
+    position: absolute;
+
+    inset: -5%;
+
+    z-index: 0;
+
+    width: 110%;
+    height: 110%;
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    opacity: 1;
+
+    transform:
+        scale(1.06);
+
+    filter:
+        saturate(0.95)
+        brightness(0.68);
+
+    transition:
+        opacity 1.8s ease,
+        transform 7s ease;
+
+    will-change:
+        opacity,
+        transform;
+}
+
+
+/* =========================================================
+   ARTWORK OVERLAY
+   ========================================================= */
+
+.home-showcase-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14, 12, 18, 0.82) 0%,
+            rgba(14, 12, 18, 0.56) 30%,
+            rgba(14, 12, 18, 0.20) 62%,
+            rgba(14, 12, 18, 0.52) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HOME CONTENT
+   ========================================================= */
+
+.home-showcase-content {
+    position: relative;
+
+    z-index: 4;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    box-sizing: border-box;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(280px, 0.72fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding:
+        120px 7% 70px;
+}
+
+
+/* =========================================================
+   LEFT — ARTWORK INFORMATION
+   ========================================================= */
+
+.home-artwork-info {
+    max-width: 720px;
+
+    color: #ffffff;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 6px 28px rgba(0, 0, 0, 0.40);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.home-artwork-category {
+    margin:
+        0 0 14px;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+.home-artwork-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(3rem, 6vw, 6rem);
+
+    font-weight: 800;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   RIGHT — ARTWORK QUOTE
+   ========================================================= */
+
+.home-artwork-quote {
+    width: 100%;
+    max-width: 500px;
+
+    justify-self: end;
+
+    color: #ffffff;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 5px 24px rgba(0, 0, 0, 0.40);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.home-artwork-description {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+
+    font-size:
+        clamp(1rem, 1.5vw, 1.25rem);
+
+    font-weight: 500;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TEXT TRANSITION
+   ========================================================= */
+
+#home.is-changing .home-artwork-info,
+#home.is-changing .home-artwork-quote {
+    opacity: 0;
+
+    transform:
+        translateY(15px);
+}
+
+
+/* =========================================================
+   FULL HOME CLICK AREA
+   ========================================================= */
+
+.home-artwork-click {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HOME LIGHTBOX
+   ========================================================= */
+
+.home-artwork-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    padding: 30px;
+
+    background:
+        rgba(8, 7, 11, 0.92);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+
+.home-artwork-lightbox.is-open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.home-lightbox-content {
+    position: relative;
+
+    width: min(1100px, 94vw);
+
+    max-height: 92vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+}
+
+
+.home-lightbox-image {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    border-radius:
+        var(--radius-medium);
+
+    box-shadow:
+        0 30px 90px
+        rgba(0, 0, 0, 0.55);
+}
+
+
+.home-lightbox-info {
+    width: 100%;
+    max-width: 850px;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+
+.home-lightbox-category {
+    margin:
+        0 0 7px;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+}
+
+
+.home-lightbox-title {
+    margin:
+        0 0 8px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(1.5rem, 3vw, 2.5rem);
+
+    font-weight: 800;
+}
+
+
+.home-lightbox-description {
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.82);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE BUTTON
+   ========================================================= */
+
+.home-lightbox-close {
+    position: fixed;
+
+    top: 24px;
+    right: 28px;
+
+    z-index: 10001;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.home-lightbox-close:hover {
+    background:
+        rgba(255, 255, 255, 0.22);
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #home.home-showcase {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+
+    .home-showcase-content {
+        min-height: 100vh;
+        min-height: 100svh;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(240px, 0.72fr);
+
+        gap: 40px;
+
+        padding:
+            110px 6% 60px;
+    }
+
+
+    .home-artwork-title {
+        font-size:
+            clamp(2.8rem, 7vw, 4.8rem);
+    }
+
+
+    .home-artwork-description {
+        font-size:
+            clamp(0.95rem, 1.8vw, 1.1rem);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    #home.home-showcase {
+        min-height: 100vh;
+        min-height: 100svh;
+    }
+
+
+    .home-showcase-content {
+        min-height: 100vh;
+        min-height: 100svh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 45px;
+
+        padding:
+            105px 8% 55px;
+
+        text-align: center;
+    }
+
+
+    .home-artwork-info {
+        width: 100%;
+
+        max-width: 600px;
+
+        text-align: center;
+    }
+
+
+    .home-artwork-category {
+        margin-bottom: 10px;
+
+        font-size: 0.75rem;
+    }
+
+
+    .home-artwork-title {
+        font-size:
+            clamp(2.4rem, 12vw, 4rem);
+
+        letter-spacing:
+            -0.04em;
+    }
+
+
+    .home-artwork-quote {
+        width: 100%;
+
+        max-width: 520px;
+
+        text-align: center;
+    }
+
+
+    .home-artwork-description {
+        font-size: 0.9rem;
+
+        line-height: 1.7;
+    }
+
+
+    .home-artwork-background {
+        inset: -6%;
+
+        width: 112%;
+        height: 112%;
+
+        filter:
+            saturate(0.90)
+            brightness(0.58);
+    }
+
+
+    .home-showcase-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(14, 12, 18, 0.30) 0%,
+                rgba(14, 12, 18, 0.35) 28%,
+                rgba(14, 12, 18, 0.70) 68%,
+                rgba(14, 12, 18, 0.92) 100%
+            );
+    }
+
+
+    .home-artwork-lightbox {
+        padding: 20px;
+    }
+
+
+    .home-lightbox-image {
+        max-height: 65vh;
+    }
+
+
+    .home-lightbox-close {
+        top: 16px;
+        right: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .home-artwork-background,
+    .home-artwork-info,
+    .home-artwork-quote,
+    .home-artwork-lightbox {
+        transition:
+            opacity 0.25s ease;
+    }
+
+}
+
+/* =========================================================
+   6. ABOUT
+   ========================================================= */
+
+#about {
+    width: min(100% - 12%, var(--container-width));
+
+    margin: 0 auto;
+
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    align-items: center;
+
+    gap: 80px;
+
+    padding: 110px 0;
+}
+
+#about > div:first-child {
+    max-width: 650px;
+}
+
+#about > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #8b70b5;
+    background: rgba(220, 210, 244, 0.55);
+
+    border: 1px solid rgba(139, 112, 181, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#about h2 {
+    margin-bottom: 24px;
+
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+}
+
+#about > div:first-child > p:not(:first-child) {
+    max-width: 590px;
+
+    margin-bottom: 18px;
+
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+#about > div:last-child {
+    position: relative;
+
+    min-height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at 70% 25%,
+            rgba(255, 216, 189, 0.85),
+            transparent 34%
+        ),
+        radial-gradient(
+            circle at 25% 75%,
+            rgba(207, 232, 247, 0.9),
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff8f2,
+            #f9f3ff
+        );
+
+    border-radius:
+        55% 45% 48% 52% /
+        45% 52% 48% 55%;
+
+    box-shadow:
+        0 25px 60px rgba(64, 56, 71, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   7. PORTFOLIO
+   ========================================================= */
+
+#portfolio {
+    width: min(100% - 12%, var(--container-width));
+
+    margin: 0 auto;
+
+    position: relative;
+
+    padding: 110px 0;
+}
+
+#portfolio > div:first-child {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+#portfolio > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #b56d52;
+    background: rgba(255, 216, 189, 0.65);
+
+    border: 1px solid rgba(181, 109, 82, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#portfolio h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+}
+
+#portfolio > div:first-child > p:last-child {
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+
+/* ---------- CATEGORY FILTER ---------- */
+
+#portfolio > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+}
+
+#portfolio > div:nth-child(2) a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 18px;
+
+    color: var(--color-text-light);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow:
+        0 5px 18px rgba(64, 56, 71, 0.04);
+
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#portfolio > div:nth-child(2) a:hover {
+    color: var(--color-heading);
+    background: var(--color-pink-soft);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+#portfolio > div:nth-child(2) a:first-child {
+    color: var(--color-white);
+    background: var(--color-pink-dark);
+
+    border-color: var(--color-pink-dark);
+}
+
+
+/* ---------- ARTWORK GRID ---------- */
+
+#portfolio > div:last-child {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* ---------- ARTWORK CARD ---------- */
+
+#portfolio article {
+    position: relative;
+
+    padding: 14px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow:
+        0 8px 25px rgba(64, 56, 71, 0.06);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    opacity: 1;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+#portfolio article:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(64, 56, 71, 0.12);
+}
+
+#portfolio article:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
+}
+
+
+/* ---------- ARTWORK PREVIEW ---------- */
+
+#portfolio article > div {
+    position: relative;
+
+    width: 100%;
+    min-height: 320px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f4,
+            #f2edff 50%,
+            #edf8ff
+        );
+
+    border-radius: var(--radius-small);
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+#portfolio article:hover > div {
+    transform: scale(1.015);
+}
+
+#portfolio article > div img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 320px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: var(--radius-small);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+#portfolio article:hover > div img {
+    transform: scale(1.035);
+    filter: brightness(1.03);
+}
+
+
+/* ---------- ARTWORK TEXT ---------- */
+
+#portfolio article > div p {
+    padding: 14px 20px;
+
+    color: var(--color-text-light);
+    background: rgba(255, 255, 255, 0.76);
+
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    box-shadow: var(--shadow-soft);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#portfolio article h3 {
+    margin: 0 8px 5px;
+
+    font-size: 1.15rem;
+    font-weight: 750;
+}
+
+#portfolio article > p {
+    margin: 0 8px 8px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   8. CONTACT
+   ========================================================= */
+
+#contact {
+    width: min(100% - 12%, var(--container-width));
+
+    margin: 0 auto;
+
+    position: relative;
+
+    padding: 110px 0;
+}
+
+
+/* =========================================================
+   CONTACT INTRO
+   ========================================================= */
+
+#contact > div:first-child {
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+#contact > div:first-child > p:first-child {
+    display: inline-block;
+
+    margin-bottom: 16px;
+    padding: 7px 16px;
+
+    color: #6b91b5;
+    background: rgba(207, 232, 247, 0.7);
+
+    border: 1px solid rgba(107, 145, 181, 0.12);
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+#contact h2 {
+    margin-bottom: 18px;
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 800;
+
+    letter-spacing: -0.035em;
+}
+
+#contact > div:first-child > p:last-child {
+    color: var(--color-text-light);
+
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT MAIN CONTENT
+   ========================================================= */
+
+/*
+   Struktur HTML:
+
+   #contact
+   └── div:nth-child(2)
+       └── div
+           ├── .contact-info
+           └── form
+
+   Jadi GRID harus diterapkan pada div TERAKHIR tersebut.
+*/
+
+#contact > div:nth-child(2) > div {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 0.75fr)
+        minmax(480px, 1.25fr);
+
+    gap: 40px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+   ========================================================= */
+
+#contact .contact-info {
+    width: 100%;
+    min-width: 0;
+
+    padding: 40px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(246, 184, 200, 0.55),
+            transparent 32%
+        ),
+        linear-gradient(
+            145deg,
+            #fff7f2,
+            #f7f1ff
+        );
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-soft);
+}
+
+#contact .contact-info h3 {
+    margin-bottom: 32px;
+
+    font-size: 1.35rem;
+    font-weight: 750;
+}
+
+
+/* ---------- CONTACT GROUP ---------- */
+
+#contact .contact-group {
+    margin-bottom: 27px;
+}
+
+#contact .contact-group:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- CONTACT LABEL ---------- */
+
+#contact .contact-label {
+    margin-bottom: 6px;
+
+    color: var(--color-heading);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+
+/* ---------- CONTACT VALUES ---------- */
+
+#contact .contact-group > p:not(.contact-label) {
+    margin-bottom: 0;
+
+    color: var(--color-text-light);
+
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+
+/* ---------- CONTACT LINKS ---------- */
+
+#contact .contact-group a {
+    color: var(--color-text-light);
+
+    transition:
+        color 0.25s ease,
+        opacity 0.25s ease;
+}
+
+#contact .contact-group a:hover {
+    color: var(--color-pink-hover);
+}
+
+
+/* ---------- GALLERY LINKS ---------- */
+
+#contact .contact-group:last-child p:not(.contact-label) {
+    margin-bottom: 6px;
+}
+
+#contact .contact-group:last-child p:not(.contact-label):first-of-type {
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   CONTACT FORM
+   ========================================================= */
+
+#contact > div:nth-child(2) > div > form {
+    width: 100%;
+    min-width: 0;
+
+    padding: 40px;
+
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* ---------- FORM GROUP ---------- */
+
+#contact form > div {
+    width: 100%;
+
+    margin-bottom: 24px;
+}
+
+
+/* ---------- FORM LABEL ---------- */
+
+#contact form label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--color-heading);
+
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+
+/* ---------- FORM INPUT ---------- */
+
+#contact form input,
+#contact form textarea {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 17px;
+
+    color: var(--color-heading);
+    background: #fffafc;
+
+    border: 1px solid rgba(64, 56, 71, 0.12);
+    border-radius: var(--radius-small);
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+#contact form input {
+    min-height: 56px;
+}
+
+#contact form textarea {
+    min-height: 210px;
+
+    resize: vertical;
+}
+
+
+/* ---------- FORM HOVER ---------- */
+
+#contact form input:hover,
+#contact form textarea:hover {
+    border-color: rgba(217, 140, 164, 0.35);
+}
+
+
+/* ---------- FORM PLACEHOLDER ---------- */
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+    color: #a69da8;
+}
+
+
+/* ---------- FORM FOCUS ---------- */
+
+#contact form input:focus,
+#contact form textarea:focus {
+    background: var(--color-white);
+
+    border-color: var(--color-pink-dark);
+
+    box-shadow:
+        0 0 0 4px rgba(246, 184, 200, 0.22);
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
+
+#contact form button {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding: 0 24px;
+
+    color: var(--color-white);
+    background: var(--color-pink-dark);
+
+    border: none;
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(217, 140, 164, 0.22);
+
+    transition:
+        background-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#contact form button:hover {
+    background: var(--color-pink-hover);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(217, 140, 164, 0.28);
+}
+
+#contact form button:active {
+    transform: translateY(-1px);
+}
+
+#contact form button:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.35);
+    outline-offset: 4px;
+}
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 40px;
+
+    padding: 60px 6% 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f5,
+            #f7f1ff 50%,
+            #eef8ff
+        );
+
+    border-top: 1px solid var(--color-border);
+}
+
+footer > div {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+}
+
+
+/* ---------- FOOTER INTRO ---------- */
+
+footer > div:first-child {
+    margin-bottom: 30px;
+}
+
+footer > div:first-child > p:first-child {
+    margin-bottom: 8px;
+
+    color: var(--color-heading);
+
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+footer > div:first-child > p:last-of-type {
+    max-width: 430px;
+
+    color: var(--color-text-light);
+
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER SOCIAL ICONS
+   ========================================================= */
+
+footer .footer-socials {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+    margin-top: 16px;
+}
+
+footer .footer-socials a {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    color: var(--color-heading);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+
+    font-size: 18px;
+    line-height: 1;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+footer .footer-socials a:hover {
+    background: var(--color-pink-soft);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.14);
+}
+
+footer .footer-socials i {
+    display: block;
+    line-height: 1;
+}
+
+
+/* ---------- COPYRIGHT ---------- */
+
+footer > div:last-child {
+    padding-top: 25px;
+
+    border-top: 1px solid var(--color-border);
+}
+
+footer > div:last-child p {
+    color: var(--color-text-light);
+
+    font-size: 0.82rem;
+}
+
+footer a:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.30);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   10. DECORATIVE ARTISTIC SHAPES
+   ========================================================= */
+
+#home::before,
+#home::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+#home::before {
+    top: 40px;
+    left: -90px;
+
+    background: rgba(246, 184, 200, 0.20);
+
+    animation: softFloat 7s ease-in-out infinite;
+}
+
+#home::after {
+    right: -80px;
+    bottom: 20px;
+
+    background: rgba(220, 210, 244, 0.25);
+
+    animation: softFloatReverse 9s ease-in-out infinite;
+}
+
+#about::before {
+    content: "";
+
+    position: absolute;
+
+    top: 30px;
+    right: -60px;
+
+    width: 130px;
+    height: 130px;
+
+    border: 20px solid rgba(255, 216, 189, 0.28);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: softRotate 12s linear infinite;
+}
+
+#portfolio::before {
+    content: "";
+
+    position: absolute;
+
+    top: 40px;
+    left: -50px;
+
+    width: 100px;
+    height: 100px;
+
+    background: rgba(207, 232, 247, 0.30);
+
+    border-radius:
+        42% 58% 55% 45%;
+
+    transform: rotate(18deg);
+
+    pointer-events: none;
+
+    animation: softFloat 8s ease-in-out infinite;
+}
+
+#contact::after {
+    content: "";
+
+    position: absolute;
+
+    right: -40px;
+    bottom: 50px;
+
+    width: 110px;
+    height: 110px;
+
+    background: rgba(246, 184, 200, 0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation: softFloatReverse 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   11. ARTISTIC DOTS & FLOWERS
+   ========================================================= */
+
+#home > div:last-child::before,
+#about > div:last-child::before {
+    content: "";
+
+    position: absolute;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        32px 25px 0 rgba(255, 255, 255, 0.55),
+        64px 5px 0 rgba(255, 255, 255, 0.40);
+
+    pointer-events: none;
+
+    animation: tinyFloat 5s ease-in-out infinite;
+}
+
+#home > div:last-child::before {
+    top: 55px;
+    right: 65px;
+}
+
+#about > div:last-child::before {
+    bottom: 60px;
+    left: 55px;
+}
+
+
+#home > div:last-child::after,
+#about > div:last-child::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius:
+        50% 50% 50% 0;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    pointer-events: none;
+}
+
+#home > div:last-child::after {
+    left: 45px;
+    bottom: 45px;
+
+    transform: rotate(45deg);
+
+    animation: flowerDrift 6s ease-in-out infinite;
+}
+
+#about > div:last-child::after {
+    top: 45px;
+    right: 45px;
+
+    transform: rotate(45deg);
+
+    animation: flowerDriftReverse 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   12. ANIMATIONS
+   ========================================================= */
+
+@keyframes softFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes softFloatReverse {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+}
+
+@keyframes softRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(8deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes flowerDrift {
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(52deg) translateY(-8px);
+    }
+}
+
+@keyframes flowerDriftReverse {
+    0%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(38deg) translateY(8px);
+    }
+}
+
+@keyframes tinyFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+/* =========================================================
+   13. LIGHTBOX
+   ========================================================= */
+
+.artwork-lightbox {
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(48, 41, 54, 0.82);
+
+    opacity: 0;
+    visibility: hidden;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.artwork-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.artwork-lightbox__content {
+    position: relative;
+
+    width: min(100%, 1000px);
+    max-height: 92vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.25);
+
+    transform: scale(0.94);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.artwork-lightbox.is-open .artwork-lightbox__content {
+    transform: scale(1);
+}
+
+.artwork-lightbox__image {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+
+    height: auto;
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+}
+
+.artwork-lightbox__caption {
+    width: 100%;
+
+    padding: 18px 8px 4px;
+
+    text-align: center;
+}
+
+.artwork-lightbox__caption h3 {
+    margin-bottom: 4px;
+
+    color: var(--color-heading);
+
+    font-size: 1.2rem;
+    font-weight: 750;
+}
+
+.artwork-lightbox__caption p {
+    color: var(--color-text-light);
+
+    font-size: 0.9rem;
+}
+
+.artwork-lightbox__close {
+    position: fixed;
+
+    top: 25px;
+    right: 30px;
+
+    z-index: 10000;
+
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--color-heading);
+    background: rgba(255, 255, 255, 0.92);
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 1.8rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.artwork-lightbox__close:hover {
+    background: var(--color-pink-soft);
+
+    transform: rotate(90deg);
+}
+
+.artwork-lightbox__close:focus-visible {
+    outline: 3px solid rgba(217, 140, 164, 0.4);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   14. SITE NOTIFICATION
+   ========================================================= */
+
+.site-notification {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 10001;
+
+    width: min(
+        calc(100% - 50px),
+        390px
+    );
+
+    padding: 16px 20px;
+
+    color: var(--color-heading);
+    background: var(--color-white);
+
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+
+    box-shadow:
+        0 18px 45px rgba(64, 56, 71, 0.15);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+.site-notification.is-visible {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.site-notification.is-success {
+    border-left: 5px solid #9bcf9b;
+}
+
+.site-notification.is-error {
+    border-left: 5px solid #e29a9a;
+}
+
+
+/* =========================================================
+   15. TABLET
+   IMPORTANT:
+   CONTACT STAYS SIDE-BY-SIDE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 18px 4%;
+    }
+
+    header nav {
+        padding: 14px 18px;
+    }
+
+    header nav > div {
+        gap: 4px;
+    }
+
+    header nav > div a {
+        padding: 8px 10px;
+        font-size: 0.88rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 70px 0 90px;
+
+        text-align: center;
+    }
+
+    #home > div:first-child {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #home > div:first-child > div {
+        justify-content: center;
+    }
+
+    #home > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 420px;
+
+        margin: 0 auto;
+    }
+
+    #home > div:last-child img {
+        min-height: 360px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 8%, var(--container-width));
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 90px 0;
+    }
+
+    #about > div:first-child {
+        max-width: 700px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    #about > div:first-child > p:not(:first-child) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #about > div:last-child {
+        width: min(100%, 520px);
+
+        min-height: 380px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+    #portfolio > div:last-child {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+    #portfolio article > div,
+    #portfolio article > div img {
+        min-height: 280px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    /*
+       IMPORTANT:
+       Contact tetap 2 kolom pada tablet.
+       Tidak ada aturan lain yang menimpa ini.
+    */
+
+    #contact {
+        width: min(100% - 8%, var(--container-width));
+
+        padding: 90px 0;
+    }
+
+    #contact > div:nth-child(2) > div {
+        grid-template-columns:
+            minmax(260px, 0.8fr)
+            minmax(360px, 1.2fr);
+
+        gap: 24px;
+    }
+
+    #contact .contact-info,
+    #contact form {
+        padding: 28px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        padding: 14px 4%;
+    }
+
+    header nav {
+        padding: 14px 16px;
+
+        border-radius: 22px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    header nav > a {
+        font-size: 1.15rem;
+    }
+
+    header nav > div {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 4px;
+    }
+
+    header nav > div a {
+        padding: 7px 9px;
+
+        font-size: 0.78rem;
+    }
+
+
+    /* ---------- HOME ---------- */
+
+    #home {
+        width: min(100% - 10%, var(--container-width));
+
+        min-height: auto;
+
+        gap: 40px;
+
+        padding: 55px 0 70px;
+    }
+
+    #home > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #home h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.5rem, 13vw, 4rem);
+
+        letter-spacing: -0.04em;
+    }
+
+    #home > div:first-child > p:nth-of-type(2) {
+        margin-bottom: 28px;
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    #home > div:first-child > div {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    #home > div:first-child > div a {
+        width: 100%;
+
+        min-height: 48px;
+    }
+
+    #home > div:last-child {
+        width: 100%;
+
+        min-height: 320px;
+
+        padding: 20px;
+
+        border-radius:
+            42% 58% 50% 50% /
+            50% 45% 55% 50%;
+    }
+
+    #home > div:last-child img {
+        min-height: 280px;
+
+        border-radius: 22px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    #about {
+        width: min(100% - 10%, var(--container-width));
+
+        gap: 40px;
+
+        padding: 70px 0;
+    }
+
+    #about > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #about h2 {
+        margin-bottom: 20px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #about > div:first-child > p:not(:first-child) {
+        font-size: 0.95rem;
+
+        line-height: 1.8;
+    }
+
+    #about > div:last-child {
+        width: 100%;
+
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+
+    /* ---------- PORTFOLIO ---------- */
+
+    #portfolio {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+    #portfolio > div:first-child {
+        margin-bottom: 35px;
+    }
+
+    #portfolio > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #portfolio h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #portfolio > div:first-child > p:last-child {
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    #portfolio > div:nth-child(2) {
+        margin-bottom: 30px;
+
+        gap: 7px;
+    }
+
+    #portfolio > div:nth-child(2) a {
+        min-height: 38px;
+
+        padding: 0 13px;
+
+        font-size: 0.78rem;
+    }
+
+    #portfolio > div:last-child {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    #portfolio article {
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+    #portfolio article > div {
+        min-height: 300px;
+
+        margin-bottom: 16px;
+    }
+
+    #portfolio article > div img {
+        min-height: 300px;
+    }
+
+    #portfolio article h3 {
+        margin: 0 7px 4px;
+
+        font-size: 1.05rem;
+    }
+
+    #portfolio article > p {
+        margin: 0 7px 8px;
+
+        font-size: 0.82rem;
+    }
+
+    #portfolio article:hover {
+        transform: translateY(-5px);
+    }
+
+    #portfolio article:hover > div,
+    #portfolio article:hover > div img {
+        transform: none;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    #contact {
+        width: min(100% - 10%, var(--container-width));
+
+        padding: 70px 0;
+    }
+
+    #contact > div:first-child {
+        margin-bottom: 35px;
+    }
+
+    #contact > div:first-child > p:first-child {
+        margin-bottom: 14px;
+
+        padding: 6px 13px;
+
+        font-size: 0.75rem;
+    }
+
+    #contact h2 {
+        margin-bottom: 16px;
+
+        font-size: clamp(2.2rem, 11vw, 3.3rem);
+    }
+
+    #contact > div:first-child > p:last-child {
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+
+    /*
+       Mobile:
+       Contact information berada di atas,
+       form berada di bawah.
+    */
+
+    #contact > div:nth-child(2) > div {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    #contact .contact-info {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+    #contact .contact-info h3 {
+        margin-bottom: 24px;
+
+        font-size: 1.15rem;
+    }
+
+    #contact .contact-group {
+        margin-bottom: 22px;
+    }
+
+    #contact form {
+        padding: 26px;
+
+        border-radius: 18px;
+    }
+
+    #contact form > div {
+        margin-bottom: 18px;
+    }
+
+    #contact form input,
+    #contact form textarea {
+        padding: 13px 14px;
+
+        font-size: 0.9rem;
+    }
+
+    #contact form textarea {
+        min-height: 140px;
+    }
+
+    #contact form button {
+        min-height: 50px;
+
+        font-size: 0.9rem;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        margin-top: 20px;
+
+        padding: 45px 5% 25px;
+    }
+
+    footer > div:first-child {
+        margin-bottom: 24px;
+    }
+
+    footer > div:first-child > p:first-child {
+        font-size: 1.15rem;
+    }
+
+    footer > div:first-child > p:last-of-type {
+        font-size: 0.84rem;
+    }
+
+    footer .footer-socials {
+        justify-content: flex-start;
+
+        gap: 10px;
+
+        margin-top: 14px;
+    }
+
+    footer .footer-socials a {
+        width: 40px;
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    footer > div:last-child {
+        padding-top: 20px;
+    }
+
+    footer > div:last-child p {
+        font-size: 0.75rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* ---------- LIGHTBOX ---------- */
+
+    .artwork-lightbox {
+        padding: 15px;
+    }
+
+    .artwork-lightbox__content {
+        width: 100%;
+
+        padding: 12px;
+
+        border-radius: 20px;
+    }
+
+    .artwork-lightbox__image {
+        max-height: 68vh;
+
+        border-radius: 14px;
+    }
+
+    .artwork-lightbox__caption {
+        padding-top: 14px;
+    }
+
+    .artwork-lightbox__caption h3 {
+        font-size: 1.05rem;
+    }
+
+    .artwork-lightbox__caption p {
+        font-size: 0.82rem;
+    }
+
+    .artwork-lightbox__close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 1.5rem;
+    }
+
+
+    /* ---------- NOTIFICATION ---------- */
+
+    .site-notification {
+        right: 15px;
+        bottom: 15px;
+
+        width: calc(100% - 30px);
+
+        padding: 14px 17px;
+    }
+
+
+    /* ---------- DECORATION ---------- */
+
+    #home::before,
+    #home::after {
+        width: 120px;
+        height: 120px;
+    }
+
+    #home::before {
+        left: -70px;
+    }
+
+    #home::after {
+        right: -60px;
+    }
+
+    #about::before {
+        right: -45px;
+
+        width: 90px;
+        height: 90px;
+
+        border-width: 14px;
+    }
+
+    #portfolio::before {
+        left: -40px;
+
+        width: 75px;
+        height: 75px;
+    }
+
+    #contact::after {
+        right: -35px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+    #home > div:last-child::after,
+    #about > div:last-child::after {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+/* =========================================================
+   17. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .logo-sakura,
+    #home::before,
+    #home::after,
+    #about::before,
+    #portfolio::before,
+    #contact::after,
+    #home > div:last-child::after,
+    #about > div:last-child::after,
+    #home > div:last-child::before,
+    #about > div:last-child::before {
+        animation: none;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .artwork-lightbox,
+    .artwork-lightbox__content,
+    .site-notification,
+    #portfolio article,
+    #home > div:last-child img,
+    #portfolio article > div img {
+        transition: none;
+    }
+
+    #home > div:last-child:hover img,
+    #portfolio article:hover > div img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   18. JAVASCRIPT INTERACTION
+   ========================================================= */
+
+
+/* ---------- SCROLL REVEAL ---------- */
+
+.scroll-reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+.footer-explore-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+/* =========================================================
+   HOME CINEMATIC ARTWORK SHOWCASE
+   ========================================================= */
+
+#home.cinematic-home {
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   ARTWORK AREA
+--------------------------------------------------------- */
+
+#home .home-artwork-placeholder.cinematic-showcase {
+    display: block;
+
+    position: relative;
+    overflow: hidden;
+
+    min-height: 520px;
+
+    border-radius: 28px;
+
+    isolation: isolate;
+
+    background: #17131a;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.18);
+
+    transform:
+        translate3d(
+            var(--parallax-x, 0px),
+            var(--parallax-y, 0px),
+            0
+        );
+
+    transition:
+        transform 0.25s ease-out;
+}
+
+
+/* ---------------------------------------------------------
+   BACKGROUND IMAGE LAYERS
+--------------------------------------------------------- */
+
+.cinematic-showcase__layer {
+    position: absolute;
+
+    inset: -7%;
+
+    z-index: 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 0;
+
+    transform:
+        scale(1.08)
+        translate3d(0, 0, 0);
+
+    transition:
+        opacity 1.8s ease,
+        transform 7s ease;
+
+    will-change:
+        opacity,
+        transform;
+}
+
+
+.cinematic-showcase__layer.is-active {
+    opacity: 1;
+
+    transform:
+        scale(1.03)
+        translate3d(0, 0, 0);
+}
+
+
+.cinematic-showcase__layer.is-entering {
+    opacity: 1;
+
+    animation:
+        cinematicArtworkEnter 1.8s ease forwards;
+}
+
+
+.cinematic-showcase__layer.is-leaving {
+    opacity: 0;
+
+    transform:
+        scale(1.12)
+        translate3d(0, 0, 0);
+
+    transition:
+        opacity 1.8s ease,
+        transform 1.8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   CINEMATIC MOTION
+--------------------------------------------------------- */
+
+@keyframes cinematicArtworkEnter {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(1.13)
+            translate3d(1.5%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1.03)
+            translate3d(0, 0, 0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   DARK / LIGHT OVERLAY
+--------------------------------------------------------- */
+
+.cinematic-showcase__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.04),
+            transparent 38%,
+            rgba(0, 0, 0, 0.30)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   SOFT ATMOSPHERE
+--------------------------------------------------------- */
+
+.cinematic-showcase__atmosphere {
+    position: absolute;
+
+    inset: -20%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(255, 220, 235, 0.16),
+            transparent 35%
+        );
+
+    opacity: 0.8;
+
+    animation:
+        cinematicAtmosphere 9s ease-in-out infinite alternate;
+}
+
+
+@keyframes cinematicAtmosphere {
+
+    0% {
+        transform:
+            translate3d(-2%, -1%, 0)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translate3d(2%, 1%, 0)
+            scale(1.06);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   ARTWORK INFORMATION
+--------------------------------------------------------- */
+
+#home .home-content {
+    position: relative;
+    z-index: 10;
+}
+
+
+.cinematic-artwork-info {
+    position: relative;
+
+    margin-top: 48px;
+
+    max-width: 650px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(180px, 0.8fr)
+        minmax(240px, 1.2fr);
+
+    column-gap: 50px;
+    row-gap: 4px;
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/* Left column: category (row 1) + title (row 2) */
+/* Right column: label (row 1) + description (row 2) */
+
+.cinematic-artwork-info.is-changing {
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY
+--------------------------------------------------------- */
+
+.cinematic-artwork-info__category {
+    grid-column: 1;
+    grid-row: 1;
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: rgba(246, 184, 200, 0.92);
+}
+
+
+/* ---------------------------------------------------------
+   COLLECTION BADGE
+   Shown between category and title when artwork
+   belongs to an Album or EP.
+--------------------------------------------------------- */
+
+.cinematic-artwork-info__collection {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: none; /* shown by JS when collection exists */
+
+    align-self: center;
+
+    width: fit-content;
+
+    margin-bottom: 10px;
+
+    padding: 4px 11px;
+
+    background:
+        rgba(246, 184, 200, 0.18);
+
+    border:
+        1px solid
+        rgba(246, 184, 200, 0.38);
+
+    border-radius: 999px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.78);
+}
+
+
+/* ---------------------------------------------------------
+   TITLE
+--------------------------------------------------------- */
+
+.cinematic-artwork-info__title {
+    grid-column: 1;
+    grid-row: 3;
+
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.3rem
+    );
+
+    line-height: 0.95;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION LABEL
+--------------------------------------------------------- */
+
+.cinematic-artwork-info__label {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    display: block;
+
+    align-self: end;
+
+    margin-bottom: 8px;
+
+    padding-left: 22px;
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+--------------------------------------------------------- */
+
+.cinematic-artwork-info__description {
+    grid-column: 2;
+    grid-row: 3;
+
+    margin: 0;
+
+    padding-left: 22px;
+
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.28);
+
+    max-width: 430px;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.22);
+}
+
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cinematic-showcase__layer,
+    .cinematic-showcase__layer.is-active,
+    .cinematic-showcase__layer.is-entering,
+    .cinematic-showcase__layer.is-leaving {
+
+        animation: none;
+
+        transition:
+            opacity 0.3s ease;
+
+        transform:
+            scale(1.03)
+            translate3d(0, 0, 0);
+    }
+
+
+    .cinematic-showcase__atmosphere {
+
+        animation: none;
+
+    }
+
+
+    #home .home-artwork-placeholder.cinematic-showcase {
+
+        transform: none;
+
+        transition: none;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .cinematic-artwork-info {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 14px;
+
+        margin-top: 35px;
+
+    }
+
+    /* Reset explicit grid placement for single-column */
+    .cinematic-artwork-info__category,
+    .cinematic-artwork-info__collection,
+    .cinematic-artwork-info__title,
+    .cinematic-artwork-info__label,
+    .cinematic-artwork-info__description {
+        grid-column: 1;
+        grid-row: unset;
+        align-self: auto;
+    }
+
+    /* Natural document order in single column:
+       category → collection (if shown) → title → label → description */
+    .cinematic-artwork-info__category    { order: 1; }
+    .cinematic-artwork-info__collection  { order: 2; }
+    .cinematic-artwork-info__title       { order: 3; }
+    .cinematic-artwork-info__label       { order: 4; }
+    .cinematic-artwork-info__description { order: 5; }
+
+    /* Switch grid to flex for simpler single-column ordering */
+    .cinematic-artwork-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .cinematic-artwork-info__label,
+    .cinematic-artwork-info__description {
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        padding-top: 12px;
+    }
+
+    .cinematic-artwork-info__description {
+        border-top: none;
+        padding-top: 0;
+    }
+
+
+    #home .home-artwork-placeholder.cinematic-showcase {
+
+        min-height: 440px;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    #home .home-artwork-placeholder.cinematic-showcase {
+
+        min-height: 360px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .cinematic-artwork-info {
+
+        margin-top: 28px;
+
+    }
+
+
+    .cinematic-artwork-info__title {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    .cinematic-artwork-info__description {
+
+        font-size: 0.82rem;
+
+        line-height: 1.65;
+
+    }
+
+}
+/* =========================================================
+   GALLERY — CINEMATIC ARTWORK SHOWCASE
+   ========================================================= */
+
+.gallery-art-showcase {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    background: #151219;
+    isolation: isolate;
+}
+
+.gallery-art-background {
+    position: absolute;
+    inset: -5%;
+    z-index: 0;
+    width: 110%;
+    height: 110%;
+
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: saturate(0.95) brightness(0.68);
+
+    transform: scale(1.06);
+
+    transition:
+        opacity 1.8s ease,
+        transform 7s ease;
+
+    will-change: opacity, transform;
+}
+
+.gallery-art-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(14, 12, 18, 0.82) 0%,
+            rgba(14, 12, 18, 0.56) 30%,
+            rgba(14, 12, 18, 0.20) 62%,
+            rgba(14, 12, 18, 0.52) 100%
+        );
+
+    pointer-events: none;
+}
+
+.gallery-art-content {
+    position: relative;
+    z-index: 4;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(280px, 0.72fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    padding:
+        120px
+        7%
+        70px;
+}
+
+.gallery-art-info {
+    max-width: 720px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 6px 28px rgba(0, 0, 0, 0.40);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.gallery-art-category {
+    display: block;
+
+    margin-bottom: 14px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.gallery-art-title {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(3.5rem, 7vw, 7rem);
+
+    font-weight: 600;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.025em;
+}
+
+.gallery-art-description {
+    position: relative;
+    z-index: 4;
+
+    max-width: 520px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 5px 22px rgba(0, 0, 0, 0.45);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.gallery-art-description p {
+    margin: 0;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(1.35rem, 2vw, 2rem);
+
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+.gallery-art-click {
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.gallery-art-showcase.is-changing
+.gallery-art-info,
+.gallery-art-showcase.is-changing
+.gallery-art-description {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+@media (max-width: 760px) {
+
+    .gallery-art-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        padding:
+            120px
+            7%
+            70px;
+    }
+
+    .gallery-art-title {
+        font-size:
+            clamp(3rem, 15vw, 5rem);
+    }
+
+    .gallery-art-description {
+        max-width: 90%;
+    }
+
+    .gallery-art-description p {
+        font-size: 1.25rem;
+    }
+}
+
+/* =========================================================
+   MIKAZOART — CONSISTENT CINEMATIC TYPOGRAPHY
+   ========================================================= */
+
+/* Samakan font judul Home dan Gallery */
+.home-artwork-title,
+.gallery-art-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Samakan font deskripsi Home dan Gallery */
+.home-artwork-description,
+.gallery-art-description,
+.gallery-art-description p {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+/* Warna teks terang untuk artwork gelap */
+#home.artwork-text-light .home-artwork-category,
+#home.artwork-text-light .home-artwork-title,
+#home.artwork-text-light .home-artwork-description,
+#home.artwork-text-light .home-artwork-description *,
+#home.artwork-text-light .home-artwork-label {
+    color: #ffffff;
+}
+
+/* Warna teks gelap untuk artwork terang */
+#home.artwork-text-dark .home-artwork-category,
+#home.artwork-text-dark .home-artwork-title,
+#home.artwork-text-dark .home-artwork-description,
+#home.artwork-text-dark .home-artwork-description *,
+#home.artwork-text-dark .home-artwork-label {
+    color: #171717;
+    text-shadow: none;
+}
+
+/* Gallery menggunakan font dan warna yang konsisten */
+.gallery-art-info {
+    font-family: "Montserrat", Arial, sans-serif;
+}
+
+.gallery-art-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* Warna Gallery ditentukan oleh class JavaScript */
+.gallery-art-showcase.artwork-text-light .gallery-art-info,
+.gallery-art-showcase.artwork-text-light .gallery-art-info * {
+    color: #ffffff;
+}
+
+.gallery-art-showcase.artwork-text-dark .gallery-art-info,
+.gallery-art-showcase.artwork-text-dark .gallery-art-info * {
+    color: #171717;
+    text-shadow: none;
+}
+/* HOME — AUTOMATIC ARTWORK TEXT CONTRAST */
+
+#home.artwork-text-light .home-artwork-category,
+#home.artwork-text-light .home-artwork-title,
+#home.artwork-text-light .home-artwork-description {
+    color: #ffffff;
+}
+
+#home.artwork-text-dark .home-artwork-category,
+#home.artwork-text-dark .home-artwork-title,
+#home.artwork-text-dark .home-artwork-description {
+    color: #171717;
+    text-shadow: none;
+}
+
+/* =========================================
+   HOME SHOWCASE — REFINED TYPOGRAPHY
+   ========================================= */
+
+#home .home-artwork-category {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+}
+
+#home .home-artwork-title {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+}
+
+#home .home-artwork-description {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* Dark artwork: light text */
+#home.artwork-text-light .home-artwork-category,
+#home.artwork-text-light .home-artwork-title,
+#home.artwork-text-light .home-artwork-description {
+    color: #ffffff !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+}
+
+/* Bright artwork: dark text */
+#home.artwork-text-dark .home-artwork-category,
+#home.artwork-text-dark .home-artwork-title,
+#home.artwork-text-dark .home-artwork-description {
+    color: #202020 !important;
+    text-shadow: none;
+}
+/* ========================================
+   MIKAZOART - WHITE LOGO & NAVBAR
+======================================== */
+
+/* Logo MIKAZOART */
+.logo,
+.logo a,
+.navbar-brand,
+.navbar-brand a,
+.site-logo,
+.site-logo a {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Navbar: Home, About, Gallery, Contact */
+nav a,
+.navbar a,
+.nav-links a,
+.nav-menu a,
+.nav-link,
+header nav a {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+/* Navbar saat kursor diarahkan ke menu */
+nav a:hover,
+.navbar a:hover,
+.nav-links a:hover,
+.nav-menu a:hover,
+.nav-link:hover,
+header nav a:hover {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Navbar dan logo tetap putih saat halaman aktif */
+nav a.active,
+.navbar a.active,
+.nav-links a.active,
+.nav-menu a.active,
+.nav-link.active {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
