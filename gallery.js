@@ -181,12 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
        ========================================================= */
 
     let currentFilter = "all";
-
     let currentProject = null;
-
-    let visibleArtworkCount = 9;
-
-    const artworkLoadAmount = 9;
+    let visibleArtworkCount = 20;
+    const artworkLoadAmount = 20;
 
 
     /* =========================================================
@@ -1424,60 +1421,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================================
-       RENDER ARTWORKS
-       ========================================================= */
+   RENDER ARTWORKS
+   ========================================================= */
 
-    function renderArtworks() {
-
-        if (!artworkGrid) {
-            return;
-        }
-
-
-        const filtered =
-            getFilteredArtworks();
-
-
-        const visible =
-            filtered.slice(
-                0,
-                visibleArtworkCount
-            );
-
-
-        artworkGrid.innerHTML = "";
-
-
-        visible.forEach(
-            (artwork) => {
-
-                artworkGrid.appendChild(
-                    createArtworkCard(artwork)
-                );
-            }
-        );
-
-
-        if (artworkCount) {
-
-            artworkCount.textContent =
-                `${filtered.length} ${
-                    filtered.length === 1
-                        ? "artwork"
-                        : "artworks"
-                }`;
-        }
-
-
-        if (loadMoreButton) {
-
-            loadMoreButton.style.display =
-                visibleArtworkCount <
-                filtered.length
-                    ? "inline-flex"
-                    : "none";
-        }
+function renderArtworks() {
+    if (!artworkGrid) {
+        return;
     }
+
+    const filtered = currentProject !== null
+        ? projects[currentProject].artworks
+        : getFilteredArtworks();
+
+    const visible = filtered.slice(
+        0,
+        visibleArtworkCount
+    );
+
+    artworkGrid.innerHTML = "";
+
+    visible.forEach((artwork) => {
+        artworkGrid.appendChild(
+            createArtworkCard(artwork)
+        );
+    });
+
+    if (artworkCount) {
+        artworkCount.textContent =
+            `${filtered.length} ${
+                filtered.length === 1
+                    ? "artwork"
+                    : "artworks"
+            }`;
+    }
+
+    if (loadMoreButton) {
+        loadMoreButton.style.display =
+            visibleArtworkCount < filtered.length
+                ? "inline-flex"
+                : "none";
+    }
+}
 
 
     /* =========================================================
@@ -1748,46 +1732,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =========================================================
-       PROJECT COLLECTION
-       ========================================================= */
+   PROJECT COLLECTION
+   ========================================================= */
 
-    function openProjectCollection(index) {
-
-    const project =
-        projects[index];
-
+function openProjectCollection(index) {
+    const project = projects[index];
 
     if (!project) {
         return;
     }
 
-
-    currentProject =
-        index;
-
-
-    currentFilter =
-        "project";
-
+    currentProject = index;
+    currentFilter = "project";
+    visibleArtworkCount = artworkLoadAmount;
 
     if (artworkGrid) {
-
         artworkGrid.innerHTML = "";
 
-
-        project.artworks.forEach(
-            (artwork) => {
-
-                artworkGrid.appendChild(
-                    createArtworkCard(artwork)
-                );
-            }
+        const visibleArtworks = project.artworks.slice(
+            0,
+            visibleArtworkCount
         );
+
+        visibleArtworks.forEach((artwork) => {
+            artworkGrid.appendChild(
+                createArtworkCard(artwork)
+            );
+        });
     }
 
-
     if (artworkCount) {
-
         artworkCount.textContent =
             `${project.artworks.length} ${
                 project.artworks.length === 1
@@ -1796,27 +1770,19 @@ document.addEventListener("DOMContentLoaded", () => {
             }`;
     }
 
-
     if (loadMoreButton) {
-
         loadMoreButton.style.display =
-            "none";
+            visibleArtworkCount < project.artworks.length
+                ? "inline-flex"
+                : "none";
     }
 
-
-    /*
-     * Automatically scroll to the artwork section
-     * after the selected collection has been rendered.
-     */
     if (artworkGrid) {
-
         requestAnimationFrame(() => {
-
             artworkGrid.scrollIntoView({
                 behavior: "smooth",
                 block: "start"
             });
-
         });
     }
 }
